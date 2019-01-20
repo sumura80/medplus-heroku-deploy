@@ -1,0 +1,497 @@
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+
+body{
+	background-color: #EAECEE;
+	font-family: 'Raleway', sans-serif;
+}
+
+.jumbotron-login{
+	background: url("login_top.jpg");
+	background-size: cover;
+}
+
+.jumbotron-nologin{
+		background: url("jumbo-nonlogin 2.png");
+	background-size: cover;
+}
+
+.message{
+	box-sizing: border-box;
+	background-color: #927A95;
+	margin-bottom: 25px;
+	margin-right: 5px;
+	margin-left: 5px;
+	padding:5px;
+	border-bottom: 4px solid #0BB523;
+ 	border-radius: 0;
+}
+
+.message-title{
+	font-size: 1.4em;
+}
+
+/*index.html 全体を真ん中に寄せる*/	
+.center {
+	text-align:center;
+}
+
+.jumbotron_login{
+	background-image: url("images/login_top.jpg");
+}
+
+/*/posts/show.html 全体の装飾　*/
+.show-whole-wrap{
+	margin-top: 45px;
+}
+.message-show{
+	background-color: #F4F6F6;
+	box-sizing: border-box;
+	padding: 0px 15px 30px 15px;
+	margin-bottom: 30px;
+}
+
+.message-posted-by{
+	font-size: 0.9em;
+}
+
+.reply-to-message{
+	padding-top: 15px;
+}
+
+
+.btn-group{
+padding-top: 10px;
+
+}
+
+/*/posts/showページの画像を大きくする*/
+.show-pic-size{
+  width: 330px;
+	height: 240px;
+	
+	}
+
+/* comments/_comment.html コメントの装飾　*/
+.comments_box{
+	background-color: #F4F8F9;
+	padding:10px;
+	border: 1px solid #7FC8DC;
+	margin-top: 20px;
+}
+
+.comments_box_user{
+	background-color: #F4F8F9;
+	padding:10px;
+	border: 1px solid #7FC8DC;
+	margin-top: 15px;
+}
+.comments_box_content{	
+	font-size: 16px;
+}
+
+/* comments/_comment.html postボタン　*/
+.post-btn{
+	width: 120px;
+	height: 40px;
+	font-size: 18px;
+}
+
+
+/*indexページのボックスを綺麗に並べるcss index のrowに記述ずみ	*/
+.row-eq-height {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+/*navbarのradiusを消して丸みを無くした*/
+.navbar {
+	border-radius: 0;
+}
+
+/* comment show pageの日本語用アコーディオン　*/
+.panel-info{
+	cursor: pointer;
+	
+}
+
+.comment-jp-heading{
+	text-align: center;
+}
+
+/*LIKEとVOTEのアイコン表示調整*/
+.index_icons .fa {
+  font-size: 20px;
+  margin-right: 5px;
+
+}
+
+/*likeボタンの*/
+.like-btn{
+	color:#8899a6;
+}	
+ 
+/*unlikeボタンの*/
+.like-btn-unlike, .index_like-icon ,.index_comments-icon{
+	color: #ff2581;	
+}
+
+.index_comments-icon ,.index_like-icon{
+	padding-right: 3px;
+}
+
+/*Accountページの自己紹介ページ
+Bootstrap4からは、img-thumbnailを使用することにした*/
+.default_image_size{
+	max-width: 200px;
+	height: auto;
+}
+
+
+
+/*headerの自己紹介画像*/
+.rounded-circle{
+	width:30px;
+	height:30px;
+
+
+}
+
+/*header上下真ん中に来るバランス*/
+.navbar-nav > li > a{
+	line-height: 25px;
+}
+
+/*commentに表示される小さい画像*/
+.comment_pic{
+	width: 60px;
+}
+
+/*voteボタンの*/
+
+.vote-btn{
+	color:#8899a6;
+}	
+ 
+
+.vote-btn-donwvote{
+	color: #ff2581;
+}
+/*voteボタンの終了*/
+
+
+
+
+
+/* Footer start */
+.footer{
+  line-height: 35px;
+  background-color: #3d434c;
+  color:#ffffff;
+}
+
+.footer-list-color{
+	color:#ffffff;
+}
+
+.footer-list-color:hover{
+	color: #53cb93;
+	text-decoration: underline;
+}
+
+
+
+.bottom-align{
+  text-align: center;
+  padding:30px 0px 10px 0px;
+ 
+}
+
+.bottom-align li a i{
+  padding-right: 10px;
+}
+
+
+
+ul.social-buttons {
+  margin-bottom: 15px;
+}
+ul.social-buttons li a {
+  padding-left:7px;
+  display: block;
+  background-color: #5c5b57;
+  height: 43px;
+  width: 43px;
+  font-size: 30px;
+  line-height: 40px;
+  border-radius: 100%;
+  color: #FFF;
+ 
+
+  /*-webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;*/
+}
+ 
+
+
+ul.social-buttons li a:hover,
+ul.social-buttons li a:focus,
+ul.social-buttons li a:active {
+  border-radius: 100%;
+ /* padding-left: 7px;*/
+  color: #53cb93;
+  cursor: pointer;
+}
+
+
+
+.fa-arrow-alt-circle-up{
+	font-size: 35px;
+	color: #FFF;
+}
+
+.fa-arrow-alt-circle-up:hover {
+	font-size: 35px;
+	/*color: #737979;*/
+	color: #53cb93;
+
+}
+
+.returntop
+{
+	transition:all 0.3s ;
+}
+
+/*footer を最下部に固定
+https://coliss.com/articles/build-websites/operation/css/css-sticky-footer.html
+*/
+.main-content{
+	min-height: calc(70vh - 10px);
+}
+
+/*about page の開始*/
+.about-menu{
+	margin-right: 20px;
+
+}
+
+/* aboutページのnavだけhoverの色を変更　*/
+.navbar-dark .navbar-nav .about-menu a:hover{
+color: #53cb93;
+}
+
+
+.about-menu-head{
+	margin-right:10px;
+
+}
+
+
+.jumbotron-about {
+	height:500px;
+  background-image: url("about-top-pic.jpg");
+  background-size: cover;
+  background-position: center 60%;
+  color: #FFF;
+
+}
+
+/* Start About us intro */
+.whole-wrap{
+	background-color: #F5F5F5;
+}
+.about-info{
+	font-size: 1.1em
+}
+.about-wrap{
+	background-color: #FFF;
+	padding: 40px;
+}
+
+ 
+.about-explanation{
+	font-size: 1.1em
+}
+
+.progress{
+	margin-bottom: 25px;
+}
+
+/* End About us intro */
+
+
+
+/* Start Services */
+.service-wrap{
+	margin-top: 50px;
+}
+.service-cover{
+	margin-top: 50px;
+}
+
+.service-icon{
+	font-size: 50px;
+	text-align: center
+
+}
+
+.service-name{
+	text-align: center
+}
+.service-box{
+	background-color: #FFF;
+	padding: 15px;
+}
+/* End Services */
+
+/*Start of middle med bar */
+.jumbotron-medbar{
+	height:300px;
+  background-image: url("about-med-bar.jpg");
+  background-size: cover;
+  background-position: center 60%;
+  color: #FFF;
+  margin-top: 100px;
+}
+/*End of middle med bar */
+
+
+/*our amazing team 開始 */
+.team-wrap{
+	margin-top: 80px;
+}
+.team-line{
+	margin-top: 35px;
+	text-align: center;
+}
+.amazing-team{
+	text-align: center;
+	font-size: 3.0em;
+	margin-bottom: 40px;
+}
+/* our amazing team 終了 */
+
+
+/* contact 開始 */
+.contact-wrap{
+	margin-top: 80px;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	background-image: url(contact.jpg);
+	background-size:cover;
+}
+
+.contact-inside{
+	background-color: #FFF;
+	padding: 30px;
+
+
+}
+
+
+/* Footer End */
+.contact-social-buttons{
+  height: 40px;
+  width: 40px;
+  font-size: 1.7rem;
+  border-radius: 50%;
+  line-height: 1.4;
+  padding-left: 10px;
+  box-shadow: 0 0 0 3px #0078ff;
+  transition: all 500ms ease;
+}
+
+.contact-social-buttons:hover{
+  background-color: #53cb93;
+  box-shadow: 0 0 0 3px #108D8D;
+  transition: all 500ms ease;
+  
+}
+.contact-fab:hover{
+	color: #FFF;
+}
+
+
+/* contact 終了 */
+
+/*about page の終了*/
+
+/* Start of Account page開始 */
+.account-whole-wrap{
+	background-color: #F9F9F7;
+	padding: 30px 10px 90px 10px;
+	margin-bottom: 60px;
+}
+
+
+/* Start of Categories */
+
+.view-margin{
+	margin-bottom: 0px;
+
+}
+
+.category-top{
+	margin-top: -20px;
+}
+
+
+
+/*---Media Queries --*/
+/*Extra Small (XS) 縦向きモバイル – 576px 以下*/
+@media (max-width: 576px) {
+  .account-pic{
+  	width:200px;
+  	height: auto;
+  }
+}
+
+/*Small (sm) 横向きモバイル 576px から 768px まで*/
+@media (max-width: 768px) {
+
+.jumbotron-about h1{
+	font-size: 2em;
+}
+ .jumbotron-about h3{
+	font-size: 1.4em;
+}
+
+.jumbotron-about{
+	margin-top: 30px;
+	height: 300px;
+}
+.about-info{
+	margin-top: 1.2em;
+}
+
+.demanding-wrap{
+	margin-top: 1.2em;
+}
+
+.jumbotron-medbar h1{
+	font-size: 1.8em;
+}
+
+.jumbotron-medbar h3{
+	font-size: 1.4em;
+}
+
+.amazing-team{
+	font-size: 2em;
+}
+
+}
+
+/*Medium (md) タブレット 768px から 992px まで*/
+@media (max-width: 992px) {
+
+
+  }
+
+/*Medium (lg) デスクトップ, 1200px まで*/
+@media (max-width: 1200px) { 
+
+}
+

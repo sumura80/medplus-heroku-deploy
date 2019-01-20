@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Med Plus Master test</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta charset="UTF-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+   <!-- Font Awesome 5-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- Fabicon -->
+    <link rel="shortcut icon" type="image/png" href="/assets/favicon.png">
+    <!-- Raleway -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+
+<body>
+  <%if current_page?(about_path) %>
+    <%= render template:'pages/about' %>
+  <% elsif current_page?(terms_path) %>
+    <%= render template:'pages/terms' %>
+  <% elsif current_page?(privacy_path) %>
+    <%= render template:'pages/privacy' %>
+  <% else %>
+
+    <%= render 'layouts/header' %>
+     <!-- ランディングページにのみjumbotronを表示 -->
+<% if user_signed_in? %> <!-- サインインしたユーザー -->
+    <% if current_page?(root_path) %>
+        <div class="jumbotron jumbotron-login jumbotron-fluid p-md-5 text-white">
+          <div class="container">
+            <h1 class="display-4 font-italic text-center">Life Abroad<br>med <span style="color: #d95857;">+</span></h1>
+            <p class="lead my-3">welcome here!</p>
+            <p class="lead mb-3">Chooose a category to log in</p>
+          </div>
+        </div>  
+    <% end %>
+<% else %>
+    <!-- サインインしていない一般ユーザー用 -->
+    <% if current_page?(root_path) %>
+       <div class="jumbotron jumbotron-nologin jumbotron-fluid p-md-5 text-white bg-info">
+          <div class="container">
+            <h1 class="display-4 font-italic text-center">Life Abroad<br>med <span style="color: #d95857;">+</span></h1>
+            <p class="lead my-3">Make OTC med choices with the help and support of full of expats</p>
+            <p class="lead mb-3">Chooose a category to log in</p>
+            <p><%= link_to "Sign Up", new_user_registration_path,class:"btn btn-secondary" %></p>
+          </div>
+        </div>  
+    <% end %>
+<% end %>
+
+      <div class="container main-content mt-4">
+         <% flash.each do |name, msg| %>
+          <div class="alert alert-<%= name == "notice" ? "success" : "danger" %>">
+            <a class="close" data-dismiss="alert">×</a> <!-- アラートダイアログに×ボタンをつける -->
+            <%= msg %>
+          </div>
+        <% end %>
+          <%= yield %>
+      </div>
+     <% end %>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>

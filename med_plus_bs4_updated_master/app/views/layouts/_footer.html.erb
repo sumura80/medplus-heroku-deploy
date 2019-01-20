@@ -1,0 +1,58 @@
+ <!-- Footer -->
+    <footer div class="footer bottom-align">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12">
+           <ul class="list-inline quicklinks">
+             <li class="list-inline-item"><%= link_to "Home", root_path,class:"footer-list-color" %></li>
+             <li class="list-inline-item"><%= link_to "About Us", about_path,class:"footer-list-color" %></li>
+             <li class="list-inline-item"><%= link_to "Terms of Service", terms_path,class:"footer-list-color" %></li>
+             <li class="list-inline-item"><%= link_to "Privacy Policy", privacy_path,class:"footer-list-color" %></li>         
+           </ul>
+          </div>
+
+          <div class="col-sm-12 col-md-12">
+           <ul class="list-inline social-buttons">
+             <li class="list-inline-item"><a href="https://www.facebook.com/lifeabroadjpn" target="_blank" ><i class="fab fa-facebook-f" style="font-size:90%;"></i></a>
+             </li>
+
+              <li class="list-inline-item"><a href="https://twitter.com/lifeabroadjpn" target="_blank"><i class="fab fa-twitter" style="font-size:90%;"></i></a>
+              </li>
+                    
+              <li class="list-inline-item"><a href="https://lifeabroadjpn.tumblr.com/" target="_blank">
+                <i class="fab fa-tumblr" style="font-size:90%;" aria-hidden="true"></i></a>
+              </li>
+              <li class="list-inline-item"><a href="https://www.youtube.com/watch?v=LnmE5-uY4FY" target="_blank"><i class="fab fa-youtube" style="font-size:90%;"></i></a>
+                    </li>                    
+          </ul>
+         </div>
+
+         <div class="col-sm-12 col-md-12">
+          <span class="copyright"><small>Copyright &copy; 2019 Med Plus All Rights Reserved.</small></span>
+          <div class="float-right returntop" id="returntop">
+           <a href="#"  style="font-size:18px;">
+           <p onclick='returntop' >
+           <i class="far fa-arrow-alt-circle-up"></i></p>        
+          </div>          
+         </div><!-- col-sm-12 col-md-12 -->
+
+      </div><!-- end of row -->
+  </div><!-- end of container -->
+
+
+
+</footer><!-- End Footer -->
+
+
+<script type="text/javascript">
+$(window).on('scroll', function () {
+        backToTop();
+    });
+    $('#returntop').on('click', function (e) {
+        e.preventDefault();
+        $('html,body').animate({
+            scrollTop: 0
+        }, 700);
+    });
+ </script>
+    

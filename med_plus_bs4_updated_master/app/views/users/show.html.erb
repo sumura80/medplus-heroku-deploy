@@ -1,0 +1,93 @@
+<h1>Account Page</h1>
+
+  <section class="account-whole-wrap">
+    <div class="container">
+      <div class="account-wrap">
+        <div class="row">
+          <div class="col-md-4 mb-4 mx-auto account-pic">
+             <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->   
+             <% if @user.user_image? %>
+              <%= image_tag @user.user_image_url %>
+             <% else %>
+             <!-- デフォル時の表示 以前は、default_image_size -->
+              <%= image_tag("default_user_image.png",class:"img-thumbnail")%> 
+             <% end %><br><br>
+             <%= link_to "画像変更", edit_user_path,class:"btn btn-success"%>
+          </div>
+
+          <div class="col-md-8">
+            <h5>Username: <span style="font-size: 0.9em" > <%= @user.username %></span></h5>
+                    
+              <% if user_signed_in? %>
+                <% if @user == current_user || current_user.admin? %>
+                  <h5>Email: <span style="font-size: 0.9em"> 
+                 <!-- 本人のみEmailが表示されるようにする -->
+                  <%= @user.email %>        
+                <% end %>
+              <% else %>
+                NONE
+              <% end %>
+            </span></h5>
+            <h5>Number of 
+                <% if @comments.length >= 2 %>
+                 Comments:
+                <% else %>
+                  Comment:
+                <% end %>
+                <%= @comments.length %>
+              </h5>
+            </div><!-- end of col-md-8 -->
+         
+
+          <div class="col-md-12">
+            <div style="border-bottom: 2px solid blue; padding-top: 15px;"></div>
+            <div class="pt-4">
+              <h5 class="title-left mb-4">Comment History</h5>   
+                <% unless @comments.length >= 1 %>
+                 No comments yet.
+                <% end %>
+
+                <% @comments.each do |comment| %>
+                 <div class="comments_box_user"> 
+                  <div class="media">
+                      <%if comment.user.present? %>
+                        <% if comment.user.user_image? %>
+                          <%= image_tag comment.user.user_image_url,size:"60",class:"mr-3" %>
+                        <% else %>
+                          <!-- デフォル時の表示 以前は、default_image_size -->
+                          <%= image_tag("default_user_image.png",size:"60",class:"mr-3")%>  
+                        <% end %>
+                      <% else %>
+                        <%= image_tag("default_user_image.png",size:"60",class:"mr-3")%>  
+                      <% end %>
+                    <div class="media-body pl-2">
+                      <!-- 改行を反映させるためのコマンド↓ -->  
+                     <%= h(comment.content).gsub(/\n/, '<br/>').html_safe %>
+                      <p class="message-posted-by mt-2">Posted by 
+                        <% if comment.user.blank? %>
+                           <%= "deleted user" %>
+                        <% else %>
+                           <%= comment.user.username %>
+                        <% end %>
+                       <%= time_ago_in_words(comment.created_at) %> ago</p>
+                    </div><!-- end of media-body -->
+                  </div><!-- end of media -->
+                </div><!-- end of comments_box -->
+            <% end %><!-- end of comments.each -->   
+          </div><!-- end of pt-4 -->
+        </div><!-- end of col-md-12 -->
+
+      </div><!-- end of row -->
+    </div><!-- end of account-wrap -->
+  </div><!-- end of container -->
+</section>
+  
+
+
+
+
+
+
+ 
+
+
