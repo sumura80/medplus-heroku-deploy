@@ -1,0 +1,38 @@
+<!-- この_comment.html.erbは_formに記述した内容がpostsのshowページに表示される。 -->
+<div class="comments_box"> 
+  <div class="media">
+		<%if comment.user.present? %>
+	    <% if comment.user.user_image? %>
+	      <%= image_tag comment.user.user_image_url,size:"60",class:"mr-3" %>
+	   	<% else %>
+	    	<!-- デフォル時の表示 以前は、default_image_size -->
+	    	<%= image_tag("default_user_image.png",size:"60",class:"mr-3")%>	
+	   	<% end %>
+   	<% else %>
+			<%= image_tag("default_user_image.png",size:"60",class:"mr-3")%>	
+	    <% end %>
+
+	<div class="media-body">
+  	<!-- 改行を反映させるためのコマンド↓ -->  
+    <%= h(comment.content).gsub(/\n/, '<br/>').html_safe %>
+		<p class="message-posted-by mt-2">Posted by 
+			<% if comment.user.blank? %>
+			   <%= "deleted user" %>
+			<% else %>
+			   <%= comment.user.username %>
+			<% end %>
+		 <%= time_ago_in_words(comment.created_at) %> ago</p>
+		 <!-- voteボタンの部分を_votes.html.erbにrender  postsの中のコメントなので、＠インスタンス変数は使わない-->
+		 <%= render partial: '/votes/votes', locals: {comment: comment} %>
+
+			<% if user_signed_in? %>
+			 <% if current_user.admin? %>
+				<%= link_to "Edit", edit_post_comment_path(comment.post, comment), class:"btn btn-link"  %>
+				<%= link_to "Delete", post_comment_path(comment.post, comment), method: :delete, data:{confirm: "Are you sure?"}, class:"btn btn-link"  %>
+				<% end %>
+			<% end %>
+	  </div><!-- end of media-body -->
+	</div><!-- end of media -->
+</div><!-- end of comments_box -->
+
+

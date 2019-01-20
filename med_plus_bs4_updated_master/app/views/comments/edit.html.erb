@@ -1,0 +1,16 @@
+<h3>Edit comment</h3>
+<%= form_for([@post, @comment])do |form| %>
+
+
+  <div class="form-group">
+    <%= form.label :content,"Comment" %>
+    <%= form.text_area :content, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Complete edit", class:"btn btn-warning" %>
+  </div>
+<% end %>
+<br>
+<p><%= link_to "Back", @post, class:"btn btn-success" %></p>
+ 

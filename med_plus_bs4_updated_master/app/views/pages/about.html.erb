@@ -1,0 +1,390 @@
+<div class="whole-wrap" id="home">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+ <div class="container-fluid">
+  <%= link_to image_tag('logo0113.png'), root_path,class:"navbar-brand" %><span class="sr-only">(current)</span>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto about-menu-head" >
+      <li class="nav-item about-menu"><a href="#home" class="nav-link">Home</a></li>
+      <li class="nav-item about-menu"><a href="#about_us" class="nav-link">About Us</a></li><li class="nav-item about-menu"><a href="#services" class="nav-link">Services</a></li><li class="nav-item about-menu"><a href="#team" class="nav-link">Team</a></li>  
+      <li class="nav-item about-menu"><a href="#contact" class="nav-link">Contact</a></li>  
+      <li class="nav-item dropdown about-menu"><!--start of pages dropdown -->
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownaboutus" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Others</a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "About Us", about_path, class:"dropdown-item" %>
+          <%= link_to "Terms of Service", terms_path, class:"dropdown-item" %> 
+          <%= link_to "Privacy Policy", privacy_path, class:"dropdown-item" %>
+        </div>
+      </li><!--end of pages dropdown -->
+
+    <% if user_signed_in? %>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <!-- 画像がある時の表示 -->
+          <% if current_user.user_image.present?  %>
+           <%= image_tag current_user.user_image_url,class:"rounded-circle" %>
+          <% else %>
+            <!-- デフォル時の表示 -->
+           <%= image_tag("default_user_image.png",class:"rounded-circle")%> 
+          <% end %> 
+          <%= current_user.username %>
+        </a>
+
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown1">	
+          <a><%= link_to "Privacy", edit_user_registration_path,class:"dropdown-item" %></a>
+          <a class="dropdown-item" href="/users/<%= current_user.id %>">Account</a> 
+          <div class="dropdown-divider"></div><!-- 横仕切り線 -->
+          <a><%= link_to "Log Out", destroy_user_session_path,method: :delete,class:"dropdown-item" %></a>    
+        </div>
+      </li>
+      <% end %>  
+    </ul>
+  </div>
+</div><!-- end of container-fluit -->
+</nav>
+
+<br>
+<div class="container"><!-- Start of container -->
+   <% flash.each do |name, msg| %>
+    <div class="alert alert-<%= name == "notice" ? "success" : "danger" %>">
+      <a class="close" data-dismiss="alert">×</a> <!-- アラートダイアログに×ボタンをつける -->
+      <%= msg %>
+    </div>
+   <% end %>
+  <!-- Start main content -->
+<!-- 	   <h1>Pages#about</h1>
+		<p>Find me in app/views/pages/about.html.erb</p> -->
+</div><!-- End of container -->	
+
+ 
+<div class="jumbotron jumbotron-fluid jumbotron-about">
+  <div class="container-fluid text-center">
+    <h1 class="display-4">WE'RE HERE TO HELP YOU</h1>
+    <h3 class="mt-4" >We provide support in a Japanese OTC medicines.</h3>
+  </div ><!-- /.container -->
+</div><!-- /.jumbotron -->
+<div id="about_us" style="margin-bottom: 100px;"> </div>
+
+
+<!-- About Us start  -->
+<section >
+    <div class="container">
+      <div class="row about-wrap">
+        <div class="col-sm-12">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-sm-6 col-md-5">
+                    <div class="med_plus_logo_pic">
+                    	<%= image_tag('med_plus_logo.png',class:"img-fluid") %>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-7">
+                    <div class="about-info">
+                      <p>Name: Med plus</p>
+                      <p>Email: info@lifeabroad.jp.</p>
+                      <p>URL: https://lifeabroad.jp.</p>
+                      <p>Established by: Lifeabroad</p>
+                      <p>Established in: 2019</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="demanding-wrap">
+                  <p class="demanding-rate lead">Demand Top 4</p>
+                  <span>Cold flu</span><span class="float-right">35%</span>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 35%;" aria-valuenow="35" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+
+                  <span>Yeast/Thrush</span><span class="float-right">30%</span>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+
+                  <span>Allergy</span><span class="float-right">20%</span>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+
+                  <span>Sleep Aids</span><span class="float-right">15%</span>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="about-us pt-4 pt-md-0">
+                  <div class="title-box-2">
+                    <h3>
+                      About Us
+                    </h3>
+                  </div>
+                  <p class="about-explanation">
+                    Life Abroad is a labor of love by a long-time foreign resident of Japan and a native who understands the struggle. With the mass of misinformation and lack of easy-to-understand information online about living and prospering in Japan as a foreigner, we decided to create Life Abroad to be a comprehensive guide. 
+                  </p>
+                  <p class="about-explanation">
+                    We want foreign residents living in Japan to be able to comfortably, conveniently, and confidentially find the information they need. Whether you’re an exchange student, here on business, visiting a friend, or a permanent resident that calls this wonderful country home, we believe you should have important and even life-saving information at your fingertips. 
+                  </p>
+                  <p class="about-explanation">
+                    One of the many challenges that come with life here is the shadow of uncertainty lying in so many aspects of life. Through Life Abroad, we hope to be a light in the dark to give you the confidence to not just live, but thrive. We wish you the best on your journey, and we will be here with you every step of the way.
+                  </p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- About Us End  -->
+
+
+<div id="services" style="margin-bottom: 100px;"> </div>
+
+  <!--Start of Services-->
+  <section id="services" class="service-wrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="text-center">
+            <h3 class="display-4">
+              Services
+            </h3>
+            <p class="text-center">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row service-cover">
+        <div class="col-md-4">
+          <div class="service-box">
+            <div class="service-icon">
+              <span class="icon-circle"><i class="fas fa-briefcase-medical"></i></span>
+            </div>
+            <div class="service-content">
+              <h2 class="service-name">Med kit</h2>
+              <p class="service-description text-center">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat! Quia,
+                provident vitae! Magni
+                tempora perferendis eum non provident.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="service-box">
+            <div class="service-icon">
+              <span class="icon-circle"><i class="fas fa-pills"></i></span>
+            </div>
+            <div class="service-content">
+              <h2 class="service-name">Pills</h2>
+              <p class="service-description text-center">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat! Quia,
+                provident vitae! Magni
+                tempora perferendis eum non provident.
+              </p>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-4">
+          <div class="service-box">
+            <div class="service-icon">
+              <span class="icon-circle"><i class="fas fa-file-medical"></i></span>
+            </div>
+            <div class="service-content">
+              <h2 class="service-name">OTC med</h2>
+              <p class="service-description text-center">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat! Quia,
+                provident vitae! Magni
+                tempora perferendis eum non provident.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end of service-cover -->
+    </div><!-- end container -- >
+  </section>
+  <!--End of Start of Services-->
+
+
+ <!--Start of middle med bar-->
+<div class="jumbotron jumbotron-fluid jumbotron-medbar">
+  <div class="container-fluid text-center">
+    <h1>WE'RE HERE TO HELP YOU</h1>
+    <h3 class="mt-4" >We provide support in a Japanese OTC medicines.</h3>
+  </div><!-- /.container -->
+</div><!-- /.jumbotron -->
+ <!--End of middle med bar-->
+
+<div id="team" style="margin-bottom: 140px;"></div>
+
+<!--Start of our team-->
+<div class="team-wrap">
+  <div class="container">
+    <h4 class="amazing-team">OUR AMAZING TEAM</h4>
+    <div class="row text-center">
+      <div class="col-sm-12 col-md-4 ml-auto">
+          <div class="card mb-3">
+            <%= image_tag 'ceo.jpg', class:"card-img-top"%>
+            <div class="card-body">
+              <h5 class="card-title">C.S. Rusch</h5>
+              <p class="card-text">President, CEO, and Co-Founder</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4 ml-auto">
+          <div class="card mb-3">
+             <%= image_tag 'vice_president.jpg', class:"card-img-top"%>
+            <div class="card-body">
+              <h5 class="card-title">K.Muraoka</h5>
+              <p class="card-text">Vice President and Co-Founder</p>
+            </div>
+          </div>
+        </div>   
+    </div>
+     <h4 class="team-line">WHENEVER YOU NEED HELP, WE ARE HERE FOR YOU.</h4>
+  </div>
+</div><!-- end of team wrap -->
+ <!--End of our team-->
+
+
+  <div id="contact" style="margin-bottom: 40px;"> </div>
+
+
+    <!--Start of contact -->
+    <section class="contact-wrap px-4" style="padding-top: ">
+      <div class="container text-center text-white">
+        <div class="row">
+          <div class="col-sm-12">
+                <h2>Contact Us</h2>
+                  <div class="contact-add">
+                    <p class="lead">
+                      Feel free to ask us anything you would like know.
+                    </p>
+                    <h4 style="font-size:28px;"><i class="far fa-envelope"></i> info@lifeabroad.jp.</h4>
+                  </div>
+          </div><!-- end of col-sm-12 -->
+        </div>
+      </div>
+    </section>
+  <!--End of contact-->
+
+
+<div id="contact" style="margin-bottom: 40px;"> </div>
+
+
+    <!--Start of contact -->
+    <section class="contact-wrap px-4">
+      <div class="container contact-inside">
+        <div class="row">
+          <div class="col-sm-12">
+                <div class="row">
+                  <div class="col-md-6">
+                      <h3 class="contact-left">
+                        Contact Us
+                      </h3>
+
+                    <div class="contact-form">
+                        <form action="" method="post" role="form" class="contactForm">
+                        <p>Feel free to ask us anything you would like know.</p>
+                        <div id="errormessage"></div>
+                        <div class="row">
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                              <div class="validation"></div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                              <div class="validation"></div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                              <div class="validation"></div>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <button type="submit" class="btn btn-info">Send Message</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div><!-- end contact-form -->
+                  </div><!-- end col-md-6 -->
+                  <div class="col-md-6"><!-- start right side of contact -->
+                      <h3>Get in Touch</h3>
+
+
+                    <div class="contact-add">
+                      <p class="lead">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolorum dolorem soluta quidem
+                        expedita aperiam aliquid at.
+                        Totam magni ipsum suscipit amet? Autem nemo esse laboriosam ratione nobis
+                        mollitia inventore?
+                      </p>
+                      <p style="font-size:20px;"><i class="far fa-envelope"></i> contact@example.com</p>
+                    </div>
+
+              <div class="row"><!-- social buttons -->
+                <div class="col-sm-12 col-md-12">
+                    <ul class="list-inline">
+                        <li class="list-inline-item contact-social-buttons"><a href="https://www.facebook.com/lifeabroadjpn" target="_blank" ><i class="fab fa-facebook-f contact-fab"></i></a>
+                        </li>
+                        <li class="list-inline-item contact-social-buttons"><a href="https://twitter.com/lifeabroadjpn" target="_blank"><i class="fab fa-twitter contact-fab" style="font-size:90%;"></i></a>
+                        </li>
+                        <li class="list-inline-item contact-social-buttons"><a href="https://lifeabroadjpn.tumblr.com/" target="_blank">
+                        <i class="fab fa-tumblr contact-fab" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="list-inline-item contact-social-buttons"><a href="https://www.youtube.com/watch?v=LnmE5-uY4FY" target="_blank"><i class="fab fa-youtube contact-fab" style="font-size:80%;"></i></a>
+                        </li>                       
+                    </ul>
+                 </div>
+                </div>
+              </div><!-- end right side of contact -->
+            </div><!-- end of row -->
+          </div><!-- end of col-sm-12 -->
+        </div>
+      </div>
+    </section>
+  <!--End of contact-->
+    <br><br><br><br><br>
+
+
+	 <!-- End main content -->
+</div><!-- end of whole wrap -->
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('a[href^="#"]').on('click', function(e){
+    e.preventDefault();
+
+
+    var target = this.hash;
+    var $target = $(target);
+
+    $('html, body').animate({
+      'scrollTop': $target.offset().top
+    }, 1000, 'swing', function() {
+      window.location.hash = target;
+    
+    });
+  });
+});
+
+</script>

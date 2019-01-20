@@ -1,0 +1,70 @@
+<div class="show-whole-wrap"> 
+  <div class="container">
+
+    <!-- Start of top box row -->
+    <div class="row message-show">
+      <div class="col-md-4 mt-4">
+        <%= image_tag @post.image_url,class:"show-pic-size img-fluid mb-3" %>
+        <h2><%= @post.title %></h2>
+        <!-- <p class="message-posted-by">Posted by
+        <%= time_ago_in_words (@post.created_at) %> ago </p> -->
+        <p>種類: <%= @post.category.name %></p>   
+        <!-- Likeボタンのコード/likeボタンの部分を_likes.html.erbにrender   Start ↓ -->
+        <%= render partial: '/likes/likes', locals: {post: @post} %>
+        <!-- Likeボタンのコード   End -->
+      </div><!-- end of col-md-4 -->
+
+       <!-- ここからshowの右画面 -->
+       <div class="col-md-7 mx-auto mt-4">
+         <!-- 改行を反映させるためのコマンド↓ -->       
+         <p><%= h(@post.description).gsub(/\n/, '<br/>').html_safe %></p>
+       </div><!-- end of col-md-7 col-md-offset-1 -->
+    <!-- end of topbox row -->
+    
+
+    <!--Start of accordion of Japanese description -->
+      <div class="col-md-12 my-4">
+        <p>
+          <a class="btn btn-outline-info btn-block" data-toggle="collapse" href="#jp-description" role="button" aria-expanded="false" aria-controls="jp-description">
+            See Japanese
+          </a>
+        </p>    
+      <div class="collapse" id="jp-description">
+        <div class="card card-header">
+          <h4><%= @post.title_jp %></h4>
+          <p><%= h(@post.description_jp).gsub(/\n/, '<br/>').html_safe %></p>
+        </div>
+      </div>
+    </div><!-- end of row -->
+    <!--End of accordion -->
+
+
+    <div class="col-sm-12" style="border-top: 1px solid #D3D3D3; padding-top: 15px;">
+      <% if @comments_by_votes.length >= 2 %>
+        <h3><%= @comments_by_votes.length %> Comments:</h3>
+      <% else %>
+        <h3><%= @comments_by_votes.length %> Comment:</h3>
+      <% end %>
+      <%= render @comments_by_votes %>
+    </div>
+
+    <div class="col-sm-12 mt-4">
+      <h3 class="reply-to-message">Reply to Post:</h3>
+      <%= render 'comments/form' %>
+    </div>
+
+
+    <div class="col-sm-12 btn-group mt-4">
+      <%= link_to "Home", root_path, class:"btn btn-secondary" %>
+        <% if user_signed_in? %>
+          <% if current_user.admin? %>
+            <%= link_to "Edit", edit_post_path(@post), class:"btn btn-success" %>
+            <%= link_to "Delete", post_path(@post),method: :delete,data:{confirm: "Are you sure?"} , class:"btn btn-danger"%>
+          <% end %>
+        <% end %>  
+    </div>
+
+
+    </div><!-- end of row message-show -->
+  </div><!-- end of container -->
+</div><!-- end of show-whole-wrap -->
