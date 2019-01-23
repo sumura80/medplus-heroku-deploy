@@ -6,6 +6,8 @@ class Post < ApplicationRecord
 	#has_many :likes, dependent: :destroy
 	#	論理削除のため、dependent: :destroyをコメント会おうtした
 	belongs_to :category
+	has_many :extraimg
+	has_many :infoimg
 
 	
 	

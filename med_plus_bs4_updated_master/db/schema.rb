@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190105225807) do
+ActiveRecord::Schema.define(version: 20190123112958) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -27,6 +27,24 @@ ActiveRecord::Schema.define(version: 20190105225807) do
     t.integer "votes_count", default: 0
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "extraimgs", force: :cascade do |t|
+    t.string "extraimg_name"
+    t.text "description"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_extraimgs_on_post_id"
+  end
+
+  create_table "infoimgs", force: :cascade do |t|
+    t.string "infoimg_name"
+    t.text "description"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_infoimgs_on_post_id"
   end
 
   create_table "likes", force: :cascade do |t|
