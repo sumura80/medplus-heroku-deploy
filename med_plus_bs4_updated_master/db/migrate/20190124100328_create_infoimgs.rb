@@ -2,6 +2,7 @@ class CreateInfoimgs < ActiveRecord::Migration[5.1]
   def change
     create_table :infoimgs do |t|
       t.string :infoimg_name
+      t.string :infoimage
       t.text :description
       t.references :post, foreign_key: true
 

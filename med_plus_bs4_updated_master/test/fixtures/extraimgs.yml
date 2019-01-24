@@ -2,10 +2,12 @@
 
 one:
   extraimg_name: MyString
+  extraimage: MyString
   description: MyText
   post: one
 
 two:
   extraimg_name: MyString
+  extraimage: MyString
   description: MyText
   post: two

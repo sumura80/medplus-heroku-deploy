@@ -23,6 +23,7 @@ class PostsController < ApplicationController
 		#@post = Post.new
 		@post = current_user.posts.build
 		@categories = Category.all.map{ |c| [c.name, c.id]}
+		@post.extraimgs.build
 	end
 
 	def create
@@ -38,11 +39,13 @@ class PostsController < ApplicationController
 
 	def edit	
 		@categories = Category.all.map{ |c| [c.name, c.id]}
+	  @post.extraimgs.build
 	end
 
 	def update
-		 @post.category_id = params[:category_id]
 
+		 @post.category_id = params[:category_id]
+		 
   	if @post.update(post_params)
   		redirect_to post_path
   	else
@@ -57,7 +60,10 @@ class PostsController < ApplicationController
 
 	private
   def post_params
-  	params.require(:post).permit(:id, :title, :description, :image, :category_id, :category_id,:title_jp, :description_jp)
+  	params.require(:post).permit(:id, :title, :description, :image,
+  	 :category_id, :category_id,:title_jp, :description_jp,
+  	 extraimgs_attributes:[ :id, :extraimg_name, :extraimage,
+  	 	:extraimg_description,:post_id, :_destroy ])
   end
 
   def find_post

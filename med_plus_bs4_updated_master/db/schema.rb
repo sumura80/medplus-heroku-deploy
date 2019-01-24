@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190123112958) do
+ActiveRecord::Schema.define(version: 20190124102126) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -31,7 +31,8 @@ ActiveRecord::Schema.define(version: 20190123112958) do
 
   create_table "extraimgs", force: :cascade do |t|
     t.string "extraimg_name"
-    t.text "description"
+    t.string "extraimage"
+    t.text "extraimg_description"
     t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -40,7 +41,8 @@ ActiveRecord::Schema.define(version: 20190123112958) do
 
   create_table "infoimgs", force: :cascade do |t|
     t.string "infoimg_name"
-    t.text "description"
+    t.string "infoimage"
+    t.text "infoimg_description"
     t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

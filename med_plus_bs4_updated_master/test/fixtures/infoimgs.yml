@@ -2,10 +2,12 @@
 
 one:
   infoimg_name: MyString
+  infoimage: MyString
   description: MyText
   post: one
 
 two:
   infoimg_name: MyString
+  infoimage: MyString
   description: MyText
   post: two
