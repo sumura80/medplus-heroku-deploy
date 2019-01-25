@@ -30,7 +30,7 @@
   <div class="form-group">
       <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
     <% if @post.image? %>
-     <%= image_tag @post.image.url %>
+     <%= image_tag @post.image_url %>
     <% end %><br>
     <%= form.label :image %>
     <%= form.file_field :image,class: "form-control" %>
@@ -38,11 +38,13 @@
 
 
 
-    <div class="form-group">
-      <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
+  <div class="form-group">
+    <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
     <%= form.fields_for :extraimgs do |extraimg| %>
       <%= extraimg.label :extraimage %>
       <%= extraimg.file_field :extraimage,class: "form-control" %>
+      <%= extraimg.check_box :_destroy %>
+      <%= extraimg.label :_destroy, 'remove' %>
     <% end %>
   </div>
 

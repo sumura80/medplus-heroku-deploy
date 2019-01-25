@@ -13,6 +13,11 @@
         <%= render partial: '/likes/likes', locals: {post: @post} %>
         <!-- Likeボタンのコード   End -->
         <p>Extra image</p>
+        <% if @post.extraimgs.any? %>
+          <% @post.extraimgs.each do |extra| %>
+            <%=  image_tag extra.extraimage_url %>
+          <% end %>
+        <% end %>
 
 
 

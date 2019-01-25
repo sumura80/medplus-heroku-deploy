@@ -1,3 +1,4 @@
 class Extraimg < ApplicationRecord
-  belongs_to :post, optional: true
+	mount_uploader :extraimage, ImageUploader
+  belongs_to :post
 end
