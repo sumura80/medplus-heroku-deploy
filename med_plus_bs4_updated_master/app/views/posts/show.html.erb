@@ -12,12 +12,14 @@
         <!-- Likeボタンのコード/likeボタンの部分を_likes.html.erbにrender   Start ↓ -->
         <%= render partial: '/likes/likes', locals: {post: @post} %>
         <!-- Likeボタンのコード   End -->
-        <p>Extra image</p>
-        <% if @post.extraimgs.any? %>
-          <% @post.extraimgs.each do |extra| %>
-            <%=  image_tag extra.extraimage_url %>
-          <% end %>
-        <% end %>
+        
+         <% if @post.extraimgs.present? %>
+           <p>Extra image</p>
+           <% @post.extraimgs.each do |exist| %>
+            <%= image_tag exist.extraimage_url %>
+           <% end %>
+         <% end %>
+  
 
 
 

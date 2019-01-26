@@ -43,7 +43,6 @@ class PostsController < ApplicationController
 	end
 
 	def update
-
 		 @post.category_id = params[:category_id]
 		 
   	if @post.update(post_params)
