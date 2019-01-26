@@ -56,7 +56,7 @@
 
             <div class="actions">
               <%= link_to "Back", :back,class:"btn btn-secondary mr-1"%>
-              <%= f.submit "Update",class:"btn btn-info" %>
+              <%= f.button "Update",class:"btn btn-info", data: {disable_with:  "<i class='fas fa-spinner fa-spin'></i>  Updating..." }%>
             </div>
           <% end %>
 

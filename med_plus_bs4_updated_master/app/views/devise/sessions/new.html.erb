@@ -33,7 +33,7 @@
             <% end -%>
 
             <div class="actions">
-              <%= f.submit "Log in", class:"btn btn-primary btn-block" %>
+              <%= f.button "Log in", class:"btn btn-primary btn-block", data: {disable_with:  "<i class='fas fa-spinner fa-spin'></i>  Loging in ..." }%>
             </div>
           <% end %>
 
