@@ -20,7 +20,7 @@
 
   <div class="actions" data-toggle="tooltip" title="Please Sign up to post" >
     <% if user_signed_in? %>
-      <%= form.submit "Post", class:"btn btn-info post-btn" %>
+      <%= form.button "Post", class:"btn btn-info post-btn" , data: {disable_with:  "<i class='fas fa-spinner fa-spin'></i>  Posting..." } %>
     <% else %>
       <%= link_to "Sign up to Post", new_user_registration_path, class:"btn btn-info" %>
    <% end %> 
