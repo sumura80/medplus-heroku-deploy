@@ -15,7 +15,7 @@
       </div><!-- end of col-md-4 -->
 
        <!-- ここからshowの右画面 -->
-       <div class="col-md-7 mx-auto mt-4">
+       <div class="col-md-7 mx-auto my-4">
          <!-- 改行を反映させるためのコマンド↓ -->       
          <p><%= h(@post.description).gsub(/\n/, '<br/>').html_safe %></p>
        </div><!-- end of col-md-7 col-md-offset-1 -->
@@ -23,7 +23,7 @@
     
 
     <!--Start of accordion of Japanese description -->
-      <div class="col-md-12 my-4">
+      <!-- <div class="col-md-12 my-4">
         <p>
           <a class="btn btn-outline-info btn-block" data-toggle="collapse" href="#jp-description" role="button" aria-expanded="false" aria-controls="jp-description">
             See Japanese
@@ -35,11 +35,11 @@
           <p><%= h(@post.description_jp).gsub(/\n/, '<br/>').html_safe %></p>
         </div>
       </div>
-    </div><!-- end of row -->
+    </div> --><!-- end of row -->
     <!--End of accordion -->
 
 
-    <div class="col-sm-12" style="border-top: 1px solid #D3D3D3; padding-top: 15px;">
+    <div class="col-sm-12 mt-4" style="border-top: 1px solid #D3D3D3; padding-top: 15px;">
       <% if @comments_by_votes.length >= 2 %>
         <h3><%= @comments_by_votes.length %> Comments:</h3>
       <% else %>
