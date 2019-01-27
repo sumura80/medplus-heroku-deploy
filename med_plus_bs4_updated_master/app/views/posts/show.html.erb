@@ -8,16 +8,53 @@
         <h2><%= @post.title %></h2>
         <!-- <p class="message-posted-by">Posted by
         <%= time_ago_in_words (@post.created_at) %> ago </p> -->
-        <p>種類: <%= @post.category.name %></p>   
-        <!-- Likeボタンのコード/likeボタンの部分を_likes.html.erbにrender   Start ↓ -->
-        <%= render partial: '/likes/likes', locals: {post: @post} %>
-        <!-- Likeボタンのコード   End -->
+        <p>種類: <%= @post.category.name %></p> 
+          
+
+        <div class="intro_wrap">
+          <% @posts.each do |intro| %>
+            <% if intro.med_purpose? %>
+              <div class="med_purpose my-3">
+               <div class ="lead">Purpose</div>             
+                <%= intro.med_purpose %> 
+               <% end %>
+            </div>
+
+            <% if intro.medical_type? %>
+              <div class="medical_type my-3">
+               <div class ="lead">medical type</div>
+                <%= intro.medical_type %>
+              </div>
+            <% end %>
+            
+            <% if intro.indication? %>
+              <div class="indication my-3">
+               <div class ="lead">Indication</div>
+                <%= intro.indication %>
+              </div>
+            <% end %>
+
+          <% end %>
+        </div><!-- end of intro_wrap -->
         
-         <% if @post.extraimgs.present? %>
-           <p>Extra image</p>
-           <% @post.extraimgs.each do |exist| %>
-            <%= image_tag exist.extraimage_url %>
-           <% end %>
+ 
+       
+
+
+        <div class="like_button_wrap my-4">
+        <!-- Likeボタンのコード/likeボタンの部分を_likes.html.erbにrender   Start ↓ -->
+          <%= render partial: '/likes/likes', locals: {post: @post} %>
+        </div>
+        <!-- Likeボタンのコード   End -->
+
+
+
+
+
+          <% @post.extraimgs.each do |extra| %>
+            <% if extra.extraimage.present? %>
+              <%= image_tag extra.extraimage_url %>
+            <% end %>
          <% end %>
   
 
