@@ -8,32 +8,30 @@
         <h2><%= @post.title %></h2>
         <!-- <p class="message-posted-by">Posted by
         <%= time_ago_in_words (@post.created_at) %> ago </p> -->
-        <p>種類: <%= @post.category.name %></p> 
-          
+      <!--   <p>種類: <%= @post.category.name %></p> 
+ -->          
 
         <div class="intro_wrap">
-          <% @posts.each do |intro| %>
-            <% if intro.med_purpose? %>
-              <div class="med_purpose my-3">
-               <div class ="lead">Purpose</div>             
-                <%= intro.med_purpose %> 
-               <% end %>
+          <% if @post.med_purpose? %>
+            <div class="med_purpose my-3">
+             <div class ="lead">Purpose</div>             
+              <%= @post.med_purpose %> 
             </div>
+          <% end %>
+          
 
-            <% if intro.medical_type? %>
-              <div class="medical_type my-3">
-               <div class ="lead">medical type</div>
-                <%= intro.medical_type %>
-              </div>
-            <% end %>
-            
-            <% if intro.indication? %>
-              <div class="indication my-3">
-               <div class ="lead">Indication</div>
-                <%= intro.indication %>
-              </div>
-            <% end %>
-
+          <% if @post.medical_type? %>
+            <div class="medical_type my-3">
+             <div class ="lead">medical type</div>
+              <%= @post.medical_type %>
+            </div>
+          <% end %>
+          
+          <% if @post.indication? %>
+            <div class="indication my-3">
+             <div class ="lead">Indication</div>
+              <%= @post.indication %>
+            </div>
           <% end %>
         </div><!-- end of intro_wrap -->
         
