@@ -61,7 +61,9 @@ class PostsController < ApplicationController
   def post_params
   	params.require(:post).permit(:id, :title, :description, :image,
   	 :category_id, :category_id,:title_jp, :description_jp,
-  	 extraimgs_attributes:[ :id, :extraimg_name, :extraimage,
+  	 :attn_large,:attn_bold,
+  	 	:attn_regular,:attn_red,:active_large,:active_regular,:active_red,:dose,
+  	 extraimgs_attributes:[:id, :extraimg_name, :extraimage,
   	 	:extraimg_description,:post_id, :_destroy ])
   end
 

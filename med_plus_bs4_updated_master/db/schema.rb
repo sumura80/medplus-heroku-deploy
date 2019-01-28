@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190127041237) do
+ActiveRecord::Schema.define(version: 20190128113006) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -70,6 +70,14 @@ ActiveRecord::Schema.define(version: 20190127041237) do
     t.text "med_purpose"
     t.string "medical_type"
     t.text "indication"
+    t.text "attn_large"
+    t.text "attn_bold"
+    t.text "attn_regular"
+    t.text "attn_red"
+    t.text "active_large"
+    t.text "active_regular"
+    t.text "active_red"
+    t.string "dose"
   end
 
   create_table "users", force: :cascade do |t|

@@ -21,6 +21,8 @@
     <%= form.label :description %>
     <%= form.text_area :description,class: "form-control" %>
   </div> 
+
+  <!-- Start left box -->
   <div class="form-group">
     <%= form.label :med_purpose %>
     <%= form.text_area :med_purpose,class: "form-control" %>
@@ -33,6 +35,7 @@
     <%= form.label :indication %>
     <%= form.text_area :indication,class: "form-control" %>
   </div>
+   <!-- end left box -->
 
 <!--   <div class="form-group">
     <%= form.label :description_Japaese %>
@@ -60,9 +63,52 @@
   </div>
 
 
-  
+<!-- Starts of attention box -->
+  <div class="form-group">
+    <%= form.label :attn_large %>
+    <%= form.text_area :attn_large,class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :attn_bold %>
+    <%= form.text_area :attn_bold,class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :attn_regular %>
+    <%= form.text_area :attn_regular,class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :attn_red %>
+    <%= form.text_area :attn_red,class: "form-control" %>
+  </div>
+<!-- End of attention box -->
 
 
+
+<!-- Starts of active box -->
+   <div class="form-group">
+    <%= form.label :"active ingrediente regular" %>
+    <%= form.text_area :active_regular,class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :dose %>
+    <%= form.text_field :dose,class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :"active ingredients large" %>
+    <%= form.text_area :active_large,class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :"active ingredients red" %>
+    <%= form.text_area :active_red,class: "form-control" %>
+  </div>
+
+<!-- End of active box -->
   
 
   <div class="actions">

@@ -54,15 +54,78 @@
               <%= image_tag extra.extraimage_url %>
             <% end %>
          <% end %>
-  
-
-
-
 
       </div><!-- end of col-md-4 -->
 
+
+
+
+
        <!-- ここからshowの右画面 -->
        <div class="col-md-7 mx-auto mt-4">
+
+        <div class="attn_wrap mb-4">
+          <% if @post.attn_large? %>
+            <div class="attn_large" style="font-size: 2em;">
+              <%= h(@post.attn_large).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+          <% end %>
+
+          <% if @post.attn_bold? %>
+            <div class="attn_bold lead">
+              <%= h(@post.attn_bold).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+          <% end %>
+
+          <% if @post.attn_regular? %>
+            <div class="attn_reg">
+              <%= h(@post.attn_regular).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+          <% end %>
+
+          <% if @post.attn_red? %>
+            <div class="attn_red lead" style="color: red;">
+              <%= h(@post.attn_red).gsub(/\n/, '<br/>').html_safe%>
+            </div>
+          <% end %>
+          
+        </div><!-- end of attn_wrap -->
+
+
+      <!-- STart of active wrap -->
+        <% if @post.active_regular? %>
+            <div class="attn_reg lead">
+              <span class="lead">Active ingredients </span>
+              <% if @post.dose? %>           
+               <span class="ml-1">( <%= @post.dose%> )</span>
+              <% end %><br>
+              <%= h(@post.active_regular).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+        <% end %>
+
+
+        <div class="active_wrap">
+          <% if @post.active_large? %>
+            <div class="attn_large" style="font-size: 2em;">
+              <%= h(@post.active_large).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+          <% end %>
+        </div>
+
+
+          <% if @post.active_red? %>
+            <div class="attn_reg lead" style="color: red;"> 
+              <%= h(@post.active_red).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+          <% end %>
+        <!-- end of active wrap -->
+
+
+
+
+
+
+<br><br><br><br><br><br>
          <!-- 改行を反映させるためのコマンド↓ -->       
          <p><%= h(@post.description).gsub(/\n/, '<br/>').html_safe %></p>
        </div><!-- end of col-md-7 col-md-offset-1 -->
