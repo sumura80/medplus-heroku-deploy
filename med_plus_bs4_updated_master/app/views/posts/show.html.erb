@@ -122,6 +122,65 @@
 
 
 
+     <!-- Start of inactive wrap -->
+          <% if @post.inactive_regular? %>
+            <div class="attn_reg"> 
+              <%= h(@post.inactive_regular).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+          <% end %>
+
+          <% if @post.inactive_bold? %>
+            <div class="attn_reg lead"> 
+              <%= h(@post.inactive_bold).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+          <% end %>
+
+          <% if @post.inactive_red? %>
+            <div class="attn_reg lead" style="color: red;"> 
+              <%= h(@post.inactive_red).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+          <% end %>
+
+          <% if @post.instructions_regular? %>
+            <div class="attn_reg"> 
+              <%= h(@post.instructions_regular).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+          <% end %>
+
+          <% if @post.instructions_bold? %>
+            <div class="attn_reg lead"> 
+              <%= h(@post.instructions_bold).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+          <% end %>
+
+          <% if @post.instructions_red? %>
+            <div class="attn_reg lead" style="color: red;"> 
+              <%= h(@post.instructions_red).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+          <% end %>
+
+
+          <% if @post.other_info_regular? %>
+            <div class="attn_reg"> 
+              <%= h(@post.other_info_regular).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+          <% end %>
+
+          <% if @post.other_info_bold? %>
+            <div class="attn_reg lead"> 
+              <%= h(@post.other_info_bold).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+          <% end %>
+
+          <% if @post.other_info_red? %>
+            <div class="attn_reg lead" style="color: red;"> 
+              <%= h(@post.other_info_red).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+          <% end %>
+    <!-- End of inactive wrap -->
+
+
+
 
 
 

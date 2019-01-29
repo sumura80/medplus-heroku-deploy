@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190128113006) do
+ActiveRecord::Schema.define(version: 20190129094008) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -78,6 +78,15 @@ ActiveRecord::Schema.define(version: 20190128113006) do
     t.text "active_regular"
     t.text "active_red"
     t.string "dose"
+    t.text "inactive_regular"
+    t.text "inactive_bold"
+    t.text "inactive_red"
+    t.text "instructions_regular"
+    t.text "instructions_bold"
+    t.text "instructions_red"
+    t.text "other_info_regular"
+    t.text "other_info_bold"
+    t.text "other_info_red"
   end
 
   create_table "users", force: :cascade do |t|

@@ -63,7 +63,11 @@ class PostsController < ApplicationController
   	 :category_id, :category_id,:title_jp, :description_jp,
   	 :attn_large,:attn_bold,
   	 	:attn_regular,:attn_red,:active_large,:active_regular,:active_red,:dose,
-  	 extraimgs_attributes:[:id, :extraimg_name, :extraimage,
+  	 	:inactive_regular,:inactive_bold,:inactive_red,:instructions_regular,
+  	 	:instructions_bold,:instructions_red,:other_info_regular,:other_info_bold,
+  	 	:other_info_red,
+
+  	  extraimgs_attributes:[:id, :extraimg_name, :extraimage,
   	 	:extraimg_description,:post_id, :_destroy ])
   end
 
