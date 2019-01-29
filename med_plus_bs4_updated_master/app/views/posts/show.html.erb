@@ -180,6 +180,48 @@
     <!-- End of inactive wrap -->
 
 
+    <!-- Start of links wrap -->
+          <% if @post.link_note? %>
+            <div class="attn_reg"> 
+              <%= link_to @post.link_note,@post.link_note %>
+            </div>
+          <% end %>
+
+          <% if @post.en_source? %>
+            <div class="attn_reg"> 
+              <%= link_to @post.en_source,@post.en_source %>
+            </div>
+          <% end %>
+
+
+          <% if @post.jp_source? %>
+            <div class="attn_reg"> 
+              <%= link_to @post.jp_source,@post.jp_source %>
+            </div>
+          <% end %>
+
+          <% if @post.en_pdf? %>
+            <div class="attn_reg"> 
+              <%= link_to @post.en_pdf,@post.en_pdf %>
+            </div>
+          <% end %>
+
+          <% if @post.jp_pdf? %>
+            <div class="attn_reg"> 
+              <%= link_to @post.jp_pdf,@post.jp_pdf %>
+            </div>
+          <% end %>
+
+          <% if @post.en_precautions? %>
+            <div class="attn_reg"> 
+              <%= link_to @post.en_precautions,@post.en_precautions %>
+            </div>
+          <% end %>
+
+
+    <!-- End of links wrap -->
+
+
 
 
 
