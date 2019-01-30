@@ -51,16 +51,30 @@
     <%= form.file_field :image,class: "form-control" %>
   </div>
 
+  <div class="posted_pic">
+    <p class="lead">Posted images</p>
+    <% @extraimgs.each do |postedimg| %>
+        <div class="mr-4">
+          <%= postedimg.id %>.
+          <%= postedimg.extraimg_name %><br>
+          <%= image_tag postedimg.extraimage %>
+          <%= postedimg.extraimg_description %>
+         <hr>
+        </div> 
+    <% end %>
+  </div>
 
   <div class="form-group">
     <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
     <%= form.fields_for :extraimgs do |extraimg| %>
-      <%= extraimg.label :extraimage %>
+      <%= extraimg.text_field :extraimg_name,class: "form-control",placeholder:"Name of the medicine" %>
       <%= extraimg.file_field :extraimage,class: "form-control" %>
+      <%= extraimg.text_area :extraimg_description,class: "form-control",placeholder:"write the description if needed" %>
       <%= extraimg.check_box :_destroy %>
-      <%= extraimg.label :_destroy, 'remove' %>
+      <%= extraimg.label :_destroy, "remove" %>
     <% end %>
   </div>
+
 
 
 <!-- Starts of attention box -->

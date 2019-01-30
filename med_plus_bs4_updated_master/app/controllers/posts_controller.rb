@@ -39,6 +39,7 @@ class PostsController < ApplicationController
 
 	def edit	
 		@categories = Category.all.map{ |c| [c.name, c.id]}
+	  @extraimgs = Extraimg.all.order("created_at ASC")
 	  @post.extraimgs.build
 	end
 

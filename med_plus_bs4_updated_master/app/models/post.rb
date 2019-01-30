@@ -8,8 +8,9 @@ class Post < ApplicationRecord
 	belongs_to :category
 	has_many :extraimgs,dependent: :destroy
 	has_many :infoimgs
-	accepts_nested_attributes_for :extraimgs,allow_destroy: true
-
+	accepts_nested_attributes_for :extraimgs,allow_destroy: true,reject_if: proc { |attributes| attributes['extraimage'].blank? }
+	accepts_nested_attributes_for :extraimgs,allow_destroy: true,reject_if: proc { |attributes| attributes['extraimg_name'].blank? }
+	accepts_nested_attributes_for :extraimgs,allow_destroy: true,reject_if: proc { |attributes| attributes['extraimg_description'].blank? }
 	
 	
 
