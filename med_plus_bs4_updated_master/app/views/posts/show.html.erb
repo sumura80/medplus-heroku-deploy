@@ -23,7 +23,7 @@
         <div class="intro_wrap">
           <% if @post.med_purpose? %>
             <div class="med_purpose my-2">
-             <div class ="lead">Purpose</div>             
+             <div class ="lead">Purpose:</div>             
               <%= @post.med_purpose %> 
             </div>
           <% end %>
@@ -31,35 +31,29 @@
 
           <% if @post.medical_type? %>
             <div class="medical_type my-2">
-             <div class ="lead">medical type</div>
+             <div class ="lead">medical type:</div>
               <%= @post.medical_type %>
             </div>
           <% end %>
           
           <% if @post.indication? %>
             <div class="indication my-2">
-             <div class ="lead">Indication</div>
+             <div class ="lead">Indication:</div>
               <%= @post.indication %>
             </div>
           <% end %>
         </div><!-- end of intro_wrap -->
         
  
-       
-
-
-
-
-
-
-
         <!-- Displaying extra images -->
-        <div class="extraimgs">
+        <div class="extraimgs my-4">
           <% @post.extraimgs.each do |extra| %>
-             <%= extra.extraimg_name %>
+             <span class="lead"><%= extra.extraimg_name %></span><br>
               <% if extra.extraimage.present? %>
-                <%= image_tag extra.extraimage_url,class:"extra-pic-size img-fluid" %>              
+                <%= image_tag extra.extraimage_url,class:"extra-pic-size img-fluid mb-2" %>
+                <br>
               <% end %>
+              <p><%= extra.extraimg_description%></p>
            <% end %>
          </div>
 
@@ -71,7 +65,7 @@
 
        <!--*********** ここからshowの右画面 *************** -->
 
-       <div class="col-md-7 mx-auto mt-1">
+       <div class="col-md-7 mx-auto mt-2">
 
         <div class="attn_wrap mb-4">
           <% if @post.attn_large? || @post.attn_bold? || @post.attn_regular? || @post.attn_red? %>
@@ -157,8 +151,6 @@
           </div>
 
 
-
-
      <!-- Start of instructions for use wrap -->
      <div class="Instructions_for_use_wrap my-4">
       <span class="lead">Instructions for use </span>
@@ -184,16 +176,35 @@
 
 
 
-     
-
-
-    
-
-
          <!-- 改行を反映させるためのコマンド↓ -->       
          <!-- <p><%= h(@post.description).gsub(/\n/, '<br/>').html_safe %></p> -->
        </div><!-- end of col-md-7 col-md-offset-1 -->
     <!-- end of topbox row -->
+
+
+
+
+      <!-- Start of info pictures wrap -->
+       <div class="col-md-12 my-2">
+                    <% if @post.other_info_regular? %>
+              <div class="attn_reg"> 
+                <%= h(@post.other_info_regular).gsub(/\n/, '<br/>').html_safe %>
+              </div>
+            <% end %>
+
+            <% if @post.other_info_bold? %>
+              <div class="attn_reg lead"> 
+                <%= h(@post.other_info_bold).gsub(/\n/, '<br/>').html_safe %>
+              </div>
+            <% end %>
+
+            <% if @post.other_info_red? %>
+              <div class="attn_reg lead" style="color: red;"> 
+                <%= h(@post.other_info_red).gsub(/\n/, '<br/>').html_safe %>
+              </div>
+            <% end %>
+       </div>
+      <!-- End of info pictures wrap -->
 
 
     <!-- Start of link wrap -->
@@ -239,40 +250,6 @@
 
      </div>
     <!-- End of link wrap -->
-
-
-
-    <!-- Start of info pictures wrap -->
-     <div class="col-md-12 my-2">
-                  <% if @post.other_info_regular? %>
-            <div class="attn_reg"> 
-              <%= h(@post.other_info_regular).gsub(/\n/, '<br/>').html_safe %>
-            </div>
-          <% end %>
-
-          <% if @post.other_info_bold? %>
-            <div class="attn_reg lead"> 
-              <%= h(@post.other_info_bold).gsub(/\n/, '<br/>').html_safe %>
-            </div>
-          <% end %>
-
-          <% if @post.other_info_red? %>
-            <div class="attn_reg lead" style="color: red;"> 
-              <%= h(@post.other_info_red).gsub(/\n/, '<br/>').html_safe %>
-            </div>
-          <% end %>
-     </div>
-    <!-- End of info pictures wrap -->
-
-
-
-
-
-
-
-
-
-
 
 
 
