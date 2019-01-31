@@ -39,7 +39,7 @@ class PostsController < ApplicationController
 
 	def edit	
 		@categories = Category.all.map{ |c| [c.name, c.id]}
-	  @extraimgs = Extraimg.all.order("created_at ASC")
+	  @extraimgs = Extraimg.where(post_id: [@post.id])
 	  @post.extraimgs.build
 	end
 
@@ -67,7 +67,7 @@ class PostsController < ApplicationController
   	 	:inactive_regular,:inactive_bold,:inactive_red,:instructions_regular,
   	 	:instructions_bold,:instructions_red,:other_info_regular,:other_info_bold,
   	 	:other_info_red,:link_note,:en_source,:jp_source,:en_pdf,:jp_pdf,
-  	 	:en_precautions,
+  	 	:en_precautions,:med_purpose,:medical_type,:indication,
 
   	  extraimgs_attributes:[:id, :extraimg_name, :extraimage,
   	 	:extraimg_description,:post_id, :_destroy ])

@@ -4,11 +4,20 @@
     <!-- Start of top box row -->
     <div class="row message-show">
       <div class="col-md-4 mt-4">
-        <%= image_tag @post.image_url,class:"show-pic-size img-fluid mb-3" %>
+        <% if @post.image? %>
+          <%= image_tag @post.image_url,class:"show-pic-size img-fluid mb-3" %>
+        <% end %>
         <h2><%= @post.title %></h2>
         <!-- <p class="message-posted-by">Posted by
         <%= time_ago_in_words (@post.created_at) %> ago </p> -->
       <!--   <p>種類: <%= @post.category.name %></p>-->  
+
+
+        <div class="like_button_wrap my-2">
+        <!-- Likeボタンのコード/likeボタンの部分を_likes.html.erbにrender   Start ↓ -->
+          <%= render partial: '/likes/likes', locals: {post: @post} %>
+        </div>
+        <!-- Likeボタンのコード   End -->
           
 
         <div class="intro_wrap">
@@ -39,11 +48,7 @@
        
 
 
-        <div class="like_button_wrap my-3">
-        <!-- Likeボタンのコード/likeボタンの部分を_likes.html.erbにrender   Start ↓ -->
-          <%= render partial: '/likes/likes', locals: {post: @post} %>
-        </div>
-        <!-- Likeボタンのコード   End -->
+
 
 
 
@@ -53,7 +58,7 @@
           <% @post.extraimgs.each do |extra| %>
              <%= extra.extraimg_name %>
               <% if extra.extraimage.present? %>
-                <%= image_tag extra.extraimage_url %>              
+                <%= image_tag extra.extraimage_url,class:"extra-pic-size img-fluid" %>              
               <% end %>
            <% end %>
          </div>
@@ -66,10 +71,10 @@
 
        <!--*********** ここからshowの右画面 *************** -->
 
-       <div class="col-md-7 mx-auto mt-4">
+       <div class="col-md-7 mx-auto mt-1">
 
         <div class="attn_wrap mb-4">
-          <% if @post.attn_large || @post.attn_bold || @post.attn_regular || @post.attn_red? %>
+          <% if @post.attn_large? || @post.attn_bold? || @post.attn_regular? || @post.attn_red? %>
             <h2>Attention:</h2>
            <% end %>
           <% if @post.attn_large? %>
@@ -153,23 +158,9 @@
 
 
 
-     
 
-
-    
-
-
-         <!-- 改行を反映させるためのコマンド↓ -->       
-         <!-- <p><%= h(@post.description).gsub(/\n/, '<br/>').html_safe %></p> -->
-       </div><!-- end of col-md-7 col-md-offset-1 -->
-    <!-- end of topbox row -->
-
-
-  
-
-
-    <!-- Start of instructions for use wrap -->
-     <div class="col-md-12 my-2">
+     <!-- Start of instructions for use wrap -->
+     <div class="Instructions_for_use_wrap my-4">
       <span class="lead">Instructions for use </span>
       <% if @post.instructions_regular? %>
          <div class="attn_reg"> 
@@ -188,9 +179,21 @@
               <%= h(@post.instructions_red).gsub(/\n/, '<br/>').html_safe %>
             </div>
           <% end %>
-     </div>
+      </div>
     <!-- End of instructions for use wrap -->
 
+
+
+     
+
+
+    
+
+
+         <!-- 改行を反映させるためのコマンド↓ -->       
+         <!-- <p><%= h(@post.description).gsub(/\n/, '<br/>').html_safe %></p> -->
+       </div><!-- end of col-md-7 col-md-offset-1 -->
+    <!-- end of topbox row -->
 
 
     <!-- Start of link wrap -->

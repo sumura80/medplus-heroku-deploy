@@ -68,9 +68,15 @@ padding-top: 10px;
 /*/posts/showページの画像を大きくする*/
 .show-pic-size{
   width: 330px;
-	height: 240px;
-	
+	height: auto;
 	}
+
+/* /posts/showページのExtraを調整 */
+.extra-pic-size{
+	 width: 260px;
+	height: auto;	
+}
+
 
 /* comments/_comment.html コメントの装飾　*/
 .comments_box{
