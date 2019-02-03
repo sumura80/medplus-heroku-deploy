@@ -50,7 +50,7 @@
           <% @post.extraimgs.each do |extra| %>
              <span class="lead"><%= extra.extraimg_name %></span><br>
               <% if extra.extraimage.present? %>
-                <%= image_tag extra.extraimage_url,class:"extra-pic-size img-fluid mb-2" %>
+                <%= image_tag extra.extraimage.url,class:"extra-pic-size img-fluid mb-2" %>
                 <br>
               <% end %>
               <p><%= extra.extraimg_description%></p>
@@ -246,10 +246,30 @@
               <p>English precautions: <%= link_to @post.en_precautions,@post.en_precautions %></p>
             </div>
           <% end %>
-    <!-- End of links wrap -->
-
      </div>
     <!-- End of link wrap -->
+
+
+    <!-- Start of other pic wrap  -->
+     <div class="col-md-12 my-2">
+      <!-- Displaying extra images -->
+        <div class="infoimgs my-4">
+          <% @post.infoimgs.each do |infoimg| %>
+            <span class="lead"><%= infoimg.infoimg_name %></span><br>
+             <% if infoimg.infoimage.present? %>
+               <%= image_tag infoimg.infoimage.url,class:"info-pic-size img-fluid mb-2" %>
+               <br>
+             <% end %>
+             <p class="mb-4"><%= infoimg.infoimg_description%></p>
+          <% end %>
+        </div>
+     </div>
+
+
+
+
+
+    <!--End  of other pic wrap  -->
 
 
 

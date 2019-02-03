@@ -1,47 +1,59 @@
 <%= form_for(@post, html: {multipart: true}) do |form| %>
 
   <div class="form-group">
-  <%= form.label :動物の種類 %>
-  <%= select_tag(:category_id, options_for_select(@categories), prompt: "種類を選んでください",class: "form-control")  %>
+    <%= form.label :"Medicine categories"%>
+    <%= select_tag(:category_id, options_for_select(@categories), prompt: "Choose categories",class: "form-control")  %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :title %>
-    <%= form.text_field :title,class: "form-control" %>
-  </div>
-<!-- 
-  <div class="form-group">
-    <%= form.label :title_Japaese %>
-    <%= form.text_field :title_jp,class: "form-control" %>
-  </div> -->
-
-<!--   <div class="form-group">
-    <%= form.label :description %>
-    <%= form.text_area :description,class: "form-control" %>
-  </div> -->
-
-<!--   <div class="form-group">
-    <%= form.label :description_Japaese %>
-    <%= form.text_area :description_jp,class: "form-control" %>
-  </div> -->
-
-
-  <!-- Start of left box -->
-
-    <div class="form-group">
-      <%= form.label :med_purpose %>
-      <%= form.text_area :med_purpose,class: "form-control" %>
-    </div> 
-    <div class="form-group">
-      <%= form.label :medical_type %>
-      <%= form.text_area :medical_type,class: "form-control" %>
-    </div>  
-    <div class="form-group">
-      <%= form.label :indication %>
-      <%= form.text_area :indication,class: "form-control" %>
+  <!-- Start left box -->
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label :title %>
+        <%= form.text_field :title,class: "form-control" %>
+      </div>
     </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label :med_purpose %>
+        <%= form.text_area :med_purpose,class: "form-control" %>
+      </div> 
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label :medical_type %>
+        <%= form.text_area :medical_type,class: "form-control" %>
+      </div> 
+    </div> 
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label :indication %>
+        <%= form.text_area :indication,class: "form-control" %>
+      </div>
+    </div> 
+  </div><!-- end of row -->
+  <!-- Enf of left box -->
 
-  <!-- end of left box -->
+
+
+    <!-- 
+      <div class="form-group">
+        <%= form.label :title_Japaese %>
+        <%= form.text_field :title_jp,class: "form-control" %>
+      </div> -->
+
+    <!--   <div class="form-group">
+        <%= form.label :description %>
+        <%= form.text_area :description,class: "form-control" %>
+      </div> -->
+
+    <!--   <div class="form-group">
+        <%= form.label :description_Japaese %>
+        <%= form.text_area :description_jp,class: "form-control" %>
+      </div> -->
+
+
+
 
 
   <div class="form-group">
@@ -63,136 +75,171 @@
   </div>
 
 
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <!-- Starts of active box -->
+         <div class="form-group">
+          <%= form.label :"active ingrediente regular" %>
+          <%= form.text_area :active_regular,class: "form-control" %>
+        </div>
 
-  <!-- Starts of attention box -->
-  <div class="form-group">
-    <%= form.label :attn_large %>
-    <%= form.text_area :attn_large,class: "form-control" %>
-  </div>
+        <div class="form-group">
+          <%= form.label :dose %>
+          <%= form.text_field :dose,class: "form-control" %>
+        </div>
 
-  <div class="form-group">
-    <%= form.label :attn_bold %>
-    <%= form.text_area :attn_bold,class: "form-control" %>
-  </div>
+        <div class="form-group lead">
+          <%= form.label :"active ingredients large" %>
+          <%= form.text_area :active_large,class: "form-control" %>
+        </div>
 
-  <div class="form-group">
-    <%= form.label :attn_regular %>
-    <%= form.text_area :attn_regular,class: "form-control" %>
-  </div>
+        <div class="form-group text-danger lead">
+          <%= form.label :"active ingredients red" %>
+          <%= form.text_area :active_red,class: "form-control" %>
+        </div>
+      <!-- End of active box -->
+      </div>
 
-  <div class="form-group">
-    <%= form.label :attn_red %>
-    <%= form.text_area :attn_red,class: "form-control" %>
-  </div>
-  
-<!-- End of attention box -->
+      <div class="col-md-6">
+        <!-- Starts of attention box -->
+        <div class="form-group" style="font-size:1.8em;">
+          <%= form.label :attn_large %>
+          <%= form.text_area :attn_large,class: "form-control" %>
+        </div>
 
+        <div class="form-group lead">
+          <%= form.label :attn_bold %>
+          <%= form.text_area :attn_bold,class: "form-control" %>
+        </div>
 
+        <div class="form-group">
+          <%= form.label :attn_regular %>
+          <%= form.text_area :attn_regular,class: "form-control" %>
+        </div>
 
+        <div class="form-group text-danger lead">
+          <%= form.label :attn_red %>
+          <%= form.text_area :attn_red,class: "form-control" %>
+        </div>
+      <!-- End of attention box -->
+      </div>
+    </div><!-- End of row -->
 
-<!-- Starts of active box -->
-   <div class="form-group">
-    <%= form.label :"active ingrediente regular" %>
-    <%= form.text_area :active_regular,class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :dose %>
-    <%= form.text_field :dose,class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :"active ingredients large" %>
-    <%= form.text_area :active_large,class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :"active ingredients red" %>
-    <%= form.text_area :active_red,class: "form-control" %>
-  </div>
-
-<!-- End of active box -->
+   <hr style="border:1px solid #76D7C4;">
 
 
+    <div class="row">
+      <div class="col-md-6">
+        <!-- Start of inactive wrap -->
+        <div class="form-group">
+          <%= form.label :"inactive_regular" %>
+          <%= form.text_area :inactive_regular,class: "form-control" %>
+        </div>
+        <div class="form-group lead">
+          <%= form.label :"inactive_bold" %>
+          <%= form.text_area :inactive_bold,class: "form-control" %>
+        </div>
+
+        <div class="form-group text-danger lead">
+          <%= form.label :"inactive_red" %>
+          <%= form.text_area :inactive_red,class: "form-control" %>
+        </div>
+        <!-- End of inactive wrap -->
+      </div>
 
 
-<!-- Start of inactive wrap -->
-  <div class="form-group">
-    <%= form.label :"inactive_regular" %>
-    <%= form.text_area :inactive_regular,class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= form.label :"inactive_bold" %>
-    <%= form.text_area :inactive_bold,class: "form-control" %>
-  </div>
+      <!-- Start of instruction wrap -->
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label :"instructions_regular" %>
+          <%= form.text_area :instructions_regular,class: "form-control" %>
+        </div>
 
-  <div class="form-group">
-    <%= form.label :"inactive_red" %>
-    <%= form.text_area :inactive_red,class: "form-control" %>
-  </div>
+        <div class="form-group lead">
+          <%= form.label :"instructions_bold" %>
+          <%= form.text_area :instructions_bold,class: "form-control" %>
+        </div>
 
-  <div class="form-group">
-    <%= form.label :"instructions_regular" %>
-    <%= form.text_area :instructions_regular,class: "form-control" %>
-  </div>
+        <div class="form-group text-danger lead">
+          <%= form.label :"instructions_red" %>
+          <%= form.text_area :instructions_red,class: "form-control" %>
+        </div>
+      </div><!-- End of instruction wrap -->
+    </div><!-- end of row -->
 
-  <div class="form-group">
-    <%= form.label :"instructions_bold" %>
-    <%= form.text_area :instructions_bold,class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :"instructions_red" %>
-    <%= form.text_area :instructions_red,class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :"other_info_regular" %>
-    <%= form.text_area :other_info_regular,class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :"other_info_bold" %>
-    <%= form.text_area :other_info_bold,class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :"other_info_red" %>
-    <%= form.text_area :other_info_red,class: "form-control" %>
-  </div>
-<!-- End of inactive wrap -->
+   <hr style="border:1px solid #76D7C4;">
 
 
 
-<!-- Start of links wrap -->
-  <div class="form-group">
-    <%= form.label :"link_note" %>
-    <%= form.text_area :link_note,class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= form.label :"en_source" %>
-    <%= form.text_area :en_source,class: "form-control" %>
-  </div>
+    <div class="row">
+      <!-- other_info_regular wrap -->
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label :"other_info_regular" %>
+          <%= form.text_area :other_info_regular,class: "form-control" %>
+        </div>
 
-  <div class="form-group">
-    <%= form.label :"jp_source" %>
-    <%= form.text_area :jp_source,class: "form-control" %>
-  </div>
+        <div class="form-group lead">
+          <%= form.label :"other_info_bold" %>
+          <%= form.text_area :other_info_bold,class: "form-control" %>
+        </div>
 
-  <div class="form-group">
-    <%= form.label :"en_pdf" %>
-    <%= form.text_area :en_pdf,class: "form-control" %>
-  </div>
-    <div class="form-group">
-    <%= form.label :"jp_pdf" %>
-    <%= form.text_area :jp_pdf,class: "form-control" %>
-  </div>
-    <div class="form-group">
-    <%= form.label :"en_precautions" %>
-    <%= form.text_area :en_precautions,class: "form-control" %>
-  </div>
+        <div class="form-group text-danger lead">
+          <%= form.label :"other_info_red" %>
+          <%= form.text_area :other_info_red,class: "form-control" %>
+        </div>
+      </div><!-- other_info_regular wrap -->
 
-<!-- End of links wrap -->
+
+      <!-- Start of links wrap -->
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label :"link_note" %>
+          <%= form.text_area :link_note,class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= form.label :"en_source" %>
+          <%= form.text_area :en_source,class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :"jp_source" %>
+          <%= form.text_area :jp_source,class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :"en_pdf" %>
+          <%= form.text_area :en_pdf,class: "form-control" %>
+        </div>
+          <div class="form-group">
+          <%= form.label :"jp_pdf" %>
+          <%= form.text_area :jp_pdf,class: "form-control" %>
+        </div>
+          <div class="form-group">
+          <%= form.label :"en_precautions" %>
+          <%= form.text_area :en_precautions,class: "form-control" %>
+        </div>
+      </div><!-- End of links wrap -->
+    </div><!-- end of row -->
+
+   <hr style="border:1px solid #76D7C4;">
+
+    <div class="row">
+      <div class="col-md-12">
+       <p class="lead">Other info picture ↓</p>
+        <!-- Start of other information picture -->
+        <div class="form-group">
+          <%= form.fields_for :infoimgs do |infoimg| %>
+            <%= infoimg.text_field :infoimg_name,class: "form-control",placeholder:"Name of the medicine" %>
+            <%= infoimg.file_field :infoimage,class: "form-control" %>
+            <%= infoimg.text_area :infoimg_description,class: "form-control",placeholder:"write the description if needed" %>
+            <%= infoimg.check_box :_destroy %>
+            <%= infoimg.label :_destroy, "remove" %>
+          <% end %>
+        </div>
+        <!-- End of other information picture -->
+      </div><!-- end of col-md-12 -->
+    </div><!-- end of row -->
 
 
 

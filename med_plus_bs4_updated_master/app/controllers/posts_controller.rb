@@ -24,6 +24,7 @@ class PostsController < ApplicationController
 		@post = current_user.posts.build
 		@categories = Category.all.map{ |c| [c.name, c.id]}
 		@post.extraimgs.build
+		@post.infoimgs.build
 	end
 
 	def create
@@ -42,6 +43,7 @@ class PostsController < ApplicationController
 	  @extraimgs = Extraimg.where(post_id: [@post.id])
 	  @infoimgs = Infoimg.where(post_id: [@post.id])
 	  @post.extraimgs.build
+	  @post.infoimgs.build
 	end
 
 	def update
