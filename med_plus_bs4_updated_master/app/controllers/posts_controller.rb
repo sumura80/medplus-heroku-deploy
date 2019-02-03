@@ -40,6 +40,7 @@ class PostsController < ApplicationController
 	def edit	
 		@categories = Category.all.map{ |c| [c.name, c.id]}
 	  @extraimgs = Extraimg.where(post_id: [@post.id])
+	  @infoimgs = Infoimg.where(post_id: [@post.id])
 	  @post.extraimgs.build
 	end
 
@@ -70,7 +71,9 @@ class PostsController < ApplicationController
   	 	:en_precautions,:med_purpose,:medical_type,:indication,
 
   	  extraimgs_attributes:[:id, :extraimg_name, :extraimage,
-  	 	:extraimg_description,:post_id, :_destroy ])
+  	 	:extraimg_description,:post_id, :_destroy ],
+  	 	infoimgs_attributes:[:id, :infoimg_name, :infoimage,
+  	 	:infoimg_description,:post_id, :_destroy ])
   end
 
   def find_post
