@@ -4,26 +4,284 @@
     <!-- Start of top box row -->
     <div class="row message-show">
       <div class="col-md-4 mt-4">
-        <%= image_tag @post.image_url,class:"show-pic-size img-fluid mb-3" %>
+        <% if @post.image? %>
+          <%= image_tag @post.image_url,class:"show-pic-size img-fluid mb-3" %>
+        <% end %>
         <h2><%= @post.title %></h2>
         <!-- <p class="message-posted-by">Posted by
         <%= time_ago_in_words (@post.created_at) %> ago </p> -->
-        <p>種類: <%= @post.category.name %></p>   
+      <!--   <p>種類: <%= @post.category.name %></p>-->  
+
+
+        <div class="like_button_wrap my-2">
         <!-- Likeボタンのコード/likeボタンの部分を_likes.html.erbにrender   Start ↓ -->
-        <%= render partial: '/likes/likes', locals: {post: @post} %>
+          <%= render partial: '/likes/likes', locals: {post: @post} %>
+        </div>
         <!-- Likeボタンのコード   End -->
+          
+
+        <div class="intro_wrap">
+          <% if @post.med_purpose? %>
+            <div class="med_purpose my-2">
+             <div class ="lead">Purpose:</div>             
+              <%= @post.med_purpose %> 
+            </div>
+          <% end %>
+          
+
+          <% if @post.medical_type? %>
+            <div class="medical_type my-2">
+             <div class ="lead">medical type:</div>
+              <%= @post.medical_type %>
+            </div>
+          <% end %>
+          
+          <% if @post.indication? %>
+            <div class="indication my-2">
+             <div class ="lead">Indication:</div>
+              <%= @post.indication %>
+            </div>
+          <% end %>
+        </div><!-- end of intro_wrap -->
+        
+ 
+        <!-- Displaying extra images -->
+        <div class="extraimgs my-4">
+          <% @post.extraimgs.each do |extra| %>
+             <span class="lead"><%= extra.extraimg_name %></span><br>
+              <% if extra.extraimage.present? %>
+                <%= image_tag extra.extraimage.url,class:"extra-pic-size img-fluid mb-2" %>
+                <br>
+              <% end %>
+              <p><%= extra.extraimg_description%></p>
+           <% end %>
+         </div>
+
       </div><!-- end of col-md-4 -->
 
-       <!-- ここからshowの右画面 -->
-       <div class="col-md-7 mx-auto my-4">
+
+
+
+
+       <!--*********** ここからshowの右画面 *************** -->
+
+       <div class="col-md-7 mx-auto mt-4">
+
+        <div class="attn_wrap mb-4">
+          <% if @post.attn_large? || @post.attn_bold? || @post.attn_regular? || @post.attn_red? %>
+            <h2>Attention:</h2>
+           <% end %>
+          <% if @post.attn_large? %>
+            <div class="attn_large" style="font-size: 1.6em;">
+              <%= h(@post.attn_large).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+          <% end %>
+
+          <% if @post.attn_bold? %>
+            <div class="attn_bold lead">
+              <%= h(@post.attn_bold).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+          <% end %>
+
+          <% if @post.attn_regular? %>
+            <div class="attn_reg">
+              <%= h(@post.attn_regular).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+          <% end %>
+
+          <% if @post.attn_red? %>
+            <div class="attn_red lead" style="color: red;">
+              <%= h(@post.attn_red).gsub(/\n/, '<br/>').html_safe%>
+            </div>
+          <% end %>
+       
+          
+        </div><!-- end of attn_wrap -->
+
+
+      <!-- Start of active wrap -->
+      <div class="active_wrap">
+        <% if @post.active_regular? %>
+            <div class="attn_reg lead">
+              <span class="lead">Active ingredients </span>
+              <% if @post.dose? %>           
+               <span class="ml-1">( <%= @post.dose%> )</span>
+              <% end %><br>
+              <span  style="font-size: 0.9em;"><%= h(@post.active_regular).gsub(/\n/, '<br/>').html_safe %></span>
+            </div>
+        <% end %>
+
+
+        <div class="active_wrap">
+          <% if @post.active_large? %>
+            <div class="attn_large my-2" style="font-size: 1.6em;">
+              <%= h(@post.active_large).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+          <% end %>
+        </div>
+
+
+          <% if @post.active_red? %>
+            <div class="attn_reg lead my-2" style="color: red;"> 
+              <%= h(@post.active_red).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+          <% end %>
+      </div>
+        <!-- end of active wrap -->
+
+        <br>
+        <!-- Start of inactive wrap -->
+        <div class="inactive_wrap mt-4">
+          <span class="lead">Inactive ingredients </span>
+            <% if @post.inactive_regular? %>
+              <div class="attn_reg"> 
+                <%= h(@post.inactive_regular).gsub(/\n/, '<br/>').html_safe %>
+              </div>
+            <% end %>
+
+            <% if @post.inactive_bold? %>
+              <div class="attn_reg lead"> 
+                <%= h(@post.inactive_bold).gsub(/\n/, '<br/>').html_safe %>
+              </div>
+            <% end %>
+
+            <% if @post.inactive_red? %>
+              <div class="attn_reg lead" style="color: red;"> 
+                <%= h(@post.inactive_red).gsub(/\n/, '<br/>').html_safe %>
+              </div>
+            <% end %>
+          </div>
+
+
+     <!-- Start of instructions for use wrap -->
+     <div class="Instructions_for_use_wrap">
+      <span class="lead">Instructions for use </span>
+      <% if @post.instructions_regular? %>
+         <div class="attn_reg"> 
+              <%= h(@post.instructions_regular).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+          <% end %>
+
+          <% if @post.instructions_bold? %>
+            <div class="attn_reg lead"> 
+              <%= h(@post.instructions_bold).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+          <% end %>
+
+          <% if @post.instructions_red? %>
+            <div class="attn_reg lead" style="color: red;"> 
+              <%= h(@post.instructions_red).gsub(/\n/, '<br/>').html_safe %>
+            </div>
+          <% end %>
+      </div>
+    <!-- End of instructions for use wrap -->
+
+
+
          <!-- 改行を反映させるためのコマンド↓ -->       
-         <p><%= h(@post.description).gsub(/\n/, '<br/>').html_safe %></p>
+         <!-- <p><%= h(@post.description).gsub(/\n/, '<br/>').html_safe %></p> -->
        </div><!-- end of col-md-7 col-md-offset-1 -->
     <!-- end of topbox row -->
+
+
+
+
+      <!-- Start of info pictures wrap -->
+       <div class="col-md-12 my-2">
+                    <% if @post.other_info_regular? %>
+              <div class="attn_reg"> 
+                <%= h(@post.other_info_regular).gsub(/\n/, '<br/>').html_safe %>
+              </div>
+            <% end %>
+
+            <% if @post.other_info_bold? %>
+              <div class="attn_reg lead"> 
+                <%= h(@post.other_info_bold).gsub(/\n/, '<br/>').html_safe %>
+              </div>
+            <% end %>
+
+            <% if @post.other_info_red? %>
+              <div class="attn_reg lead" style="color: red;"> 
+                <%= h(@post.other_info_red).gsub(/\n/, '<br/>').html_safe %>
+              </div>
+            <% end %>
+       </div>
+      <!-- End of info pictures wrap -->
+
+
+    <!-- Start of link wrap -->
+     <div class="col-md-12 my-4">
+      <!-- Start of links wrap -->
+          <% if @post.link_note? %>
+            <div class="attn_reg"> 
+              <p>Note: <%= link_to @post.link_note,@post.link_note,:target => "_blank" %></p>
+            </div>
+          <% end %>
+
+          <% if @post.en_source? %>
+            <div class="attn_reg"> 
+              <p>English source: <%= link_to @post.en_source,@post.en_source,:target => "_blank" %></p>
+            </div>
+          <% end %>
+
+
+          <% if @post.jp_source? %>
+            <div class="attn_reg"> 
+              <p>Japanese source: <%= link_to @post.jp_source,@post.jp_source,:target => "_blank" %></p>
+            </div>
+          <% end %>
+
+          <% if @post.en_pdf? %>
+            <div class="attn_reg"> 
+              <p>English pdf: <%= link_to @post.en_pdf,@post.en_pdf,:target => "_blank" %></p>
+            </div>
+          <% end %>
+
+          <% if @post.jp_pdf? %>
+            <div class="attn_reg"> 
+              <p>Japanese pdf: <%= link_to @post.jp_pdf,@post.jp_pdf,:target => "_blank" %></p>
+            </div>
+          <% end %>
+
+          <% if @post.en_precautions? %>
+            <div class="attn_reg"> 
+              <p>English precautions: <%= link_to @post.en_precautions,@post.en_precautions,:target => "_blank" %></p>
+            </div>
+          <% end %>
+     </div>
+    <!-- End of link wrap -->
+
+
+    <!-- Start of other pic wrap  -->
+     <div class="col-md-12 my-2">
+      <!-- Displaying extra images -->
+        <div class="infoimgs my-4">
+          <% @post.infoimgs.each do |infoimg| %>
+            <span class="lead"><%= infoimg.infoimg_name %></span><br>
+             <% if infoimg.infoimage.present? %>
+               <%= image_tag infoimg.infoimage.url,class:"info-pic-size img-fluid mb-2" %>
+               <br>
+             <% end %>
+             <p class="mb-4"><%= infoimg.infoimg_description%></p>
+          <% end %>
+        </div>
+     </div>
+
+
+
+
+
+    <!--End  of other pic wrap  -->
+
+
+
+
+
+
     
 
     <!--Start of accordion of Japanese description -->
-      <!-- <div class="col-md-12 my-4">
+      <div class="col-md-12 my-4">
         <p>
           <a class="btn btn-outline-info btn-block" data-toggle="collapse" href="#jp-description" role="button" aria-expanded="false" aria-controls="jp-description">
             See Japanese
@@ -35,11 +293,11 @@
           <p><%= h(@post.description_jp).gsub(/\n/, '<br/>').html_safe %></p>
         </div>
       </div>
-    </div> --><!-- end of row -->
+    </div><!-- end of row -->
     <!--End of accordion -->
 
 
-    <div class="col-sm-12 mt-4" style="border-top: 1px solid #D3D3D3; padding-top: 15px;">
+    <div class="col-sm-12" style="border-top: 1px solid #D3D3D3; padding-top: 15px;">
       <% if @comments_by_votes.length >= 2 %>
         <h3><%= @comments_by_votes.length %> Comments:</h3>
       <% else %>
@@ -68,3 +326,9 @@
     </div><!-- end of row message-show -->
   </div><!-- end of container -->
 </div><!-- end of show-whole-wrap -->
+
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>

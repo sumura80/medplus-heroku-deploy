@@ -18,7 +18,7 @@
   </div>
   
 
-  <div class="actions" data-toggle="tooltip" title="Please Sign up to post" >
+  <div class="actions">
     <% if user_signed_in? %>
       <%= form.button "Post", class:"btn btn-info post-btn" , data: {disable_with:  "<i class='fas fa-spinner fa-spin'></i>  Posting..." } %>
     <% else %>
