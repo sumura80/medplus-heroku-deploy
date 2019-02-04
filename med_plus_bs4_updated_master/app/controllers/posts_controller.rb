@@ -23,6 +23,8 @@ class PostsController < ApplicationController
 		#@post = Post.new
 		@post = current_user.posts.build
 		@categories = Category.all.map{ |c| [c.name, c.id]}
+		@post.extraimgs.build
+		@post.infoimgs.build
 	end
 
 	def create
@@ -38,11 +40,15 @@ class PostsController < ApplicationController
 
 	def edit	
 		@categories = Category.all.map{ |c| [c.name, c.id]}
+	  @extraimgs = Extraimg.where(post_id: [@post.id])
+	  @infoimgs = Infoimg.where(post_id: [@post.id])
+	  @post.extraimgs.build
+	  @post.infoimgs.build
 	end
 
 	def update
 		 @post.category_id = params[:category_id]
-
+		 
   	if @post.update(post_params)
   		redirect_to post_path
   	else
@@ -57,7 +63,19 @@ class PostsController < ApplicationController
 
 	private
   def post_params
-  	params.require(:post).permit(:id, :title, :description, :image, :category_id, :category_id,:title_jp, :description_jp)
+  	params.require(:post).permit(:id, :title, :description, :image,
+  	 :category_id, :category_id,:title_jp, :description_jp,
+  	 :attn_large,:attn_bold,
+  	 	:attn_regular,:attn_red,:active_large,:active_regular,:active_red,:dose,
+  	 	:inactive_regular,:inactive_bold,:inactive_red,:instructions_regular,
+  	 	:instructions_bold,:instructions_red,:other_info_regular,:other_info_bold,
+  	 	:other_info_red,:link_note,:en_source,:jp_source,:en_pdf,:jp_pdf,
+  	 	:en_precautions,:med_purpose,:medical_type,:indication,
+
+  	  extraimgs_attributes:[:id, :extraimg_name, :extraimage,
+  	 	:extraimg_description,:post_id, :_destroy ],
+  	 	infoimgs_attributes:[:id, :infoimg_name, :infoimage,
+  	 	:infoimg_description,:post_id, :_destroy ])
   end
 
   def find_post
