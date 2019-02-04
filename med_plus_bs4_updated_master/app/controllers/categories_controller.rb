@@ -21,6 +21,6 @@ class CategoriesController < ApplicationController
 	end
 
 	def digestive
-		@digestives = Post.where(:category_id => 3)	
+		@digestives = Post.where(:category_id => 4)	
 	end
 end
