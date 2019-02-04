@@ -100,13 +100,14 @@
 
 
       <!-- Start of active wrap -->
+      <div class="active_wrap">
         <% if @post.active_regular? %>
             <div class="attn_reg lead">
               <span class="lead">Active ingredients </span>
               <% if @post.dose? %>           
                <span class="ml-1">( <%= @post.dose%> )</span>
               <% end %><br>
-              <%= h(@post.active_regular).gsub(/\n/, '<br/>').html_safe %>
+              <span  style="font-size: 0.9em;"><%= h(@post.active_regular).gsub(/\n/, '<br/>').html_safe %></span>
             </div>
         <% end %>
 
@@ -125,26 +126,27 @@
               <%= h(@post.active_red).gsub(/\n/, '<br/>').html_safe %>
             </div>
           <% end %>
+      </div>
         <!-- end of active wrap -->
 
-
+        <br>
         <!-- Start of inactive wrap -->
-        <div class="inactive_wrap my-4">
+        <div class="inactive_wrap mt-4">
           <span class="lead">Inactive ingredients </span>
             <% if @post.inactive_regular? %>
-              <div class="attn_reg my-2"> 
+              <div class="attn_reg"> 
                 <%= h(@post.inactive_regular).gsub(/\n/, '<br/>').html_safe %>
               </div>
             <% end %>
 
             <% if @post.inactive_bold? %>
-              <div class="attn_reg lead my-2"> 
+              <div class="attn_reg lead"> 
                 <%= h(@post.inactive_bold).gsub(/\n/, '<br/>').html_safe %>
               </div>
             <% end %>
 
             <% if @post.inactive_red? %>
-              <div class="attn_reg lead my-2" style="color: red;"> 
+              <div class="attn_reg lead" style="color: red;"> 
                 <%= h(@post.inactive_red).gsub(/\n/, '<br/>').html_safe %>
               </div>
             <% end %>
@@ -152,7 +154,7 @@
 
 
      <!-- Start of instructions for use wrap -->
-     <div class="Instructions_for_use_wrap my-4">
+     <div class="Instructions_for_use_wrap">
       <span class="lead">Instructions for use </span>
       <% if @post.instructions_regular? %>
          <div class="attn_reg"> 
@@ -208,42 +210,42 @@
 
 
     <!-- Start of link wrap -->
-     <div class="col-md-12 my-2">
+     <div class="col-md-12 my-4">
       <!-- Start of links wrap -->
           <% if @post.link_note? %>
             <div class="attn_reg"> 
-              <p>Note: <%= link_to @post.link_note,@post.link_note %></p>
+              <p>Note: <%= link_to @post.link_note,@post.link_note,:target => "_blank" %></p>
             </div>
           <% end %>
 
           <% if @post.en_source? %>
             <div class="attn_reg"> 
-              <p>English source: <%= link_to @post.en_source,@post.en_source %></p>
+              <p>English source: <%= link_to @post.en_source,@post.en_source,:target => "_blank" %></p>
             </div>
           <% end %>
 
 
           <% if @post.jp_source? %>
             <div class="attn_reg"> 
-              <p>Japanese source: <%= link_to @post.jp_source,@post.jp_source %></p>
+              <p>Japanese source: <%= link_to @post.jp_source,@post.jp_source,:target => "_blank" %></p>
             </div>
           <% end %>
 
           <% if @post.en_pdf? %>
             <div class="attn_reg"> 
-              <p>English pdf: <%= link_to @post.en_pdf,@post.en_pdf %></p>
+              <p>English pdf: <%= link_to @post.en_pdf,@post.en_pdf,:target => "_blank" %></p>
             </div>
           <% end %>
 
           <% if @post.jp_pdf? %>
             <div class="attn_reg"> 
-              <p>Japanese pdf: <%= link_to @post.jp_pdf,@post.jp_pdf %></p>
+              <p>Japanese pdf: <%= link_to @post.jp_pdf,@post.jp_pdf,:target => "_blank" %></p>
             </div>
           <% end %>
 
           <% if @post.en_precautions? %>
             <div class="attn_reg"> 
-              <p>English precautions: <%= link_to @post.en_precautions,@post.en_precautions %></p>
+              <p>English precautions: <%= link_to @post.en_precautions,@post.en_precautions,:target => "_blank" %></p>
             </div>
           <% end %>
      </div>
