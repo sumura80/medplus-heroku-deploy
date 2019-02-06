@@ -23,6 +23,8 @@
     <%= render template:'pages/terms' %>
   <% elsif current_page?(privacy_path) %>
     <%= render template:'pages/privacy' %>
+  <% elsif current_page?(new_contact_path) %>
+    <%= render template:'contacts/new' %>
   <% else %>
 
     <%= render 'layouts/header' %>
