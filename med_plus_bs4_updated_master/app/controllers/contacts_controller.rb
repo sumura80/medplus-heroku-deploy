@@ -6,14 +6,14 @@ class ContactsController < ApplicationController
 	def create
 		@contact = Contact.new(contact_params)
 		if  @contact.save
-			redirect_to thanks_path
+			 redirect_to thanks_path
+			# redirect_to thanks_path
 	# メール送信
 	# InquiryMailer.received_email(@inquiry).deliver
 	# 完了画面を表示
   	else
-  		render 'new'
+  		render action: 'new' 
   	end
-
 	end
 
 
