@@ -7,3 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #Title.create(:name => '観察日記', :sales_date => '2011-11-14', :price => 1000)
+
+Post.create(:category_id =>2,:title => 'Sample med', :active_regular => 'test meds active')
