@@ -391,30 +391,28 @@ color: #53cb93;
 
 /* contact 開始 */
 .contact-wrap{
-	margin-top: 60px;
+	margin-top: 30px;
 	padding-top: 80px;
 	padding-bottom: 80px;
-	background-image: url(contact.jpg);
-	background-size:cover;
+
 }
 
 
 
 .contact-inside{
-	background-color: #FFF;
-	opacity: .9;
 	padding: 60px;
+	background-image: url(contact.jpg);
+	background-size:cover;
 }
 
 
 .contact-whole-wrap{
 	margin-top: -60px;
+	margin-bottom: -40px;
+	padding: -100px;
 }
 
 
-.contact-whole-confirm-wrap{
- 
-}
 
 /* Footer End */
 .contact-social-buttons{

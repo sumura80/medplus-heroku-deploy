@@ -1,26 +1,25 @@
-    <%= render 'layouts/header' %>
 <div class="contact-whole-wrap" >
 <%= form_for @contact do |f| %>
     <!--Start of contact -->
-    <section class="contact-wrap px-4">
-      <% if @contact.errors.any? %>
-      <div id="error_explanation" class="alert alert-danger alert-dismissible">
-       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-
-        <h4><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h4>
-
-        <ul>
-        <% @contact.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
+    <section class="contact-wrap px-4"> 
       <div class="container contact-inside">
         <div class="row">
           <div class="col-sm-12">
+            <% if @contact.errors.any? %>
+              <div id="error_explanation" class="alert alert-danger alert-dismissible">
+               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+
+                <h4><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h4>
+
+                <ul>
+                <% @contact.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
               <h3 class="contact-left">
-                Contact Use
+                Contact Us
               </h3>
 
             <div class="contact-form">
@@ -30,7 +29,8 @@
                  <div class="row">
                   <div class="col-md-12 mb-3">
                     <div class="form-group">
-                    <%= f.text_field :name,class:"form-control",placeholder:"Your Name" %>
+                    <%= f.text_field :name,class:"form-control",placeholder:"Your Name " %>
+                    (3 characters minimum)
                     </div>
                   </div>
 
@@ -46,7 +46,7 @@
                     </div>
                   </div>
                   <div class="col-md-12">
-                    <%= f.button 'Send' ,class:"btn btn-info",  data: {confirm: 'Are you sure?',disable_with:  "<i class='fas fa-spinner fa-spin'></i>  Sending..."}%>
+                    <%= f.button 'Send' ,class:"btn btn-warning btn-block",  data: {confirm: 'Are you sure?',disable_with:  "<i class='fas fa-spinner fa-spin'></i>  Sending..."}%>
                   </div>
                 </div>
               </form>

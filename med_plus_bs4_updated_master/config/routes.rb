@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   # post 'confirm' ,to:'contacts#confirm'  #確認画面
   # post 'thanks'   ,to:'contacts#thanks' #送信完了画面
   resources :contacts, only:[:new, :create]
-  get 'thanks'   ,to:'contacts#thanks' #送信完了画面
+  get 'thanks' ,to:'contacts#thanks' #送信完了画面
 
 
 end
