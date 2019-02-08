@@ -65,9 +65,9 @@
 
        <!--*********** ここからshowの右画面 *************** -->
 
-       <div class="col-md-7 mx-auto mt-2">
+       <div class="col-md-7 mx-auto mt-4">
 
-        <div class="attn_wrap mb-4">
+        <div class="attn_wrap">
           <% if @post.attn_large? || @post.attn_bold? || @post.attn_regular? || @post.attn_red? %>
             <h2>Attention:</h2>
            <% end %>
@@ -154,7 +154,7 @@
 
 
      <!-- Start of instructions for use wrap -->
-     <div class="Instructions_for_use_wrap">
+     <div class="Instructions_for_use_wrap mt-4">
       <span class="lead">Instructions for use </span>
       <% if @post.instructions_regular? %>
          <div class="attn_reg"> 
