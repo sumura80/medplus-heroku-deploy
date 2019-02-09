@@ -31,7 +31,7 @@
 
           <% if @post.medical_type? %>
             <div class="medical_type my-2">
-             <div class ="lead">medical type:</div>
+             <div class ="lead">Drug Type:</div>
               <%= @post.medical_type %>
             </div>
           <% end %>
@@ -281,7 +281,7 @@
     
 
     <!--Start of accordion of Japanese description -->
-      <div class="col-md-12 my-4">
+<!--       <div class="col-md-12 my-4">
         <p>
           <a class="btn btn-outline-info btn-block" data-toggle="collapse" href="#jp-description" role="button" aria-expanded="false" aria-controls="jp-description">
             See Japanese
@@ -293,7 +293,7 @@
           <p><%= h(@post.description_jp).gsub(/\n/, '<br/>').html_safe %></p>
         </div>
       </div>
-    </div><!-- end of row -->
+    </div> --><!-- end of row -->
     <!--End of accordion -->
 
 
@@ -307,7 +307,7 @@
     </div>
 
     <div class="col-sm-12 mt-4">
-      <h3 class="reply-to-message">Reply to Post:</h3>
+      <h3 class="reply-to-message">Comment:</h3>
       <%= render 'comments/form' %>
     </div>
 
