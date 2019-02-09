@@ -391,18 +391,51 @@ color: #53cb93;
 
 /* contact 開始 */
 .contact-wrap{
-	margin-top: 80px;
+	margin-top: 30px;
 	padding-top: 80px;
 	padding-bottom: 80px;
 	background-image: url(contact.jpg);
 	background-size:cover;
+
 }
 
 .contact-inside{
-	background-color: #FFF;
-	padding: 30px;
+	padding: 60px;
+	background-image: url(contact.jpg);
+	background-size:cover;
+}
 
+.contact-wrap-new{
+	margin-top: 30px;
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
 
+.contact-inside-new{
+	padding: 60px;
+	background-image: url(contact.jpg);
+	background-size:cover;
+}
+.contact-whole-wrap{
+	margin-top: -60px;
+	margin-bottom: -40px;
+	padding: -100px;
+}
+
+.contact-btn{
+	width: 220px;
+}
+
+/* Thanks page */
+.thanks-check{
+	font-size: 5em;
+	text-align: center;
+	padding-bottom: 15px;
+  color:#06BB37;
+}
+
+.thanks-btn{
+	width: 220px;
 }
 
 
