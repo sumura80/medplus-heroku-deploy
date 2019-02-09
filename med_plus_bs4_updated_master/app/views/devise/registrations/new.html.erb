@@ -9,7 +9,7 @@
           <div class="form-group mb-4">
             <div class="input-group">
               <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fas fa-user"></i></i></span>
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
               </div>
               <%= f.text_field :username, autofocus: true, autocomplete: "username" ,class:"form-control", placeholder: "username" %>
             </div>
@@ -50,11 +50,11 @@
           </div>
 
           <div class="actions">
-            <%= f.button "Sign up",class:"btn btn-primary btn-block", data: {disable_with:  "<i class='fas fa-spinner fa-spin'></i>  Signing up..." } %>
+            <%= f.button "Sign up",class:"btn btn-success btn-block", data: {disable_with:  "<i class='fas fa-spinner fa-spin'></i>  Signing up..." } %>
           </div>
         <% end %>
 
-        <div class="login" style="border-top: 1px solid #808080; margin: 30px 0px 15px 0px; padding-top:20px;">Do you have an accout?
+        <div class="login" style="border-top: 1px solid #808080; margin: 30px 0px 15px 0px; padding-top:20px;">Do you have an account?
          <%= render "devise/shared/links" %>
         </div>
 
