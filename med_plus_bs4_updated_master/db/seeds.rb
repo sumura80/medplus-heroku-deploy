@@ -10,6 +10,10 @@
 
 User.create(email: 'admin@com',username: 'tester',admin: 'true', password: 'password')
 User.create(email: 'test@com',username: 'tester',admin: 'false', password: 'password')
+Category.create(name:"Pain Relief")
+Category.create(name:"Allergy")
+Category.create(name:"Cold / Flu")
+Category.create(name:"Digestive/GI")
 Post.create(category_id: 2, title: 'Sample med', active_regular: 'bespoke XOXO slow-carb selvage lumbersexual wayfarers jean shorts irony cardigan fingerstache kombucha.', user_id: 1, image: open("./app/assets/images/sample_med_01.jpg"))
 Post.create(category_id: 1, title: 'A + D Ointment', active_regular: 'Lorem ipsum dolor amet twee shabby chic succulents coloring book, hashtag beard chia authentic try-hard retro blog pork belly.', user_id: 1, image: open("./app/assets/images/sample_med_02.jpg"))
 Post.create(category_id: 1, title: 'New medicines', active_regular: 'Williamsburg mlkshk flexitarian listicle fam, af marfa unicorn brunch messenger bag. Chia mixtape man bun la croix master cleanse. ', user_id: 2, image: open("./app/assets/images/sample_med_03.jpg"))
