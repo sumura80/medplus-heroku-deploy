@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'privacy' , to:'pages#privacy'
 
   devise_for :users
+  # devise_for :users, controllers: { sessions: 'users/sessions' } 
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :posts do 
   	resources :likes, only: [:create, :destroy]
@@ -24,7 +26,7 @@ Rails.application.routes.draw do
   resources :users, only:[:show, :edit, :update]
   root 'posts#index'
 
-
+  
 
 
 end
