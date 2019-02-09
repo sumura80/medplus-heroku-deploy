@@ -397,14 +397,11 @@ color: #53cb93;
 
 }
 
-
-
 .contact-inside{
 	padding: 60px;
 	background-image: url(contact.jpg);
 	background-size:cover;
 }
-
 
 .contact-whole-wrap{
 	margin-top: -60px;
@@ -412,6 +409,21 @@ color: #53cb93;
 	padding: -100px;
 }
 
+.contact-btn{
+	width: 220px;
+}
+
+/* Thanks page */
+.thanks-check{
+	font-size: 5em;
+	text-align: center;
+	padding-bottom: 15px;
+  color:#06BB37;
+}
+
+.thanks-btn{
+	width: 220px;
+}
 
 
 /* Footer End */

@@ -46,7 +46,12 @@
                     </div>
                   </div>
                   <div class="col-md-12">
-                    <%= f.button 'Send' ,class:"btn btn-warning btn-block",  data: {confirm: 'Are you sure?',disable_with:  "<i class='fas fa-spinner fa-spin'></i>  Sending..."}%>
+                    <% if user_signed_in? %>
+                       <%= f.button 'Send' ,class:"btn btn-warning contact-btn mx-auto d-block",  data: {confirm: 'Are you sure?',disable_with:  "<i class='fas fa-spinner fa-spin'></i>  Sending..."}%>
+                      <% else %>
+                        <%= link_to 'Sign up to post' ,new_user_registration_path,class:"btn btn-danger contact-btn mx-auto d-block"%>
+                    <% end %>
+
                   </div>
                 </div>
               </form>
