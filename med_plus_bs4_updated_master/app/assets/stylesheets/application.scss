@@ -394,6 +394,8 @@ color: #53cb93;
 	margin-top: 30px;
 	padding-top: 80px;
 	padding-bottom: 80px;
+	background-image: url(contact.jpg);
+	background-size:cover;
 
 }
 
@@ -403,6 +405,17 @@ color: #53cb93;
 	background-size:cover;
 }
 
+.contact-wrap-new{
+	margin-top: 30px;
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+.contact-inside-new{
+	padding: 60px;
+	background-image: url(contact.jpg);
+	background-size:cover;
+}
 .contact-whole-wrap{
 	margin-top: -60px;
 	margin-bottom: -40px;
