@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   resources :users, only:[:show, :edit, :update]
   root 'posts#index'
 
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
   
 
 
