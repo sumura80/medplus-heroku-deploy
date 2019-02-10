@@ -3,8 +3,17 @@ Rails.application.routes.draw do
   get 'terms' , to:'pages#terms'
   get 'privacy' , to:'pages#privacy'
 
-  devise_for :users
+  #devise_for :users
   # devise_for :users, controllers: { sessions: 'users/sessions' } 
+  #↓This devise addition is to send an email when user sign up and some actions↓
+    devise_for :users, controllers: {
+    passwords: "users/passwords",
+    registrations: "users/registrations",
+    confirmations: "users/confirmations",
+    omniauth_callbacks: "users/omniauth_callbacks",
+    sessions: "users/sessions",
+    unlocks: "users/unlocks"
+  }
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :posts do 
