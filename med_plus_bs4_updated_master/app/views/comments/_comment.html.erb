@@ -25,12 +25,23 @@
 		 <!-- voteボタンの部分を_votes.html.erbにrender  postsの中のコメントなので、＠インスタンス変数は使わない-->
 		 <%= render partial: '/votes/votes', locals: {comment: comment} %>
 
-			<% if user_signed_in? %>
+<!-- 			<% if user_signed_in? %>
 			 <% if current_user.admin? %>
 				<%= link_to "Edit", edit_post_comment_path(comment.post, comment), class:"btn btn-link"  %>
 				<%= link_to "Delete", post_comment_path(comment.post, comment), method: :delete, data:{confirm: "Are you sure?"}, class:"btn btn-link"  %>
 				<% end %>
+			<% end %> -->
+	
+			<% if user_signed_in? %>
+				 <% if comment.user_id == current_user.id  || current_user.admin? %>
+					 <%= link_to "Delete", post_comment_path(comment.post, comment), method: :delete, data:{confirm: "Are you sure?"}, class:"btn btn-link"  %>
+					<% end %>
+				 <% if current_user.admin? %>
+					 <%= link_to "Edit", edit_post_comment_path(comment.post, comment), class:"btn btn-link"  %>
+				 <% end %>
 			<% end %>
+
+
 	  </div><!-- end of media-body -->
 	</div><!-- end of media -->
 </div><!-- end of comments_box -->
