@@ -11,3 +11,10 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 
+
+#Contact page message sent email
+#Gamil address
+CONTACT_MAILER_USER_ID: "codetest1980@gmail.com"
+#Gamil 2 段階認証プロセス password
+CONTACT_MAILER_PASSWORD: "lnbhibmwqlatlncx"
+

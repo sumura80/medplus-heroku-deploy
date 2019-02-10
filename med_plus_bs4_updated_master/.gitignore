@@ -22,3 +22,6 @@
 
 .byebug_history
 /public/uploads
+
+#Ignore application.yml code for figaro gem
+/config/application.yml
