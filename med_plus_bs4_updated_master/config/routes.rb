@@ -4,15 +4,13 @@ Rails.application.routes.draw do
   get 'privacy' , to:'pages#privacy'
 
   #devise_for :users
-  # devise_for :users, controllers: { sessions: 'users/sessions' } 
+  #↓サインアップした時のwelcomeメールに対応させるため、deviseのusersを下記に書き直した。↓
   #↓This devise addition is to send an email when user sign up and some actions↓
     devise_for :users, controllers: {
     passwords: "users/passwords",
     registrations: "users/registrations",
     confirmations: "users/confirmations",
-    omniauth_callbacks: "users/omniauth_callbacks",
-    sessions: "users/sessions",
-    unlocks: "users/unlocks"
+    sessions: "users/sessions"
   }
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

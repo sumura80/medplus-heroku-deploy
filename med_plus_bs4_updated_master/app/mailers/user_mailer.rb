@@ -6,13 +6,12 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.signup_confirmation.subject
   #
   
-
   def signup_confirmation(user)
   	@user = user
     @greeting = "Hi"
 
     mail (
-       from: ENV['ACTION_MAILER_EMAIL_ADDRESS'],
+       from: 'codetest1980@gmail.com',
        to: @user.email,
        subject: "Sign Up Confirmation"
 
