@@ -8,11 +8,11 @@ class UserMailer < ApplicationMailer
   
   def signup_confirmation(user)
   	@user = user
-    @greeting = "Hi"
+
     mail(
     from: 'codetest1980@gmail.com',
     to:   @user.email,
-    subject: 'Sign Up Confirmation'
+    subject: 'Sign Up Confirmation(Med Plus)'
   )
   end
 end

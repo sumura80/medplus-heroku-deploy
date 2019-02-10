@@ -6,7 +6,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super
     
-    UserMailer.signup_confirmation(@user).deliver unless resource.invalid?
+    UserMailer.signup_confirmation(user).deliver unless resource.invalid?
   end
   # GET /resource/sign_up
   # def new

@@ -1,5 +1,12 @@
-<h1>User#signup_confirmation</h1>
-HTML
-<p>
-  <%= @greeting %>, find me in app/views/user_mailer/signup_confirmation.html.erb
-</p>
+<h2>Dear @user.username</h2>
+<p>Thank you very much for signing up to keep in touch with Med Plus.
+	<br>We're very happy you're here. We founded Med Plus because we wanted to create a trustworthy website for you to find proper medicines you need.</p>
+
+
+<div class="user-data" style="font-size: 1.2em;">
+	Your username: @user.username<br>
+  Your email: @user.email
+</div>
+<br><br>
+<p>We're hoping to see you on the Med Pus website soon</p>
+<a href="http://localhost:3000/" target="_blank"></a>

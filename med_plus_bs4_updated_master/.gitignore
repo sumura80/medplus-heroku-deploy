@@ -22,5 +22,6 @@
 
 .byebug_history
 /public/uploads
-# Ignore application configuration
+
+# Ignore application configuration to set up password and 定数
 /config/application.yml
