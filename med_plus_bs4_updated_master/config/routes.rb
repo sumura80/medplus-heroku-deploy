@@ -3,7 +3,16 @@ Rails.application.routes.draw do
   get 'terms' , to:'pages#terms'
   get 'privacy' , to:'pages#privacy'
 
-  devise_for :users
+  #devise_for :users
+  #↓サインアップした時のwelcomeメールに対応させるため、deviseのusersを下記に書き直した。↓
+  #↓This devise addition is to send an email when user sign up and some actions↓
+    devise_for :users, controllers: {
+    passwords: "users/passwords",
+    registrations: "users/registrations",
+    confirmations: "users/confirmations",
+    sessions: "users/sessions"
+  }
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :posts do 
   	resources :likes, only: [:create, :destroy]
@@ -24,12 +33,17 @@ Rails.application.routes.draw do
   resources :users, only:[:show, :edit, :update]
   root 'posts#index'
 
+
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
+  
+
   #Contact page routes↓
   # get  'contact' ,to:'contacts#index' #入力画面
   # post 'confirm' ,to:'contacts#confirm'  #確認画面
   # post 'thanks'   ,to:'contacts#thanks' #送信完了画面
   resources :contacts, only:[:new, :create]
   get 'thanks' ,to:'contacts#thanks' #送信完了画面
+
 
 
 end
