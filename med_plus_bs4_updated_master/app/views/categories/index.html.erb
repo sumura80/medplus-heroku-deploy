@@ -1,11 +1,19 @@
 <h3 class="my-4">Categories of OTC in Japan</h3>
+
 <div class="center">
+<!-- 	  <% if user_signed_in? %>
+      <% if current_user.admin? %>
+				<%= link_to "New Category", new_category_path,class:"btn btn-success mb-4" %>
+			<% end %>
+		<% end %>
+ -->
+
+
+
   <div class="row row-eq-height">
-
-
 <!-- Cards -->
 
-		<!-- Dogs -->
+		<!-- Pain Relief -->
   	<div class="col-sm-6 col-md-6 col-lg-3">
        <div class="card mb-3">
 			  <%= image_tag 'pain-relief.jpg', class:"card-img-top"%>
@@ -14,7 +22,7 @@
 			    	<h4 class="category-top">Pain Relief</h4>Lorem ipsum dolor amet echo park cronut typewriter, skateboard letterpress sriracha four dollar toast four loko raw denim godard coloring book lo-fi hoodie kickstarter craft beer. Disrupt next level williamsburg pop-up ethical raclette. 
 			    </p>
 			    <div class="d-flex justify-content-between">   
-             <div class="view-margin"><%= link_to "View Dogs", categories_pain_relief_path,class:"btn btn-outline-success" %></div>
+             <div class="view-margin"><%= link_to "Pain Relief", categories_pain_relief_path,class:"btn btn-outline-success" %></div>
 						 <p class="text-muted"><%= @pain_reliefs.size %> items</p>
           </div>
 			  </div>
@@ -23,7 +31,7 @@
 
 
 
-    <!-- Cats -->
+    <!-- Allergy -->
 		<div class="col-sm-6 col-md-6 col-lg-3">
       <div class="card mb-3">
 			  <%= image_tag 'allergy.jpeg', class:"card-img-top"%>
@@ -32,7 +40,7 @@
 			    	<h4 class="category-top">Allergy</h4>TJean shorts street art paleo williamsburg. Live-edge woke cliche 8-bit, post-ironic street art hashtag vexillologist pitchfork tumblr gentrify tbh unicorn succulents. Cronut cred butcher air plant marfa hoodie heirloom art party 3 wolf moon shaman. 
 			    </p>
 			    <div class="d-flex justify-content-between">   
-             <div class="view-margin"><%= link_to "View Cats", categories_allergy_path,class:"btn btn-outline-success" %></div>
+             <div class="view-margin"><%= link_to "Allergy", categories_allergy_path,class:"btn btn-outline-success" %></div>
 						 <p class="text-muted"><%= @allergys.size %> items</p>
           </div>
 			  </div>
