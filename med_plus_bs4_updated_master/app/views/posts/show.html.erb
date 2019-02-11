@@ -8,16 +8,17 @@
           <%= image_tag @post.image_url,class:"show-pic-size img-fluid mb-3" %>
         <% end %>
         <h2><%= @post.title %></h2>
+          <div class="like_button_wrap my-2" style="font-size: 1.4em;">
+        <!-- Likeボタンのコード/likeボタンの部分を_likes.html.erbにrender   Start ↓ -->
+          <%= render partial: '/likes/likes', locals: {post: @post},class:"" %>
+        </div>
+        <!-- Likeボタンのコード   End -->
         <!-- <p class="message-posted-by">Posted by
         <%= time_ago_in_words (@post.created_at) %> ago </p> -->
       <!--   <p>種類: <%= @post.category.name %></p>-->  
 
 
-        <div class="like_button_wrap my-2">
-        <!-- Likeボタンのコード/likeボタンの部分を_likes.html.erbにrender   Start ↓ -->
-          <%= render partial: '/likes/likes', locals: {post: @post} %>
-        </div>
-        <!-- Likeボタンのコード   End -->
+
           
 
         <div class="intro_wrap">
