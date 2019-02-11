@@ -67,23 +67,26 @@ padding-top: 10px;
 
 /*/posts/showページの画像を大きくする*/
 .show-pic-size{
-  width: 330px;
-	height: auto;
+	max-width: 100%;
+	max-height: auto;
 	}
 
 /* /posts/showページのExtraを調整 */
 .extra-pic-size{
-	 width: 260px;
-	height: auto;	
+	/* width: 260px;*/
+	/*height: auto;	*/
+	max-width: 100%;
+	max-height: 100% 
+	
 }
 
 /* /posts/showページのinfoimgを調整 */
-/*.info-pic-size{
-    width:auto;
-    height:auto; 
+.info-pic-size{
+    max-width: 100%;
+    max-height: 800px; 
 }
 
-*/
+
 
 
 
@@ -115,9 +118,8 @@ padding-top: 10px;
 
 /*indexページのボックスを綺麗に並べるcss index のrowに記述ずみ	*/
 .row-eq-height {
-    display: flex;
-    flex-wrap: wrap;
-
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /*navbarのradiusを消して丸みを無くした*/
@@ -484,6 +486,15 @@ color: #53cb93;
 .category-top{
 	margin-top: -20px;
 }
+
+/* Categoriesのcard-topの高さを揃える*/
+.category-pic{
+	min-height: 170px;
+}
+
+
+
+
 
 
 

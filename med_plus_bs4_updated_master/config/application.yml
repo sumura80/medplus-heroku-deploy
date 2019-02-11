@@ -14,7 +14,7 @@
 
 #Contact page message sent email
 #Gamil address
-CONTACT_MAILER_USER_ID: "codetest1980@gmail.com"
+ACTION_MAILER_EMAIL_ADDRESS: "codetest1980@gmail.com"
 #Gamil 2 段階認証プロセス password
-CONTACT_MAILER_PASSWORD: "lnbhibmwqlatlncx"
+ACTION_MAILER_EMAIL_PASSWORD: "lnbhibmwqlatlncx"
 

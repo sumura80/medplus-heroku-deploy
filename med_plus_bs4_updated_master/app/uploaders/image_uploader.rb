@@ -23,6 +23,7 @@
 
   # Process files as they are uploaded:
   # process scale: [200, 300]
+  #https://fuchiaz.com/rails-rmagic-resize/
   #例process 〜　のほうが先に処理されるのでこちらにより大きいサイズを、
   #例version の方により小さいサイズを指定するとよい。
   #例  process resize_to_limit: [800,800]
@@ -30,8 +31,11 @@
   #例     process resize_to_limit: [300,300]
   #例 end
 
-
-   process :resize_to_fit => [200, 300]
+  #process resize_to_limit: [200, 300]
+   process resize_to_limit: [1200,1200]
+  # resize_to_fitはファイルのサイズを変更します
+  # アップロードされたファイルを200〜200以下に変換する
+   # process :resize_to_fit => [200, 300]
   #
   # def scale(width, height)
   #   # do something
