@@ -48,9 +48,9 @@ gem 'rails-ujs'
 #↓論理削除を簡単にするgem
 gem 'paranoia', '~> 2.4', '>= 2.4.1'
 
+
 #パスワードやSecurity credientialsを保存するためのgem
 gem "figaro"
-
 
 group :development, :test do
   #Debuggのために追加
@@ -60,6 +60,8 @@ group :development, :test do
 end
 
 group :development do
+  #送ったメールをブラウザで確認するためのgem
+  gem "letter_opener"
   gem 'letter_opener_web'
 end
 

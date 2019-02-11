@@ -1,0 +1,13 @@
+<div class="contact-wrap" style="padding-top: 5px;">
+<p>We got a message from <span style="color: #F34834; font-weight: bold;"><%= @contact.name %></span></p>
+
+<h5 style="">Message</h5>
+<div style="background-color: #EBEDEF; padding: 5px;"><%= h@contact.message.gsub(/\n/, '<br/>').html_safe %></div>
+<br><br>
+
+<p>
+	Name: <span style="color: #F34834; font-weight: bold;"><%= @contact.name %></span><br>
+	Email:<span style="font-weight: bold;"><%= @contact.email %></span><br>
+</p>
+
+</div>
