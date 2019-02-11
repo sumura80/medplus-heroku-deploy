@@ -25,7 +25,10 @@
 		 <!-- voteボタンの部分を_votes.html.erbにrender  postsの中のコメントなので、＠インスタンス変数は使わない-->
 		 <%= render partial: '/votes/votes', locals: {comment: comment} %>
 
-<!-- 			<% if user_signed_in? %>
+
+
+<!-- 	Only admin was able to Delete but changed to the way users can delete like code below also added "check_current_user"action in comment_controller.		
+      <% if user_signed_in? %>
 			 <% if current_user.admin? %>
 				<%= link_to "Edit", edit_post_comment_path(comment.post, comment), class:"btn btn-link"  %>
 				<%= link_to "Delete", post_comment_path(comment.post, comment), method: :delete, data:{confirm: "Are you sure?"}, class:"btn btn-link"  %>
