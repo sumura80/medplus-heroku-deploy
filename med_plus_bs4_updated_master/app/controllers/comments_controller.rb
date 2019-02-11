@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
 	before_action :find_post
 	before_action :find_comment ,only:[:show, :edit, :update, :destroy]
 	before_action :authenticate_user!
+	before_action :check_current_user, only:[:destroy]
 
 
 	def new
@@ -71,6 +72,15 @@ class CommentsController < ApplicationController
 			redirect_to root_path, alert:"Sorry, only Administrator can edit."
 		end
 	end
+
+	def check_current_user
+		 if current_user.admin?  || @user == current_user
+        return true
+    end
+			flash[:alert] = "Sorry, only User can delete"
+			redirect_to root_path
+	end
+
 
 
 end
