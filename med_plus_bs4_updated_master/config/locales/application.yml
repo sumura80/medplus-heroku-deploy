@@ -1,3 +1,0 @@
-development:
-  ENV['ACTION_MAILER_EMAIL_ADDRESS']: 'codetest1980@gmail.com'
-  ENV['ACTION_MAILER_EMAIL_PASSWORD']: 'lnbhibmwqlatlncx'

@@ -54,8 +54,8 @@ Rails.application.configure do
 
   #このサイトを参考　　http://c5meru.hatenablog.jp/entry/2018/07/29/200011
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  #ActionMailer::Base.delivery_method = :smtp
-  config.action_mailer.delivery_method = :letter_opener_web
+  ActionMailer::Base.delivery_method = :smtp
+  #config.action_mailer.delivery_method = :letter_opener_web
   ActionMailer::Base.smtp_settings = {
   address: 'smtp.gmail.com',
   domain: 'gmail.com',
