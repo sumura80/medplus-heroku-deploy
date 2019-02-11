@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190105225807) do
+ActiveRecord::Schema.define(version: 20190205092305) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -27,6 +27,34 @@ ActiveRecord::Schema.define(version: 20190105225807) do
     t.integer "votes_count", default: 0
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "extraimgs", force: :cascade do |t|
+    t.string "extraimg_name"
+    t.string "extraimage"
+    t.text "extraimg_description"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_extraimgs_on_post_id"
+  end
+
+  create_table "infoimgs", force: :cascade do |t|
+    t.string "infoimg_name"
+    t.string "infoimage"
+    t.text "infoimg_description"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_infoimgs_on_post_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -47,6 +75,32 @@ ActiveRecord::Schema.define(version: 20190105225807) do
     t.integer "category_id"
     t.string "title_jp"
     t.text "description_jp"
+    t.text "med_purpose"
+    t.string "medical_type"
+    t.text "indication"
+    t.text "attn_large"
+    t.text "attn_bold"
+    t.text "attn_regular"
+    t.text "attn_red"
+    t.text "active_large"
+    t.text "active_regular"
+    t.text "active_red"
+    t.string "dose"
+    t.text "inactive_regular"
+    t.text "inactive_bold"
+    t.text "inactive_red"
+    t.text "instructions_regular"
+    t.text "instructions_bold"
+    t.text "instructions_red"
+    t.text "other_info_regular"
+    t.text "other_info_bold"
+    t.text "other_info_red"
+    t.text "link_note"
+    t.text "en_source"
+    t.text "jp_source"
+    t.text "en_pdf"
+    t.text "jp_pdf"
+    t.string "en_precautions"
   end
 
   create_table "users", force: :cascade do |t|

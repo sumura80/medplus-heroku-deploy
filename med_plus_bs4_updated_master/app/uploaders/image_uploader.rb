@@ -23,12 +23,23 @@
 
   # Process files as they are uploaded:
   # process scale: [200, 300]
-  process :resize_to_fit => [200, 300]
+  #例process 〜　のほうが先に処理されるのでこちらにより大きいサイズを、
+  #例version の方により小さいサイズを指定するとよい。
+  #例  process resize_to_limit: [800,800]
+  #例  version :thumb do
+  #例     process resize_to_limit: [300,300]
+  #例 end
+
+
+   process :resize_to_fit => [200, 300]
   #
   # def scale(width, height)
   #   # do something
   # end
 
+
+
+ 
   # Create different versions of your uploaded files:
   # version :thumb do
   #   process resize_to_fit: [50, 50]

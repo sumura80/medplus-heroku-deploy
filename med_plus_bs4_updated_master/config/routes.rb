@@ -33,8 +33,17 @@ Rails.application.routes.draw do
   resources :users, only:[:show, :edit, :update]
   root 'posts#index'
 
+
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
   
+
+  #Contact page routes↓
+  # get  'contact' ,to:'contacts#index' #入力画面
+  # post 'confirm' ,to:'contacts#confirm'  #確認画面
+  # post 'thanks'   ,to:'contacts#thanks' #送信完了画面
+  resources :contacts, only:[:new, :create]
+  get 'thanks' ,to:'contacts#thanks' #送信完了画面
+
 
 
 end
