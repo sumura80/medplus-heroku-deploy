@@ -7,6 +7,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super
     UserMailer.signup_confirmation(@user).deliver
   end
+
+  def update
+    super
+    UserMailer.edit_privacy_confirmation(@user).deliver
+  end
   # GET /resource/sign_up
   # def new
   #   super
