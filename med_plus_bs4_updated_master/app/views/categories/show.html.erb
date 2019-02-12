@@ -1,0 +1,53 @@
+<h3 class="mb-4 display-4"><%= @category.name %></h3>
+
+   <% if user_signed_in? %>
+      <% if current_user.admin? %>
+        <%= link_to "Edit Category", edit_category_path,class:"btn btn-info mb-4" %>
+        <%= link_to "Delete Category", category_path(@category),class:"btn btn-danger mb-4 float-right",method: :delete, data:{confirm: "Are you sure to delete this category? "} %>
+      <% end %>
+   <% end %>
+ <div class="center">
+  <div class="row row-eq-height">
+    <!-- Cards -->
+    <% @posts.each do |post| %>
+    <div class="col-sm-6 col-md-6 col-lg-3">
+       <div class="card mb-3">
+          <% if post.image? %>
+           <%= image_tag post.image.url, class:"card-img-top" %>
+          <% end %> 
+
+  
+        <div class="card-body">
+          <p class="card-text card-bottom">
+            <h5 class="category-top"><%= post.title %></h5>
+            <%= post.description %>
+          </p>
+  
+           <div class="view-margin"><%= link_to "View More", post_path(post),class:"btn btn-outline-success btn-block" %></div>
+           <!-- like and comment numbers -->
+           <div class="icons-nums pt-3">
+              <div class="index_icons"> 
+                <% if post.likes.size >= 1 %>
+                  <span class="far fa-heart index_like-icon"></span><%= post.likes.size %> 
+                <% else %>
+                  <span class="far fa-heart index_like-icon_zero"></span><%= post.likes.size %>
+                <% end %>
+
+              <span style="margin-right: 25px;"></span>
+
+                <% if post.comments.size >= 1 %>
+                  <span class="far fa-comments index_comments-icon"></span><%= post.comments.size %>  
+                <% else %>
+                  <span class="far fa-comments index_comments-icon_zero"></span><%= post.comments.size %> 
+                <% end %>
+            </div>
+           </div><!-- end of like and comment numbers -->
+        </div><!-- end of card-body -->
+
+      </div><!-- end of card mb-3 -->
+    </div><!-- end of col-3 -->
+   <% end %> <!-- end of @cold_flus.each do |post| -->
+ </div><!-- end of row  row-eq-height-->
+ <p><%= link_to "一覧に戻る", root_path,class:"btn btn-outline-secondary" %></p>
+</div><!-- end of center -->
+
