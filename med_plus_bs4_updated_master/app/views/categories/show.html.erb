@@ -3,11 +3,20 @@
    <% if user_signed_in? %>
       <% if current_user.admin? %>
         <%= link_to "Edit Category", edit_category_path,class:"btn btn-info mb-4" %>
-        <%= link_to "Delete Category", category_path(@category),class:"btn btn-danger mb-4 float-right",method: :delete, data:{confirm: "Are you sure to delete this category? "} %>
       <% end %>
    <% end %>
  <div class="center">
   <div class="row row-eq-height">
+    <% if @category.precaution_large? || @category.precaution_red? || @category.precaution_bold? %>
+      <div class="col-md-12 precaution-wrap mb-4">
+        <div class="precaution p-3" style="border:2px solid #067CB0;">
+          <div class="mb-2"style="font-size:1.8em;"><%= @category.precaution_large %></div>
+          <div class="text-danger lead mb-2"><%= @category.precaution_red %></div>
+          <div class="lead mb-2"><%= @category.precaution_bold %></div>
+        </div>
+      </div>
+    <% end %>
+
     <!-- Cards -->
     <% @posts.each do |post| %>
     <div class="col-sm-6 col-md-6 col-lg-3">
@@ -50,4 +59,8 @@
  </div><!-- end of row  row-eq-height-->
  <p><%= link_to "一覧に戻る", root_path,class:"btn btn-outline-secondary" %></p>
 </div><!-- end of center -->
-
+<% if user_signed_in? %>
+  <% if current_user.admin? %>
+    <%= link_to "Delete Category", category_path(@category),class:"btn btn-danger mb-4",method: :delete, data:{confirm: "Are you sure to delete this category? "} %>
+  <% end %>
+<% end %>

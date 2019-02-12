@@ -2,6 +2,15 @@
 
   <div class="row mt-4">
     <div class="col-md-12">
+      <div class="form-group">
+        <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
+        <% if @category.image? %>
+         <%= image_tag @category.image.url,class:"category-pic-size img-fluid" %>
+        <% end %><br>
+          <%= form.label :image %>
+          <%= form.file_field :image,class: "form-control" %>
+      </div>
+
        <div class="form-group">
         <%= form.label :"name" %>
         <%= form.text_field :name,class: "form-control" %>
@@ -32,7 +41,7 @@
    
 
   <div class="actions">
-    <%= form.submit "Post new Category", class:"btn btn-warning"%>
+    <%= form.submit "Post ", class:"btn btn-warning"%>
   </div>
 <% end %>
 <br>
