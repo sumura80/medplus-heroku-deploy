@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
 	before_action :find_category ,only:[:show,:edit,:update,:destroy]
+	before_action :authenticate_user!, except:[:index, :show]
+	before_action :check_user, except:[:index, :show]
 			
 	def index
 		@categories = Category.all.order("created_at ASC")
@@ -48,6 +50,14 @@ class CategoriesController < ApplicationController
 	def category_params
 		params.require(:category).permit(:name,:precaution_bold,
 			:precaution_red,:precaution_large,:blurb,:image)
+	end
+
+
+	def check_user
+		unless current_user.admin?
+			flash[:alert] = "Sorry, only Administrator can edit"
+			redirect_to root_path
+		end
 	end
 
 
