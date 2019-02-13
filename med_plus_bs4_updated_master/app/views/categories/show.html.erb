@@ -10,9 +10,9 @@
     <% if @category.precaution_large? || @category.precaution_red? || @category.precaution_bold? %>
       <div class="col-md-12 precaution-wrap mb-4">
         <div class="precaution p-3" style="border:2px solid #067CB0;">
-          <div class="mb-2"style="font-size:1.8em;"><%= @category.precaution_large %></div>
-          <div class="text-danger lead mb-2"><%= @category.precaution_red %></div>
-          <div class="lead mb-2"><%= @category.precaution_bold %></div>
+          <div class="mb-2"style="font-size:1.8em;"><%= h(@category.precaution_large).gsub(/\n/, '<br/>').html_safe %></div>
+          <div class="text-danger lead mb-2"><%= h(@category.precaution_red).gsub(/\n/, '<br/>').html_safe %></div>
+          <div class="lead mb-2"><%= h(@category.precaution_bold).gsub(/\n/, '<br/>').html_safe %></div>
         </div>
       </div>
     <% end %>
@@ -22,16 +22,16 @@
     <div class="col-sm-6 col-md-6 col-lg-3">
        <div class="card mb-3">
           <% if post.image? %>
-           <%= image_tag post.image.url, class:"card-img-top" %>
+           <%= image_tag post.image.url, class:"card-img-top img-fluid",style:"min-height: 170px;" %>
           <% end %> 
 
   
         <div class="card-body">
           <p class="card-text card-bottom">
             <h5 class="category-top"><%= post.title %></h5>
-            <%= post.description %>
+            <%= h(post.description).gsub(/\n/, '<br/>').html_safe %>
           </p>
-  
+
            <div class="view-margin"><%= link_to "View More", post_path(post),class:"btn btn-outline-success btn-block" %></div>
            <!-- like and comment numbers -->
            <div class="icons-nums pt-3">

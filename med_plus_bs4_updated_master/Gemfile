@@ -48,9 +48,10 @@ gem 'rails-ujs'
 #↓論理削除を簡単にするgem
 gem 'paranoia', '~> 2.4', '>= 2.4.1'
 
-
 #パスワードやSecurity credientialsを保存するためのgem
 gem "figaro"
+#Search機能
+gem 'ransack'
 
 group :development, :test do
   #Debuggのために追加
