@@ -46,7 +46,7 @@ Rails.application.routes.draw do
 
   #ransackを使った検索結果表示の画面search
   #controllerはapplication_controllerのsearchメソッド
-  get 'search', to:"layouts#search"
+  get 'search', to: 'posts#search'
 
 
 end

@@ -2,6 +2,16 @@ class PostsController < ApplicationController
 		before_action :find_post ,only: [:show, :edit, :update, :destroy]
 		before_action :authenticate_user!, except:[:index, :show]
 		before_action :check_user, except:[:index, :show]
+	  # before_action :search
+	  before_filter :set_search
+
+
+	def search
+	  #これ原型=> @search = Article.search(params[:q])
+	  @query = Post.ransack(params[:q]) #ransackメソッド推奨
+	  @search_posts = @query.result(distinct: true)
+	  render 'search'
+	end
 
 	def index
 		if params[:category].blank?

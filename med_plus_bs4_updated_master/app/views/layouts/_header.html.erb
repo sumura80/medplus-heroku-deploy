@@ -39,9 +39,10 @@
         </div>
       </li><!--end of pages dropdown -->
     </ul><!-- end of ul class="navbar-nav mr-auto" -->
-    
+
+    <!-- Search box -->
     <form class="form-inline my-2 my-lg-0">
-      <%= search_form_for @query, url: search_path do |f| %>
+      <%= search_form_for @query, url: posts_path do |f| %>
         <%= f.text_field :title_cont ,placeholder: 'Search',class:"form-control mr-sm-2" %>
         <%= f.submit "Submit" , class: 'btn btn-outline-success my-2 my-sm-0'%>
       <% end %>

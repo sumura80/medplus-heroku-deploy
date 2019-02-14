@@ -3,14 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  before_action :search
 
-	def search
-	  #これ原型=> @search = Article.search(params[:q])
-	  @query = Post.ransack(params[:q]) #ransackメソッド推奨
-	  @search_posts = @query.result
-	  
-	end
 
 
   # 下記のコードで名前の変更はできるようにしてあるが、今回は変更出来ない仕様
