@@ -23,15 +23,23 @@ Rails.application.routes.draw do
 
 
   root 'categories#index'
+
   resources :categories  
   # get 'categories/pain_relief' ,to: 'categories#pain_relief'
   # get 'categories/allergy' ,to: 'categories#allergy'
   # get 'categories/cold_flu' ,to: 'categories#cold_flu'
   # get 'categories/digestive' ,to: 'categories#digestive'
+  resources :categories
+ # get 'categories/pain_relief' ,to: 'categories#pain_relief'
+ # get 'categories/allergy' ,to: 'categories#allergy'
+ # get 'categories/cold_flu' ,to: 'categories#cold_flu'
+ # get 'categories/digestive' ,to: 'categories#digestive'
+
 
   #userのshowページ作成URL
   resources :users, only:[:show, :edit, :update]
-  # root 'posts#index'
+  #TODO:↓このrootは必要かどうか検討が必要　20190211
+  #root 'posts#index'
 
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?

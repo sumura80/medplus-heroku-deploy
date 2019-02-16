@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%= form_for(@category, html: {multipart: true}) do |form| %>
 
   <div class="row mt-4">
@@ -59,3 +60,43 @@
 <% end %>
 <br>
 <p><%= link_to "Back", @category, class:"btn btn-secondary" %></p>
+=======
+<%= form_for @category do |form| %>
+  <!-- Start category form -->
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="form-group">
+        <%= form.label :"Category name" %>
+        <%= form.text_field :name,class: "form-control" %>
+      </div>
+
+      <div class="form-group mt-2 lead text-danger">
+        <%= form.label :precaution_red %>
+        <%= form.text_area :precaution_red,rows: "4",class: "form-control" %>
+      </div>
+
+      <div class="form-group mt-2 lead">
+        <%= form.label :precaution_bold %>
+        <%= form.text_area :precaution_bold,rows: "4",class: "form-control" %>
+      </div>
+
+      <div class="form-group mt-2" style="font-size:1.8em;">
+        <%= form.label :precaution_large %>
+        <%= form.text_area :precaution_large,rows: "4",class: "form-control" %>
+      </div>
+
+
+
+    </div> 
+  </div><!-- end of row -->
+  <!-- Enf  category form -->
+
+  <div class="actions">
+    <%= form.submit "Posting Category", class:"btn btn-info"%>
+  </div>
+<% end %>
+
+<br>
+<p><%= link_to "Back", root_path, class:"btn btn-success" %></p>
+>>>>>>> category_precautions

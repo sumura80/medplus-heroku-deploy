@@ -54,3 +54,8 @@
   </div>
  <p class="mt-4"><%= link_to "一覧に戻る", root_path,class:"btn btn-outline-secondary" %></p>
 </div>
+
+
+<div class="paginate-wrapper" style="margin-bottom: 50px;">
+  <%= will_paginate @posts,  renderer: WillPaginate::ActionView::BootstrapLinkRenderer  %>
+</div>
