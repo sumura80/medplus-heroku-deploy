@@ -6,6 +6,7 @@ body{
 	font-family: 'Raleway', sans-serif;
 }
 
+/*ハイフンlogin hyphen*/
 .jumbotron-login{
 	background: url("login_top.jpg");
 	background-size: cover;
@@ -15,6 +16,13 @@ body{
 		background: url("jumbo-nonlogin 2.png");
 	background-size: cover;
 }
+
+
+/*under_bar ??*/
+/*.jumbotron_login{
+	background-image: url("images/login_top.jpg");
+}
+*/
 
 .message{
 	box-sizing: border-box;
@@ -36,9 +44,6 @@ body{
 	text-align:center;
 }
 
-.jumbotron_login{
-	background-image: url("images/login_top.jpg");
-}
 
 /*/posts/show.html 全体の装飾　*/
 .show-whole-wrap{
