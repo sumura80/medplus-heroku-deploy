@@ -39,7 +39,7 @@ Rails.application.routes.draw do
   #userのshowページ作成URL
   resources :users, only:[:show, :edit, :update]
   #TODO:↓このrootは必要かどうか検討が必要　20190211
-  root 'posts#index'
+  #root 'posts#index'
 
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
@@ -52,6 +52,9 @@ Rails.application.routes.draw do
   resources :contacts, only:[:new, :create]
   get 'thanks' ,to:'contacts#thanks' #送信完了画面
 
+  #ransackを使った検索結果表示の画面search
+  #controllerはapplication_controllerのsearchメソッド
+  get 'search', to: 'posts#search'
 
 
 end

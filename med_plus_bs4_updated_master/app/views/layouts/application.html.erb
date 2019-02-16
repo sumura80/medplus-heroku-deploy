@@ -41,12 +41,12 @@
 <% else %>
     <!-- サインインしていない一般ユーザー用 -->
     <% if current_page?(root_path) %>
-       <div class="jumbotron jumbotron-nologin jumbotron-fluid p-md-5 text-white bg-info">
+       <div class="jumbotron jumbotron-nologin jumbotron-fluid p-md-5 text-white">
           <div class="container">
             <h1 class="display-4 font-italic text-center">Life Abroad<br>med <span style="color: #d95857;">+</span></h1>
             <p class="lead my-3">Make OTC med choices with the help and support of full of expats</p>
             <p class="lead mb-3">Chooose a category to log in</p>
-            <p><%= link_to "Sign Up", new_user_registration_path,class:"btn btn-secondary" %></p>
+            <p><%= link_to "Sign Up", new_user_registration_path,class:"btn btn-info" %></p>
           </div>
         </div>  
     <% end %>
@@ -59,6 +59,7 @@
             <%= msg %>
           </div>
         <% end %>
+        
           <%= yield %>
       </div>
      <% end %>

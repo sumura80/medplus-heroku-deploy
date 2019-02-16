@@ -41,6 +41,13 @@
       </li><!--end of pages dropdown -->
     </ul><!-- end of ul class="navbar-nav mr-auto" -->
 
+    <!-- Search box -->
+    <form class="form-inline my-2 my-lg-0" action="/search" method="get">
+      <%= search_form_for @query do |f| %>
+        <%= f.search_field  :title_or_title_jp_or_med_purpose_or_medical_type_or_indication_or_attn_large_or_attn_bold_or_attn_regular_or_attn_red_or_active_large_or_active_regular_or_active_red_or_title_jp_or_description_jp_cont,placeholder: 'Search',class:"form-control mr-sm-2" , required: true,oninvalid:"this.setCustomValidity('Type a medicine or ingredient')" ,oninput:"this.setCustomValidity('')"%>
+        <%= f.submit "Search" , class: 'btn btn-outline-success my-2 my-sm-0'%>
+      <% end %>
+    </form>
 
 
     <ul class="navbar-nav">

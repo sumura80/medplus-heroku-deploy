@@ -1,0 +1,52 @@
+<h1 class="index-wrap my-4">Search result</h1>
+ <div class="center">
+  <div class="row row-eq-height">
+	<%if @search_posts.present? %>
+  	<% @search_posts.each do |search| %>
+			<!-- Cards -->
+       <!-- Search page -->
+        <div class="col-sm-6 col-md-6 col-lg-3">
+           <div class="card mb-3">
+              <% if search.image? %>
+               <%= image_tag search.image, class:"card-img-top img-fluid",style:"min-height: 170px;" %>
+              <% end %> 
+      
+            <div class="card-body">
+              <p class="card-text card-bottom">
+                <h5 class="category-top"><%= search.title %></h5>
+                Lorem ipsum dolor amet echo park cronut typewriter, skateboard letterpress sriracha four dollar toast four loko raw denim godard coloring book.
+              </p>
+      
+               <div class="view-margin"><%= link_to "View More", search_path(search),class:"btn btn-outline-success btn-block" %></div>
+               <!-- like and comment numbers -->
+               <div class="icons-nums pt-3">
+                  <div class="index_icons"> 
+                    <% if search.likes.size >= 1 %>
+                      <span class="far fa-heart index_like-icon"></span><%= search.likes.size %> 
+                    <% else %>
+                      <span class="far fa-heart index_like-icon_zero"></span><%= search.likes.size %>
+                    <% end %>
+
+                  <span style="margin-right: 25px;"></span>
+
+                    <% if search.comments.size >= 1 %>
+                      <span class="far fa-comments index_comments-icon"></span><%= search.comments.size %>  
+                    <% else %>
+                      <span class="far fa-comments index_comments-icon_zero"></span><%= search.comments.size %> 
+                    <% end %>
+                </div>
+               </div><!-- end of like and comment numbers -->
+            </div><!-- end of card-body -->
+
+          </div><!-- end of card mb-3 -->
+        </div><!-- end of col-3 -->
+		<% end %>
+		<% else %>
+      <div class="col-sm-12">
+				<p class="float-left" style="margin-bottom: 140px; font-size: 1.6em;">Nothing matched your query.</p>
+			</div>
+		<%end %><!-- end of  @search_posts.present? -->
+
+  </div>
+ <p class="mt-4"><%= link_to "Back to Home", root_path,class:"btn btn-outline-secondary" %></p>
+</div>
