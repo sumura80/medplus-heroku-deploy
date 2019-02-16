@@ -1,4 +1,5 @@
 <h3 class="my-4">Categories of OTC in Japan</h3>
+<<<<<<< HEAD
    <% if user_signed_in? %>
       <% if current_user.admin? %>
         <%= link_to "Add Category", new_category_path,class:"btn btn-danger mb-2" %>
@@ -14,6 +15,78 @@
        	 <% if category.image? %>
            <%= image_tag category.image.url, class:"card-img-top" %>
           <% end %> 
+=======
+
+<div class="center">
+<!-- 	  <% if user_signed_in? %>
+      <% if current_user.admin? %>
+				<%= link_to "New Category", new_category_path,class:"btn btn-success mb-4" %>
+			<% end %>
+		<% end %>
+ -->
+
+
+
+  <div class="row row-eq-height">
+<!-- Cards -->
+
+		<!-- Pain Relief -->
+  	<div class="col-sm-6 col-md-6 col-lg-3">
+       <div class="card mb-3">
+			  <%= image_tag 'pain-relief.jpg', class:"card-img-top"%>
+			  <div class="card-body">
+			    <p class="card-text">
+			    	<h4 class="category-top">Pain Relief</h4>Lorem ipsum dolor amet echo park cronut typewriter, skateboard letterpress sriracha four dollar toast four loko raw denim godard coloring book lo-fi hoodie kickstarter craft beer. Disrupt next level williamsburg pop-up ethical raclette. 
+			    </p>
+			    <div class="d-flex justify-content-between">   
+             <div class="view-margin"><%= link_to "Pain Relief", categories_pain_relief_path,class:"btn btn-outline-success" %></div>
+						 <p class="text-muted"><%= @pain_reliefs.size %> items</p>
+          </div>
+			  </div>
+			</div>
+    </div><!-- end of col-3 -->
+
+
+
+    <!-- Allergy -->
+		<div class="col-sm-6 col-md-6 col-lg-3">
+      <div class="card mb-3">
+			  <%= image_tag 'allergy.jpeg', class:"card-img-top"%>
+			  <div class="card-body">
+			    <p class="card-text">
+			    	<h4 class="category-top">Allergy</h4>TJean shorts street art paleo williamsburg. Live-edge woke cliche 8-bit, post-ironic street art hashtag vexillologist pitchfork tumblr gentrify tbh unicorn succulents. Cronut cred butcher air plant marfa hoodie heirloom art party 3 wolf moon shaman. 
+			    </p>
+			    <div class="d-flex justify-content-between">   
+             <div class="view-margin"><%= link_to "Allergy", categories_allergy_path,class:"btn btn-outline-success" %></div>
+						 <p class="text-muted"><%= @allergys.size %> items</p>
+          </div>
+			  </div>
+			</div>
+    </div><!-- end of col-3 -->
+
+
+     <!-- Rabbits -->
+		<div class="col-sm-6 col-md-6 col-lg-3">
+      <div class="card mb-3">
+			  <%= image_tag 'cold_flu', class:"card-img-top"%>
+			  <div class="card-body">
+			    <p class="card-text">
+			    	<h4 class="category-top">Cold / Flu</h4>Pop-up gochujang lyft tumeric snackwave, irony next level seitan. Vexillologist farm-to-table flexitarian quinoa, hammock offal polaroid live-edge before they sold out roof party celiac. Photo booth next level blue bottle squid. 
+			    </p>
+			    <div class="d-flex justify-content-between">   
+             <div class="view-margin"><%= link_to "Cold / Flu", categories_cold_flu_path,class:"btn btn-outline-success" %></div>
+						 <p class="text-muted"><%= @cold_flus.size %> items</p>
+          </div>
+			  </div>
+			</div>
+    </div><!-- end of col-3 -->
+
+
+    <!-- Headhog -->
+		<div class="col-sm-6 col-md-6 col-lg-3">
+      <div class="card mb-3">
+			  <%= image_tag 'digestive.jpg', class:"card-img-top"%>
+>>>>>>> category_precautions
 			  <div class="card-body">
 			    <p class="card-text">
 			    	<h4 class="category-top"><%= category.name %></h4>

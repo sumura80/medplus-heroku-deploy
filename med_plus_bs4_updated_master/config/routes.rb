@@ -23,14 +23,23 @@ Rails.application.routes.draw do
 
 
   root 'categories#index'
+<<<<<<< HEAD
   resources :categories  
   # get 'categories/pain_relief' ,to: 'categories#pain_relief'
   # get 'categories/allergy' ,to: 'categories#allergy'
   # get 'categories/cold_flu' ,to: 'categories#cold_flu'
   # get 'categories/digestive' ,to: 'categories#digestive'
+=======
+  resources :categories
+  get 'categories/pain_relief' ,to: 'categories#pain_relief'
+  get 'categories/allergy' ,to: 'categories#allergy'
+  get 'categories/cold_flu' ,to: 'categories#cold_flu'
+  get 'categories/digestive' ,to: 'categories#digestive'
+>>>>>>> category_precautions
 
   #userのshowページ作成URL
   resources :users, only:[:show, :edit, :update]
+  #TODO:↓このrootは必要かどうか検討が必要　20190211
   root 'posts#index'
 
 

@@ -10,12 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190205092305) do
+ActiveRecord::Schema.define(version: 20190211064053) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "precaution_bold"
+    t.text "precaution_red"
+    t.text "precaution_large"
+    t.text "blurb"
+    t.string "image"
   end
 
   create_table "comments", force: :cascade do |t|
