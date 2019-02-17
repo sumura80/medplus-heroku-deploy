@@ -94,10 +94,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #====================================================
 
 #Herokuデプロイに対しての設定
-group :development do
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
+group :development do
+  gem 'sqlite3'
 end
 
 
