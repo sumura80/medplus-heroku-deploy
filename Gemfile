@@ -48,7 +48,8 @@ gem 'rails-ujs'
 gem 'paranoia', '~> 2.4', '>= 2.4.1'
 
 #パスワードやSecurity credientialsを保存するためのgem
-gem "figaro"
+gem 'figaro'
+
 #Search機能
 gem 'ransack'
 
@@ -56,6 +57,9 @@ gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 
 #will_paginate-bootstrap4 通常のwill_paginate-bootstrapではエラーになる
 gem 'will_paginate-bootstrap4'
+
+gem 'fog'
+
 
 group :development, :test do
   #Debuggのために追加

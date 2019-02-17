@@ -18,3 +18,10 @@ ACTION_MAILER_EMAIL_ADDRESS: "codetest1980@gmail.com"
 #Gamil 2 段階認証プロセス password
 ACTION_MAILER_EMAIL_PASSWORD: "lnbhibmwqlatlncx"
 
+
+region:                ENV['AMAZON_S3_REGION'], 
+aws_access_key_id:     ENV['AMAZON_ACCESS_KEY_ID'],
+aws_secret_access_key: ENV['AMAZON_SECRET_ACCESS_KEY']
+
+config.fog_directory:  ENV['AMAZON_S3_BUCKET_NAME']
+
