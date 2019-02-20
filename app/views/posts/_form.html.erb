@@ -1,7 +1,7 @@
 <%= form_for(@post, html: {multipart: true}) do |form| %>
 
   <div class="form-group">
-    <%= form.label :"Medicine categories"%>
+    <%= form.label :"Choose category↓"%>
     <%= select_tag(:category_id, options_for_select(@categories), prompt: "Choose categories",class: "form-control")  %>
   </div>
 
@@ -9,7 +9,7 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <%= form.label :title %>
+        <%= form.label :"Medicine name" %>
         <%= form.text_field :title,class: "form-control" %>
       </div>
     </div>
@@ -131,7 +131,7 @@
     <div class="row">
       <div class="col-md-6">
         <!-- Start of inactive wrap -->
-        <div class="form-group">
+        <div class="form-group" style="font-size:1.8em;">
           <%= form.label :"inactive_regular" %>
           <%= form.text_area :inactive_regular,rows: "10",class: "form-control" %>
         </div>
@@ -150,7 +150,7 @@
 
       <!-- Start of instruction wrap -->
       <div class="col-md-6">
-        <div class="form-group">
+        <div class="form-group" style="font-size:1.8em;">
           <%= form.label :"instructions_regular" %>
           <%= form.text_area :instructions_regular,rows: "10",class: "form-control" %>
         </div>
