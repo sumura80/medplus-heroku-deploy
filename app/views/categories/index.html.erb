@@ -10,22 +10,24 @@
   <div class="row row-eq-height">
   	<% @categories.each do |category| %>
   	  <div class="col-sm-6 col-md-6 col-lg-3">
-       <div class="card mb-3">
-       	 <% if category.image? %>
-           <%= image_tag category.image.url, class:"card-img-top" %>
-          <% end %> 
-			  <div class="card-body">
-			    <p class="card-text">
-			    	<h4 class="category-top"><%= category.name %></h4>
-			    	<%= category.blurb %>
-			    </p>
-			    <div class="d-flex justify-content-between">   
-             <div class="view-margin"><%= link_to "View #{category.name}", category_path(category),class:"btn btn-outline-success" %>
-             </div>
-						 <p class="text-muted"><%= category.posts.size %> items</p>
-          </div>
-			  </div>
+      <%= link_to category, class:"mb-3" ,style:"text-decoration:none;" do %>
+       <div class="card mb-3 card-hover">
+       	   <% if category.image? %>
+            <%= image_tag category.image.url, class:"card-img-top" %>
+           <% end %> 
+  			  <div class="card-body">
+  			    <div class="card-text">
+  			    	<h4 class="category-top"><%= category.name %></h4>
+  			    	<%= category.blurb %>
+  			    </div>
+  			    <div class="d-flex justify-content-between mt-4" style=" text-decoration: none;">   
+               <div class="view-margin" style="color: #FFF"><%= link_to "View #{category.name}", category_path(category),class:"btn btn-info" %>
+               </div>
+  						 <p class="text-muted"><%= category.posts.size %> items</p>
+            </div>
+  			  </div>
 			</div>
+      <% end %>
     </div><!-- end of col-3 -->
 	<% end %>
   </div>
