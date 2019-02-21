@@ -59,12 +59,12 @@
  </div><!-- end of row  row-eq-height-->
  <p><%= link_to "一覧に戻る", root_path,class:"btn btn-outline-secondary" %></p>
 </div><!-- end of center -->
-<% if user_signed_in? %>
+<!--<% if user_signed_in? %>
   <% if current_user.admin? %>
     <%= link_to "Delete Category", category_path(@category),class:"btn btn-danger mb-4",method: :delete, data:{confirm: "Are you sure to delete this category? "} %>
   <% end %>
 <% end %>
-
+-->
 <div class="paginate-wrapper" style="margin-bottom: 50px;">
   <%= will_paginate @posts,  renderer: WillPaginate::ActionView::BootstrapLinkRenderer  %>
 </div>
