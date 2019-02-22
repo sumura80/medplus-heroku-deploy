@@ -14,10 +14,10 @@
             <div class="card-body">
               <p class="card-text card-bottom">
                 <h5 class="category-top"><%= search.title %></h5>
-                Lorem ipsum dolor amet echo park cronut typewriter, skateboard letterpress sriracha four dollar toast four loko raw denim godard coloring book.
+                <%= search.description %>
               </p>
-      
-               <div class="view-margin"><%= link_to "View More", search_path(search),class:"btn btn-outline-success btn-block" %></div>
+                
+               <div class="view-margin"><%= link_to "View More", post_path(search),class:"btn btn-outline-success btn-block" %></div>
                <!-- like and comment numbers -->
                <div class="icons-nums pt-3">
                   <div class="index_icons"> 
