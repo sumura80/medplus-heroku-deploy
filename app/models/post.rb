@@ -16,6 +16,9 @@ class Post < ApplicationRecord
 	accepts_nested_attributes_for :infoimgs,allow_destroy: true,reject_if: proc { |attributes| attributes['infoimg_name'].blank? }
 	accepts_nested_attributes_for :infoimgs,allow_destroy: true,reject_if: proc { |attributes| attributes['infoimg_description'].blank? }
 	
+	validates :category_id, presence: true
+	validates :title, presence: { message: "Medicine name can't be blank"}
+	validates :image, presence: true
 	
 
 
