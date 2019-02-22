@@ -43,7 +43,8 @@ class PostsController < ApplicationController
 		if @post.save
 			redirect_to @post
   	else
-  		render 'edit'
+  		@categories = Category.all.map{ |c| [c.name, c.id]}
+  		render 'new'
   	end
 	end
 
