@@ -9,9 +9,9 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto about-menu-head" >
       <li class="nav-item about-menu"><%= link_to "About Us", about_path,class:"nav-link" %></li>
-      <li class="nav-item about-menu"><%= link_to "Terms of Service", terms_path, class:"nav-link" %></li>  
-      <li class="nav-item about-menu active"><%= link_to "Privacy Policy", privacy_path, class:"nav-link" %></li> 
-    
+      <li class="nav-item about-menu"><%= link_to "Terms of Service", terms_path, class:"nav-link" %></li>
+      <li class="nav-item about-menu active"><%= link_to "Privacy Policy", privacy_path, class:"nav-link" %></li>
+
 
     <% if user_signed_in? %>
       <li class="nav-item dropdown">
@@ -21,18 +21,18 @@
            <%= image_tag current_user.user_image_url,class:"rounded-circle" %>
           <% else %>
             <!-- デフォル時の表示 -->
-           <%= image_tag("default_user_image.png",class:"rounded-circle")%> 
-          <% end %> 
+           <%= image_tag("default_user_image.png",class:"rounded-circle")%>
+          <% end %>
           <%= current_user.username %>
         </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown1">  
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown1">
           <a><%= link_to "Privacy", edit_user_registration_path,class:"dropdown-item" %></a>
-          <a class="dropdown-item" href="/users/<%= current_user.id %>">Account</a> 
+          <a class="dropdown-item" href="/users/<%= current_user.id %>">Account</a>
           <div class="dropdown-divider"></div><!-- 横仕切り線 -->
-          <a><%= link_to "Log Out", destroy_user_session_path,method: :delete,class:"dropdown-item" %></a>    
+          <a><%= link_to "Log Out", destroy_user_session_path,method: :delete,class:"dropdown-item" %></a>
         </div>
       </li>
-      <% end %>  
+      <% end %>
     </ul>
 
   </div>
@@ -52,7 +52,7 @@
   <!-- Start main content -->
 <!--     <h1>Pages#about</h1>
     <p>Find me in app/views/pages/about.html.erb</p> -->
-</div><!-- End of flash container --> 
+</div><!-- End of flash container -->
 
 
   <!--Start of privacy-->
@@ -62,7 +62,7 @@
         <div class="col-sm-12">
           <div class="text-left">
             <p style="font-size: 1.8em;">
-              Med Plus PRIVACY POLICY
+              PRIVACY POLICY
             </p>
             <hr>
             <p class="text-center">
@@ -84,7 +84,7 @@
             <a href="#Links" class="list-group-item list-group-item-action">V. Links To Other Websites</a>
             <a href="#Changes" class="list-group-item list-group-item-action">VI. Changes To Our Privacy Policy</a>
             <a href="#Contact" class="list-group-item list-group-item-action">VII. Contact Us</a>
-            
+
           </div>
         </div><!-- end of col-md-3 mb-4 -->
 
@@ -92,25 +92,26 @@
           <div class="lead">
             Introduction<br><br>
           </div>
-          <p class="text-muted">Life Abroad (the “Company”) is committed to maintaining robust privacy protections for its users. Our Privacy Policy (“Privacy Policy”) is designed to help you understand how we collect, use and safeguard the information you provide to us and to assist you in making informed decisions when using our Service.<br><br> 
+          <p class="text-muted">Med Plus (the “Company”), a subsidiary of Life Abroad, is committed to maintaining robust privacy protections for its users. Our Privacy Policy (“Privacy Policy”) is designed to help you understand how we collect, use and safeguard the information you provide to us and to assist you in making informed decisions when using our Service.<br><br>
 
-          For purposes of this Agreement, “Service” refers to the Company’s service which can be accessed via our website at https://lifeabroad.jp, at which users can obtain information about products for sale in Japan, ingredients in those products, and information about various public systems. The terms “we,” “us,” and “our” refer to the Company. “You” refers to you, as a user of Service. By accepting our Privacy Policy and Terms of Use (found here: https://lifeabroad.jp/html/others/terms.html ), you consent to our collection, storage, use and disclosure of your personal information as described in this Privacy Policy. 
+          For purposes of this Agreement, “Service” refers to the Company’s service which can be accessed via our website at https://medplus.jp, at which users can obtain information about over-the-counter medications for sale in Japan, ingredients in those products, and information regarding product usage, warnings, and any other information pertinent to the prodocts and their use.
+          The terms “we,” “us,” and “our” refer to the Company. “You” refers to you, as a user of Service. By accepting our Privacy Policy and Terms of Use (found here: https://medplus.jp/privacy ), you consent to our collection, storage, use and disclosure of your personal information as described in this Privacy Policy.
           </p>
 
           <div id="Information" style="margin-bottom: 80px;"></div>
-          
 
-          
-          
+
+
+
 
           <div class="card mb-4">
             <div class="card-header">I. Information We Collect</div>
             <div class="card-body text-muted">
-              We collect “Non-Personal Information” and “Personal Information.” Non-Personal Information includes information that cannot be used to personally identify you, such as anonymous usage data, general demographic information we may collect, referring/exit pages and URLs, platform types, preferences you submit and preferences that are generated based on the data you submit and number of clicks. Personal Information includes only your email, which you submit to us through the registration process at the Site.<br><br>
+              We collect “Non-Personal Information” and “Personal Information.” Non-Personal Information includes information that cannot be used to personally identify you, such as anonymous usage data, general demographic information we may collect, referring/exit pages and URLs, platform types, preferences you submit and preferences that are generated based on the data you submit and number of clicks. Personal Information includes only your name and email, which you submit to us through the registration process at the Site.<br><br>
 
               <p>1. Information collected via Technology </p>
               To activate the Service you do not need to submit any Personal Information other than your email address. To use the Service thereafter, you do not need to submit further Personal Information. However, in an effort to improve the quality of the Service, we track information provided to us by your browser or by our software application when you view or use the Service, such as the website you came from (known as the “referring URL”), the type of browser you use, the device from which you connected to the Service, the time and date of access, and other information that does not personally identify you. We track this information using cookies, or small text files which include an anonymous unique identifier. Cookies are sent to a user’s browser from our servers and are stored on the user’s computer hard drive. Sending a cookie to a user’s browser enables us to collect Non-Personal information about that user and keep a record of the user’s preferences when utilizing our services, both on an individual and aggregate basis. For example, the Company may use cookies to collect the following information:<br><br>
-              
+
               <ul>
                 <li>Determine which domain to measure</li>
                 <li>Distinguish unique users</li>
@@ -174,7 +175,7 @@
           <div class="card mb-4">
             <div class="card-header">V. Links To Other Websites</div>
             <div class="card-body text-muted">
-              As part of the Service, we may provide links to or compatibility with other websites or applications. However, we are not responsible for the privacy practices employed by those websites or the information or content they contain. This Privacy Policy applies solely to information collected by us through the Site and the Service. Therefore, this Privacy Policy does not apply to your use of a third party website accessed by selecting a link on our Site or via our Service. To the extent that you access or use the Service through or on another website or application, then the privacy policy of that other website or application will apply to your access or use of that site or application. We encourage our users to read the privacy statements of other websites before proceeding to use them. 
+              As part of the Service, we may provide links to or compatibility with other websites or applications. However, we are not responsible for the privacy practices employed by those websites or the information or content they contain. This Privacy Policy applies solely to information collected by us through the Site and the Service. Therefore, this Privacy Policy does not apply to your use of a third party website accessed by selecting a link on our Site or via our Service. To the extent that you access or use the Service through or on another website or application, then the privacy policy of that other website or application will apply to your access or use of that site or application. We encourage our users to read the privacy statements of other websites before proceeding to use them.
                <div id="Changes" class="mb-3"></div>
             </div>
           </div>
@@ -190,7 +191,7 @@
           <div class="card mb-4">
             <div class="card-header">VII. Contact Us</div>
             <div class="card-body text-muted">
-              If you have any questions regarding this Privacy Policy or the practices of this Site, please contact us by sending an email to info@lifeabroad.jp. 
+              If you have any questions regarding this Privacy Policy or the practices of this Site, please contact us by sending an email to info@lifeabroad.jp.
             </div>
           </div>
         </div><!-- end of col-sm-9 -->
@@ -217,13 +218,8 @@ $(document).ready(function(){
       'scrollTop': $target.offset().top
     }, 1000, 'swing', function() {
       window.location.hash = target;
-    
+
     });
   });
 });
 </script>
-
-
-
-
- 
