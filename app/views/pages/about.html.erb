@@ -9,14 +9,14 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto about-menu-head" >
       <li class="nav-item about-menu"><a href="#home" class="nav-link">Home</a></li>
-      <li class="nav-item about-menu"><a href="#about_us" class="nav-link">About Us</a></li><li class="nav-item about-menu"><a href="#services" class="nav-link">Services</a></li><li class="nav-item about-menu"><a href="#team" class="nav-link">Team</a></li>  
-      <li class="nav-item about-menu"><a href="#contact" class="nav-link">Contact</a></li>  
+      <li class="nav-item about-menu"><a href="#about_us" class="nav-link">About Us</a></li><li class="nav-item about-menu"><a href="#services" class="nav-link">Services</a></li><li class="nav-item about-menu"><a href="#team" class="nav-link">Team</a></li>
+      <li class="nav-item about-menu"><a href="#contact" class="nav-link">Contact</a></li>
       <li class="nav-item dropdown about-menu"><!--start of pages dropdown -->
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownaboutus" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Others</a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <%= link_to "About Us", about_path, class:"dropdown-item" %>
-          <%= link_to "Terms of Service", terms_path, class:"dropdown-item" %> 
+          <%= link_to "Terms of Service", terms_path, class:"dropdown-item" %>
           <%= link_to "Privacy Policy", privacy_path, class:"dropdown-item" %>
         </div>
       </li><!--end of pages dropdown -->
@@ -29,19 +29,19 @@
            <%= image_tag current_user.user_image_url,class:"rounded-circle" %>
           <% else %>
             <!-- デフォル時の表示 -->
-           <%= image_tag("default_user_image.png",class:"rounded-circle")%> 
-          <% end %> 
+           <%= image_tag("default_user_image.png",class:"rounded-circle")%>
+          <% end %>
           <%= current_user.username %>
         </a>
 
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown1">	
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown1">
           <a><%= link_to "Privacy", edit_user_registration_path,class:"dropdown-item" %></a>
-          <a class="dropdown-item" href="/users/<%= current_user.id %>">Account</a> 
+          <a class="dropdown-item" href="/users/<%= current_user.id %>">Account</a>
           <div class="dropdown-divider"></div><!-- 横仕切り線 -->
-          <a><%= link_to "Log Out", destroy_user_session_path,method: :delete,class:"dropdown-item" %></a>    
+          <a><%= link_to "Log Out", destroy_user_session_path,method: :delete,class:"dropdown-item" %></a>
         </div>
       </li>
-      <% end %>  
+      <% end %>
     </ul>
   </div>
 </div><!-- end of container-fluit -->
@@ -56,15 +56,15 @@
     </div>
    <% end %>
   <!-- Start main content -->
-<!-- 	   <h1>Pages#about</h1>
-		<p>Find me in app/views/pages/about.html.erb</p> -->
-</div><!-- End of container -->	
+<!--     <h1>Pages#about</h1>
+    <p>Find me in app/views/pages/about.html.erb</p> -->
+</div><!-- End of container -->
 
- 
+
 <div class="jumbotron jumbotron-fluid jumbotron-about">
   <div class="container-fluid text-center">
-    <h1 class="display-4">WE'RE HERE TO HELP YOU</h1>
-    <h3 class="mt-4" >We provide support in a Japanese OTC medicines.</h3>
+    <h1 class="display-4">We're here to help you</h1>
+    <h1 class="mt-2" >find the medicine you need.</h1>
   </div ><!-- /.container -->
 </div><!-- /.jumbotron -->
 <div id="about_us" style="margin-bottom: 100px;"> </div>
@@ -80,42 +80,42 @@
                 <div class="row">
                   <div class="col-sm-6 col-md-5">
                     <div class="med_plus_logo_pic">
-                    	<%= image_tag('https://s3-ap-northeast-1.amazonaws.com/medplus-japan/admin-images/med_plus_logo.png',class:"img-fluid") %>
+                      <%= image_tag('https://s3-ap-northeast-1.amazonaws.com/medplus-japan/admin-images/med_plus_logo.png',class:"img-fluid") %>
                     </div>
                   </div>
                   <div class="col-sm-6 col-md-7">
                     <div class="about-info">
-                      <p>Name: Med plus</p>
-                      <p>Email: info@lifeabroad.jp.</p>
-                      <p>URL: https://lifeabroad.jp.</p>
-                      <p>Established by: Lifeabroad</p>
+                      <p>Name: Med+</p>
+                      <p>Email: info@lifeabroad.jp</p>
+                      <p>URL: <%= link_to "https://lifeabroad.jp","https://lifeabroad.jp/" %></p>
+                      <p>Established by: Life Abroad</p>
                       <p>Established in: 2019</p>
                     </div>
                   </div>
                 </div>
                 <div class="demanding-wrap">
-                  <p class="demanding-rate lead">Demand Top 4</p>
-                  <span>Cold flu</span><span class="float-right">35%</span>
+                  <p class="demanding-rate lead">Top 4 Visited Categories</p>
+                  <span>Cold/Flu</span><span class="float-right">62%</span>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 35%;" aria-valuenow="35" aria-valuemin="0"
-                      aria-valuemax="100"></div>
-                  </div>
-
-                  <span>Yeast/Thrush</span><span class="float-right">30%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0"
-                      aria-valuemax="100"></div>
-                  </div>
-
-                  <span>Allergy</span><span class="float-right">20%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0"
+                    <div class="progress-bar" role="progressbar" style="width: 62%;" aria-valuenow="62" aria-valuemin="0"
                       aria-valuemax="100"></div>
                   </div>
 
                   <span>Sleep Aids</span><span class="float-right">15%</span>
                   <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+
+                  <span>Allergy</span><span class="float-right">12%</span>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 12%" aria-valuenow="12" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+
+                  <span>Digestive</span><span class="float-right">11%</span>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 11%" aria-valuenow="11" aria-valuemin="0"
                       aria-valuemax="100"></div>
                   </div>
                 </div>
@@ -128,14 +128,18 @@
                     </h3>
                   </div>
                   <p class="about-explanation">
-                    Life Abroad is a labor of love by a long-time foreign resident of Japan and a native who understands the struggle. With the mass of misinformation and lack of easy-to-understand information online about living and prospering in Japan as a foreigner, we decided to create Life Abroad to be a comprehensive guide. 
-                  </p>
+                    Med+ is an answer to a call we experienced while operating our main site, Life Abroad. Through our analytics, we were able to see that the majority of visitors to our site came in search of medical information.
+                    Med+ is an interactive source of information regarding over-the-counter medications available in Japan, with a social media aspect that allows users to recommend certain medicines to others through the use of comments, likes, Facebook, and Twitter. Our goal with Med+ is to get more reliable information out to those who need it, and allow our users to communicate with each other regarding their own experiences with different medicines.
+                    </p>
                   <p class="about-explanation">
-                    We want foreign residents living in Japan to be able to comfortably, conveniently, and confidentially find the information they need. Whether you’re an exchange student, here on business, visiting a friend, or a permanent resident that calls this wonderful country home, we believe you should have important and even life-saving information at your fingertips. 
-                  </p>
+                    We take our role in the "gaijin" community very seriously, and we strive to continue to improve the lives of people from all over the world who have chosen to make Japan their home. No matter where you're from, you have the right to easily accessible, reliable, easy-to-understand information regarding the products we use every day.
+                    </p>
                   <p class="about-explanation">
-                    One of the many challenges that come with life here is the shadow of uncertainty lying in so many aspects of life. Through Life Abroad, we hope to be a light in the dark to give you the confidence to not just live, but thrive. We wish you the best on your journey, and we will be here with you every step of the way.
-                  </p>
+                    We sincerely hope that this site will help improve your life and make your daily comings and goings more informed and full of confidence.
+                    </p>
+                    <p class="about-explanation">
+                    From the Life Abroad team, we wish all of our fellow foreigners the very best in their journey, and we will be here with you every step of the way.
+                    </p>
                 </div>
               </div>
             </div>
@@ -158,7 +162,7 @@
               Services
             </h3>
             <p class="text-center">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              The following information can be found on the Med+ website.
             </p>
           </div>
         </div>
@@ -168,30 +172,26 @@
         <div class="col-md-4">
           <div class="service-box">
             <div class="service-icon">
-              <span class="icon-circle"><i class="fas fa-briefcase-medical"></i></span>
-            </div>
-            <div class="service-content">
-              <h2 class="service-name">Med kit</h2>
-              <p class="service-description text-center">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat! Quia,
-                provident vitae! Magni
-                tempora perferendis eum non provident.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="service-box">
-            <div class="service-icon">
               <span class="icon-circle"><i class="fas fa-pills"></i></span>
             </div>
             <div class="service-content">
-              <h2 class="service-name">Pills</h2>
+              <h2 class="service-name">OTC Med Info</h2>
               <p class="service-description text-center">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat! Quia,
-                provident vitae! Magni
-                tempora perferendis eum non provident.
+                We provide detailed information about over-the-counter medications available in Japan, including active and inactive ingredients, instructions for use, and warnings, all translated into English by a professional translator. You can be sure that the information you find is true and accurate to the original Japanese content.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="service-box">
+            <div class="service-icon">
+              <span class="icon-circle"><i class="far fa-comment-alt"></i></span>
+            </div>
+            <div class="service-content">
+              <h2 class="service-name">Interaction</h2>
+              <p class="service-description text-center">
+                The Med+ site allows you to create an account that will allow you to leave comments on various medicines, leaving your opinion, experience, or recommendations to other foreign residents of Japan. In this way, we hope that we can help close the gap between foreign residents and the daunting prospect of buying medication in a foreign language.
               </p>
             </div>
           </div>
@@ -200,14 +200,12 @@
         <div class="col-md-4">
           <div class="service-box">
             <div class="service-icon">
-              <span class="icon-circle"><i class="fas fa-file-medical"></i></span>
+              <span class="icon-circle"><i class="fas fa-user-shield"></i></span>
             </div>
             <div class="service-content">
-              <h2 class="service-name">OTC med</h2>
+              <h2 class="service-name">Protection</h2>
               <p class="service-description text-center">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat! Quia,
-                provident vitae! Magni
-                tempora perferendis eum non provident.
+                At Life Abroad, and subsequently on the Med+ site, we do not tolerate abusive or hateful rhetoric. You can rest easy knowing that should anyone be provoked or attacked in any message on the site, it will be promptly dealt with in order to keep peace, harmony, and the spirit of camaraderie the main focus of our mission.
               </p>
             </div>
           </div>
@@ -223,7 +221,6 @@
 <div class="jumbotron jumbotron-fluid jumbotron-medbar">
   <div class="container-fluid text-center">
     <h1>WE'RE HERE TO HELP YOU</h1>
-    <h3 class="mt-4" >We provide support in a Japanese OTC medicines.</h3>
   </div><!-- /.container -->
 </div><!-- /.jumbotron -->
  <!--End of middle med bar-->
@@ -254,9 +251,9 @@
               <p class="card-text">Vice President and Co-Founder</p>
             </div>
           </div>
-        </div>   
+        </div>
     </div>
-     <h4 class="team-line">WHENEVER YOU NEED HELP, WE ARE HERE FOR YOU.</h4>
+     <h4 class="team-line">Whenever you need help, we are here for you.</h4>
   </div>
 </div><!-- end of team wrap -->
  <!--End of our team-->
@@ -275,8 +272,8 @@
                     <p class="lead">
                       Feel free to ask us anything you would like know.
                     </p>
-                    <h4 style="font-size:28px;"><i class="far fa-envelope"></i> info@lifeabroad.jp.</h4>
-                    <h4>Or</h4>
+                    <h4 style="font-size:28px;"><i class="far fa-envelope"></i> info@lifeabroad.jp</h4>
+                    <h4>or</h4>
                     <h4>Visit our contact page</h4>
                     <p class="pt-2"><%= link_to new_contact_path, class:"btn btn-success thanks-btn btn-lg mx-auto d-block mt-4" do %>
                       <i class="far fa-envelope" style="margin-right: 5px;"></i> Contact page
@@ -292,7 +289,7 @@
 
 <div id="contact" style="margin-bottom: 60px;"> </div>
 
-	 <!-- End main content -->
+   <!-- End main content -->
 </div><!-- end of whole wrap -->
 
 <script type="text/javascript">
@@ -308,7 +305,7 @@ $(document).ready(function(){
       'scrollTop': $target.offset().top
     }, 1000, 'swing', function() {
       window.location.hash = target;
-    
+
     });
   });
 });
