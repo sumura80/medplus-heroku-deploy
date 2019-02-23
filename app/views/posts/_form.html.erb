@@ -91,15 +91,17 @@
     <div class="row mt-4">
       <div class="col-md-6">
         <!-- Starts of active box -->
-         <div class="form-group lead text-primary">
-          <%= form.label :"active ingrediente regular (Required)" %>
-          <%= form.text_area :active_regular,rows: "10",class: "form-control" %>
-        </div>
 
         <div class="form-group text-primary lead">
           <%= form.label :"Amount (Required)" %>
           <%= form.text_field :dose,class: "form-control" %>
         </div>
+
+         <div class="form-group lead text-primary">
+          <%= form.label :"active ingrediente (Required)" %>
+          <%= form.text_area :active_regular,rows: "10",class: "form-control" %>
+        </div>
+
 
         <div class="form-group lead">
           <%= form.label :"active ingredients large" %>
@@ -145,7 +147,7 @@
       <div class="col-md-6">
         <!-- Start of inactive wrap -->
         <div class="form-group text-primary" style="font-size:1.8em;">
-          <%= form.label :"inactive_regular (Required)" %>
+          <%= form.label :"inactive ingredients (Required)" %>
           <%= form.text_area :inactive_regular,rows: "10",class: "form-control" %>
         </div>
         <div class="form-group lead">
@@ -164,7 +166,7 @@
       <!-- Start of instruction wrap -->
       <div class="col-md-6">
         <div class="form-group text-primary" style="font-size:1.8em;">
-          <%= form.label :"instructions_regular (Required)" %>
+          <%= form.label :"instructions for use (Required)" %>
           <%= form.text_area :instructions_regular,rows: "10",class: "form-control" %>
         </div>
 
@@ -186,7 +188,7 @@
 
     <div class="row">
       <!-- other_info_regular wrap -->
-      <div class="col-md-6">
+      <div class="col-md-6 mt-4">
         <div class="form-group">
           <%= form.label :"other_info_regular" %>
           <%= form.text_area :other_info_regular,rows: "5",class: "form-control" %>
