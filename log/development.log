@@ -9331,3 +9331,293 @@ Processing by PostsController#new as HTML
 Completed 200 OK in 119ms (Views: 109.4ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/posts" for 127.0.0.1 at 2019-02-24 10:51:13 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 40], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered posts/index.html.erb within layouts/application (21.3ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (10.7ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 190ms (Views: 181.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at 2019-02-24 10:51:19 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = 2 LIMIT ?[0m  [["post_id", 4], ["LIMIT", 1]]
+  Rendered likes/_likes.html.erb (9.9ms)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mExtraimg Load (0.1ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 4]]
+  [1m[36mInfoimg Load (0.1ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 4]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" LEFT OUTER JOIN "votes" ON "votes"."comment_id" = "comments"."id" WHERE "comments"."post_id" = ? GROUP BY "comments"."id" ORDER BY count(votes.id) desc[0m  [["post_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.3ms)
+  Rendered posts/show.html.erb within layouts/application (34.9ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (10.2ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 130ms (Views: 118.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-24 10:51:22 +0900
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (17.2ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (9.6ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 174ms (Views: 166.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2019-02-24 10:51:24 +0900
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = 1 LIMIT ? OFFSET ?[0m  [["LIMIT", 40], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (17.7ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (5.1ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 147ms (Views: 138.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2019-02-24 10:51:25 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = 2 LIMIT ?[0m  [["post_id", 1], ["LIMIT", 1]]
+  Rendered likes/_likes.html.erb (4.7ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExtraimg Load (0.1ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mInfoimg Load (0.1ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" LEFT OUTER JOIN "votes" ON "votes"."comment_id" = "comments"."id" WHERE "comments"."post_id" = ? GROUP BY "comments"."id" ORDER BY count(votes.id) desc[0m  [["post_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (1.7ms)
+  Rendered posts/show.html.erb within layouts/application (21.2ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (5.1ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 110ms (Views: 94.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2019-02-24 10:51:27 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mExtraimg Load (0.3ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = 1[0m
+  [1m[36mExtraimg Load (0.2ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mInfoimg Load (0.4ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = 1[0m
+  [1m[36mInfoimg Load (0.4ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (36.1ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (5.0ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 137ms (Views: 124.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2019-02-24 10:51:35 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = 2 LIMIT ?[0m  [["post_id", 1], ["LIMIT", 1]]
+  Rendered likes/_likes.html.erb (9.6ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExtraimg Load (0.2ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mInfoimg Load (0.1ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" LEFT OUTER JOIN "votes" ON "votes"."comment_id" = "comments"."id" WHERE "comments"."post_id" = ? GROUP BY "comments"."id" ORDER BY count(votes.id) desc[0m  [["post_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (3.3ms)
+  Rendered posts/show.html.erb within layouts/application (46.9ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (6.0ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 139ms (Views: 129.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-24 10:55:32 +0900
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (20.7ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (9.0ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 159ms (Views: 150.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2019-02-24 10:55:33 +0900
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = 1 LIMIT ? OFFSET ?[0m  [["LIMIT", 40], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (10.3ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (8.7ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 97ms (Views: 89.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-24 10:55:37 +0900
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (15.8ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (8.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 100ms (Views: 92.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/categories/2" for 127.0.0.1 at 2019-02-24 10:55:38 +0900
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = 2 LIMIT ? OFFSET ?[0m  [["LIMIT", 40], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/show.html.erb within layouts/application (6.7ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (4.9ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 77ms (Views: 70.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts?category=Allergy" for 127.0.0.1 at 2019-02-24 10:56:45 +0900
+Processing by PostsController#index as HTML
+  Parameters: {"category"=>"Allergy"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Allergy"], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = ? LIMIT ? OFFSET ?[0m  [["category_id", 2], ["LIMIT", 40], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/index.html.erb within layouts/application (4.8ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (10.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 97ms (Views: 91.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts?category=Allergy" for 127.0.0.1 at 2019-02-24 10:57:25 +0900
+Processing by PostsController#index as HTML
+  Parameters: {"category"=>"Allergy"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Allergy"], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = ? LIMIT ? OFFSET ?[0m  [["category_id", 2], ["LIMIT", 40], ["OFFSET", 0]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/index.html.erb within layouts/application (18.0ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (15.0ms)
+  Rendered layouts/_footer.html.erb (1.5ms)
+Completed 200 OK in 142ms (Views: 132.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts?category=Allergy" for 127.0.0.1 at 2019-02-24 10:58:00 +0900
+Processing by PostsController#index as HTML
+  Parameters: {"category"=>"Allergy"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Allergy"], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `precaution_large?' for nil:NilClass):
+    4:  <div class="center">
+    5:   <div class="row row-eq-height">
+    6: 
+    7:     <% if @category.precaution_large? || @category.precaution_red? || @category.precaution_bold? %>
+    8:     <div class="col-md-12 precaution-wrap mb-4">
+    9:       <div class="precaution p-3" style="border:2px solid #067CB0;">
+   10:         <div class="mb-2"style="font-size:1.8em;"><%= h(@category.precaution_large).gsub(/\n/, '<br/>').html_safe %></div>
+  
+app/views/posts/index.html.erb:7:in `_app_views_posts_index_html_erb___3876184955346585693_70269839071800'
+Started GET "/posts?category=Allergy" for 127.0.0.1 at 2019-02-24 10:59:01 +0900
+Processing by PostsController#index as HTML
+  Parameters: {"category"=>"Allergy"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Allergy"], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = ? LIMIT ? OFFSET ?[0m  [["category_id", 2], ["LIMIT", 40], ["OFFSET", 0]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/index.html.erb within layouts/application (4.3ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (10.1ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 115ms (Views: 110.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-24 10:59:03 +0900
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (14.6ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (9.6ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 101ms (Views: 93.7ms | ActiveRecord: 2.1ms)
+
+
