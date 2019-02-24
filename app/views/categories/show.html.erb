@@ -6,8 +6,8 @@
         <%= link_to "Edit Category", edit_category_path,class:"btn btn-warning mb-4" %>
       <% end %>
    <% end %>
- <div class="center">
-  <div class="row row-eq-height">
+
+  <div class="row">
     <% if @category.precaution_large? || @category.precaution_red? || @category.precaution_bold? %>
       <div class="col-md-12 precaution-wrap mb-4">
         <div class="precaution p-3" style="border:2px solid #067CB0;">
@@ -17,7 +17,10 @@
         </div>
       </div>
     <% end %>
-
+  </div>
+ 
+ <div class="center">
+  <div class="row row-eq-height">
     <!-- Cards -->
     <% @posts.each do |post| %>
     <div class="col-sm-6 col-md-6 col-lg-3">
