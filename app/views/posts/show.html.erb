@@ -19,7 +19,7 @@
 
         <div class="intro_wrap">
           <% if @post.med_purpose? %>
-            <div class="med_purpose my-2">
+            <div class="med_purpose my-3">
              <div class ="lead">Purpose:</div>             
               <%= h(@post.med_purpose).gsub(/\n/, '<br/>').html_safe %> 
             </div>
@@ -27,14 +27,14 @@
           
 
           <% if @post.medical_type? %>
-            <div class="medical_type my-4">
+            <div class="medical_type my-3">
              <div class ="lead">Drug Type:</div>
               <%= @post.medical_type %>
             </div>
           <% end %>
 
           <% if @post.indication? %>
-            <div class="indication my-2">
+            <div class="indication my-3">
              <div class ="lead">Indication:</div>
               <%= h(@post.indication).gsub(/\n/, '<br/>').html_safe %>
             </div>
@@ -63,36 +63,30 @@
        <!--*********** ここからshowの右画面 *************** -->
 
        <div class="col-md-7 mx-auto mt-4">
-
         <div class="attn_wrap">
-          <% if @post.attn_large? || @post.attn_bold? || @post.attn_regular? || @post.attn_red? %>
-            <h2>Attention:</h2>
-           <% end %>
           <% if @post.attn_large? %>
-            <div class="attn_large" style="font-size: 1.6em;">
+            <div class="attn_large mb-2" style="font-size: 1.6em;">
               <%= h(@post.attn_large).gsub(/\n/, '<br/>').html_safe %>
             </div>
           <% end %>
 
           <% if @post.attn_bold? %>
-            <div class="attn_bold lead">
+            <div class="attn_bold lead mb-2">
               <%= h(@post.attn_bold).gsub(/\n/, '<br/>').html_safe %>
             </div>
           <% end %>
 
           <% if @post.attn_regular? %>
-            <div class="attn_reg">
+            <div class="attn_reg mb-2">
               <%= h(@post.attn_regular).gsub(/\n/, '<br/>').html_safe %>
             </div>
           <% end %>
 
           <% if @post.attn_red? %>
-            <div class="attn_red lead" style="color: red;">
+            <div class="attn_red lead mb-2" style="color: red;">
               <%= h(@post.attn_red).gsub(/\n/, '<br/>').html_safe%>
             </div>
-          <% end %>
-       
-          
+          <% end %>                
         </div><!-- end of attn_wrap -->
 
 
