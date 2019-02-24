@@ -9747,3 +9747,226 @@ Processing by CategoriesController#show as HTML
 Completed 200 OK in 113ms (Views: 108.2ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-02-24 18:24:12 +0900
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (59.9ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (6.7ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 239ms (Views: 228.0ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-02-24 18:24:16 +0900
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (58.5ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (6.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 163ms (Views: 147.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-02-24 18:24:25 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vuf9+X1AUAQkEIYVYThO1kR8JP3S2KynK2oHijQSfBJCLX3YrxvNPeCapX0c3jpy3ZAxKUw6HZxyaswnXGLk5Q==", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "button"=>""}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 198ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-24 18:24:25 +0900
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (10.5ms)
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (9.9ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 101ms (Views: 96.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2019-02-24 18:24:26 +0900
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = 1 LIMIT ? OFFSET ?[0m  [["LIMIT", 40], ["OFFSET", 0]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (5.1ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (9.7ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 101ms (Views: 94.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2019-02-24 18:24:28 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.6ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = 2 LIMIT ?[0m  [["post_id", 1], ["LIMIT", 1]]
+  Rendered likes/_likes.html.erb (4.0ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExtraimg Load (0.3ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mInfoimg Load (0.4ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" LEFT OUTER JOIN "votes" ON "votes"."comment_id" = "comments"."id" WHERE "comments"."post_id" = ? GROUP BY "comments"."id" ORDER BY count(votes.id) desc[0m  [["post_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (9.8ms)
+  Rendered posts/show.html.erb within layouts/application (61.4ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (5.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 143ms (Views: 129.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2019-02-24 18:25:39 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = 2 LIMIT ?[0m  [["post_id", 1], ["LIMIT", 1]]
+  Rendered likes/_likes.html.erb (4.9ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExtraimg Load (0.1ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mInfoimg Load (0.1ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" LEFT OUTER JOIN "votes" ON "votes"."comment_id" = "comments"."id" WHERE "comments"."post_id" = ? GROUP BY "comments"."id" ORDER BY count(votes.id) desc[0m  [["post_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.5ms)
+  Rendered posts/show.html.erb within layouts/application (21.0ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (5.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 104ms (Views: 96.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2019-02-24 18:25:44 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mExtraimg Load (0.3ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = 1[0m
+  [1m[36mExtraimg Load (0.1ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mInfoimg Load (0.2ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = 1[0m
+  [1m[36mInfoimg Load (0.1ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (22.4ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (4.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 133ms (Views: 104.4ms | ActiveRecord: 2.1ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2019-02-24 18:26:13 +0900
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XtvOMw0pFLo43y44nuoU8dVIxcVq71DJqMLqnZYbqynIxxZw4g8XihTtf8Bl1J9TkFBxK50tbU/2YDKQpqVRNA==", "post"=>{"category_id"=>"1", "title"=>"Tylenol A", "med_purpose"=>"This NSAID (non-steroidal anti-inflammatory drug) is common in the U.S. and other countries, but in Japan is difficult to obtain without a prescription.", "medical_type"=>"Acetaminophen", "indication"=>"Lorem ipsum\r\ndolor amet edison \r\nbulb fam tumeric", "description"=>"write some description of the medicine here", "extraimgs_attributes"=>{"0"=>{"extraimg_name"=>"", "extraimg_description"=>"", "_destroy"=>"0"}}, "dose"=>"per 1 caplet", "active_regular"=>"・Acetaminophen 300mg", "active_large"=>"", "active_red"=>"", "attn_large"=>"", "attn_bold"=>"", "attn_regular"=>"", "attn_red"=>"", "inactive_regular"=>"Cellulose, pregelatinized starch, hydroxypropyl cellulose, carboxymethylcellulose calcium, magnesium stearate, hypromellose, D-mannitol, titanium oxide, talc, carnauba wax", "inactive_bold"=>"", "inactive_red"=>"", "instructions_regular"=>"Adults and children 15 years and over: Take 1 caplet every 4-6 hours as needed for pain, up to 3 times daily. Do not exceed 3 caplets per day. Do not take this medicine with other products containing acetaminophen. Children under 15 should not take this medicine. \r\n\r\nAsk your doctor or pharmacist before use if you take any regular prescription medications or are currently taking another medication.", "instructions_bold"=>"", "instructions_red"=>"", "other_info_red"=>"Vaporware cred typewriter tattooed whatever etsy.", "other_info_bold"=>"Master cleanse cronut live-edge adaptogen pop-up twee, vice aesthetic.", "other_info_regular"=>"Lorem ipsum dolor amet fam vape YOLO, waistcoat mlkshk cronut photo booth. Quinoa fashion axe cloud bread tbh sriracha actually", "en_precautions"=>"https://hipsum.co/", "en_source"=>"http://takeda-kenko.jp/en/products/genestu/tylenol.html\r\n", "jp_source"=>"http://tylenol.jp/tylenola.html", "en_pdf"=>"", "jp_pdf"=>"", "link_note"=>"", "infoimgs_attributes"=>{"0"=>{"infoimg_name"=>"", "infoimg_description"=>"", "_destroy"=>"0"}}}, "commit"=>"Edit complete", "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "posts" SET "indication" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["indication", "Lorem ipsum\r\ndolor amet edison \r\nbulb fam tumeric"], ["updated_at", "2019-02-24 09:26:13.772827"], ["id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 22ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2019-02-24 18:26:13 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = 2 LIMIT ?[0m  [["post_id", 1], ["LIMIT", 1]]
+  Rendered likes/_likes.html.erb (4.0ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExtraimg Load (0.1ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mInfoimg Load (0.1ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" LEFT OUTER JOIN "votes" ON "votes"."comment_id" = "comments"."id" WHERE "comments"."post_id" = ? GROUP BY "comments"."id" ORDER BY count(votes.id) desc[0m  [["post_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (1.9ms)
+  Rendered posts/show.html.erb within layouts/application (18.7ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (8.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 155ms (Views: 145.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2019-02-24 18:26:39 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mExtraimg Load (0.2ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = 1[0m
+  [1m[36mExtraimg Load (0.1ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mInfoimg Load (0.4ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = 1[0m
+  [1m[36mInfoimg Load (0.3ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (18.2ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (5.4ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 110ms (Views: 96.6ms | ActiveRecord: 1.9ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2019-02-24 18:26:53 +0900
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xlwrx4hV5yKm8SKPLg1VxXyazUCgYtcNe04rbYgQANFQQPOEZ3PkEorDc3fVM95nOYJ5rleg6osl7PNguK76zA==", "post"=>{"category_id"=>"1", "title"=>"Tylenol A", "med_purpose"=>"This NSAID (non-steroidal anti-inflammatory drug) is common in\r\nthe U.S. and other countries, but in Japan is difficult to obtain \r\nwithout a prescription.", "medical_type"=>"Acetaminophen", "indication"=>"Lorem ipsum\r\ndolor amet edison \r\nbulb fam tumeric", "description"=>"write some description of the medicine here", "extraimgs_attributes"=>{"0"=>{"extraimg_name"=>"", "extraimg_description"=>"", "_destroy"=>"0"}}, "dose"=>"per 1 caplet", "active_regular"=>"・Acetaminophen 300mg", "active_large"=>"", "active_red"=>"", "attn_large"=>"", "attn_bold"=>"", "attn_regular"=>"", "attn_red"=>"", "inactive_regular"=>"Cellulose, pregelatinized starch, hydroxypropyl cellulose, carboxymethylcellulose calcium, magnesium stearate, hypromellose, D-mannitol, titanium oxide, talc, carnauba wax", "inactive_bold"=>"", "inactive_red"=>"", "instructions_regular"=>"Adults and children 15 years and over: Take 1 caplet every 4-6 hours as needed for pain, up to 3 times daily. Do not exceed 3 caplets per day. Do not take this medicine with other products containing acetaminophen. Children under 15 should not take this medicine. \r\n\r\nAsk your doctor or pharmacist before use if you take any regular prescription medications or are currently taking another medication.", "instructions_bold"=>"", "instructions_red"=>"", "other_info_red"=>"Vaporware cred typewriter tattooed whatever etsy.", "other_info_bold"=>"Master cleanse cronut live-edge adaptogen pop-up twee, vice aesthetic.", "other_info_regular"=>"Lorem ipsum dolor amet fam vape YOLO, waistcoat mlkshk cronut photo booth. Quinoa fashion axe cloud bread tbh sriracha actually", "en_precautions"=>"https://hipsum.co/", "en_source"=>"http://takeda-kenko.jp/en/products/genestu/tylenol.html\r\n", "jp_source"=>"http://tylenol.jp/tylenola.html", "en_pdf"=>"", "jp_pdf"=>"", "link_note"=>"", "infoimgs_attributes"=>{"0"=>{"infoimg_name"=>"", "infoimg_description"=>"", "_destroy"=>"0"}}}, "commit"=>"Edit complete", "id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "posts" SET "med_purpose" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["med_purpose", "This NSAID (non-steroidal anti-inflammatory drug) is common in\r\nthe U.S. and other countries, but in Japan is difficult to obtain \r\nwithout a prescription."], ["updated_at", "2019-02-24 09:26:53.302099"], ["id", 1]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 22ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2019-02-24 18:26:53 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = 2 LIMIT ?[0m  [["post_id", 1], ["LIMIT", 1]]
+  Rendered likes/_likes.html.erb (6.4ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExtraimg Load (0.1ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mInfoimg Load (0.1ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" LEFT OUTER JOIN "votes" ON "votes"."comment_id" = "comments"."id" WHERE "comments"."post_id" = ? GROUP BY "comments"."id" ORDER BY count(votes.id) desc[0m  [["post_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (1.6ms)
+  Rendered posts/show.html.erb within layouts/application (19.7ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (9.1ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 153ms (Views: 144.4ms | ActiveRecord: 2.0ms)
+
+

@@ -17,15 +17,11 @@
         <%= time_ago_in_words (@post.created_at) %> ago </p> -->
       <!--   <p>種類: <%= @post.category.name %></p>-->  
 
-
-
-          
-
         <div class="intro_wrap">
           <% if @post.med_purpose? %>
             <div class="med_purpose my-2">
              <div class ="lead">Purpose:</div>             
-              <%= @post.med_purpose %> 
+              <%= h(@post.med_purpose).gsub(/\n/, '<br/>').html_safe %> 
             </div>
           <% end %>
           
@@ -36,11 +32,11 @@
               <%= @post.medical_type %>
             </div>
           <% end %>
-          
+
           <% if @post.indication? %>
             <div class="indication my-2">
              <div class ="lead">Indication:</div>
-              <%= @post.indication %>
+              <%= h(@post.indication).gsub(/\n/, '<br/>').html_safe %>
             </div>
           <% end %>
         </div><!-- end of intro_wrap -->
