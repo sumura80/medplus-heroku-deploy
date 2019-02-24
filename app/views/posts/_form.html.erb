@@ -189,19 +189,18 @@
     <div class="row">
       <!-- other_info_regular wrap -->
       <div class="col-md-6">
-        <div class="form-group">
-          <%= form.label :"other_info_regular" %>
-          <%= form.text_area :other_info_regular,rows: "5",class: "form-control" %>
+        <div class="form-group text-danger lead">
+          <%= form.label :"other_info_red" %>
+          <%= form.text_area :other_info_red,class: "form-control" %>
         </div>
 
         <div class="form-group lead">
           <%= form.label :"other_info_bold" %>
           <%= form.text_area :other_info_bold,class: "form-control" %>
         </div>
-
-        <div class="form-group text-danger lead">
-          <%= form.label :"other_info_red" %>
-          <%= form.text_area :other_info_red,class: "form-control" %>
+      <div class="form-group">
+          <%= form.label :"other_info_regular" %>
+          <%= form.text_area :other_info_regular,rows: "5",class: "form-control" %>
         </div>
       </div><!-- other_info_regular wrap -->
 
