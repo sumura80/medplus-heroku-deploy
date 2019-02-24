@@ -211,9 +211,9 @@
     <!-- Start of link wrap -->
      <div class="col-md-12 my-4">
       <!-- Start of links wrap -->
-          <% if @post.link_note? %>
+          <% if @post.en_precautions? %>
             <div class="attn_reg"> 
-              <p>Note: <%= link_to @post.link_note,@post.link_note,:target => "_blank" %></p>
+              <p>English precautions: <%= link_to @post.en_precautions,@post.en_precautions,:target => "_blank" %></p>
             </div>
           <% end %>
 
@@ -242,9 +242,9 @@
             </div>
           <% end %>
 
-          <% if @post.en_precautions? %>
+          <% if @post.link_note? %>
             <div class="attn_reg"> 
-              <p>English precautions: <%= link_to @post.en_precautions,@post.en_precautions,:target => "_blank" %></p>
+              <p>Note: <%= link_to @post.link_note,@post.link_note,:target => "_blank" %></p>
             </div>
           <% end %>
      </div>

@@ -13,7 +13,7 @@
   <% end %>
 
 
-  <div class="form-group text-primary lead">
+  <div class="form-group text-primary text-danger lead">
     <%= form.label :"Choose category↓  (Required)"%>
     <%= select_tag(:category_id, options_for_select(@categories), prompt: "Choose categories",class: "form-control")  %>
   </div>
@@ -209,8 +209,8 @@
       <!-- Start of links wrap -->
       <div class="col-md-6">
         <div class="form-group">
-          <%= form.label :"link_note" %>
-          <%= form.text_area :link_note,class: "form-control" %>
+          <%= form.label :"en_precautions" %>
+          <%= form.text_area :en_precautions,class: "form-control" %>
         </div>
         <div class="form-group">
           <%= form.label :"en_source" %>
@@ -230,10 +230,11 @@
           <%= form.label :"jp_pdf" %>
           <%= form.text_area :jp_pdf,class: "form-control" %>
         </div>
-          <div class="form-group">
-          <%= form.label :"en_precautions" %>
-          <%= form.text_area :en_precautions,class: "form-control" %>
+        <div class="form-group">
+          <%= form.label :"link_note" %>
+          <%= form.text_area :link_note,class: "form-control" %>
         </div>
+
       </div><!-- End of links wrap -->
     </div><!-- end of row -->
 
