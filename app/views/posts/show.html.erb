@@ -189,23 +189,21 @@
 
       <!-- Start of info pictures wrap -->
        <div class="col-md-12 mt-4">
-                    <% if @post.other_info_regular? %>
-              <div class="attn_reg"> 
-                <%= h(@post.other_info_regular).gsub(/\n/, '<br/>').html_safe %>
-              </div>
-            <% end %>
-
-            <% if @post.other_info_bold? %>
-              <div class="attn_reg lead"> 
-                <%= h(@post.other_info_bold).gsub(/\n/, '<br/>').html_safe %>
-              </div>
-            <% end %>
-
-            <% if @post.other_info_red? %>
-              <div class="attn_reg lead" style="color: red;"> 
-                <%= h(@post.other_info_red).gsub(/\n/, '<br/>').html_safe %>
-              </div>
-            <% end %>
+        <% if @post.other_info_red? %>
+          <div class="attn_reg lead" style="color: red;"> 
+            <%= h(@post.other_info_red).gsub(/\n/, '<br/>').html_safe %>
+          </div>
+        <% end %>
+        <% if @post.other_info_bold? %>
+          <div class="attn_reg lead"> 
+            <%= h(@post.other_info_bold).gsub(/\n/, '<br/>').html_safe %>
+          </div>
+        <% end %>
+        <% if @post.other_info_regular? %>
+          <div class="attn_reg"> 
+            <%= h(@post.other_info_regular).gsub(/\n/, '<br/>').html_safe %>
+          </div>
+        <% end %>
        </div>
       <!-- End of info pictures wrap -->
 
@@ -317,6 +315,7 @@
       <%= link_to "Home", root_path, class:"btn btn-secondary" %>
         <% if user_signed_in? %>
           <% if current_user.admin? %>
+          <!--TODO  ADD back to category show page button here -->
             <%= link_to "Edit", edit_post_path(@post), class:"btn btn btn-warning" %>
             <%= link_to "Delete", post_path(@post),method: :delete,data:{confirm: "Are you sure?"} , class:"btn btn-danger"%>
           <% end %>
