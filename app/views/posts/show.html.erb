@@ -317,7 +317,6 @@
       <%= link_to "Home", root_path, class:"btn btn-secondary" %>
         <% if user_signed_in? %>
           <% if current_user.admin? %>
-            <%= link_to "Back to Category", category_path(@post), class:"btn btn btn-success" %>
             <%= link_to "Edit", edit_post_path(@post), class:"btn btn btn-warning" %>
             <%= link_to "Delete", post_path(@post),method: :delete,data:{confirm: "Are you sure?"} , class:"btn btn-danger"%>
           <% end %>
