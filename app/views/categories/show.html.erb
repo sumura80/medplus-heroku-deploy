@@ -15,7 +15,7 @@
           <div class="text-danger lead mb-2"><%= h(@category.precaution_red).gsub(/\n/, '<br/>').html_safe %></div>
           <div class="lead mb-2"><%= h(@category.precaution_bold).gsub(/\n/, '<br/>').html_safe %></div>
             <% if @category.precaution_uri? %>
-              <%= link_to "#{@category.precaution_uri_title}",@category.precaution_uri,class:"btn btn-info my-3",target: "_blank"%>
+              <%= link_to "#{@category.precaution_uri_title}",@category.precaution_uri,class:"btn btn-info my-3",target: "_blank" %>
             <% end %>
         </div>
       </div>
