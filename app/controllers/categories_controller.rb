@@ -49,7 +49,8 @@ class CategoriesController < ApplicationController
 
 	def category_params
 		params.require(:category).permit(:name,:precaution_bold,
-			:precaution_red,:precaution_large,:blurb,:image)
+			:precaution_red,:precaution_large,:blurb,:image,
+			:precaution_uri,:precaution_uri_title)
 	end
 
 
