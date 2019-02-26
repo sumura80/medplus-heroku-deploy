@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190211064053) do
+ActiveRecord::Schema.define(version: 20190226110237) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20190211064053) do
     t.text "precaution_large"
     t.text "blurb"
     t.string "image"
+    t.string "precaution_uri"
+    t.string "precaution_uri_title"
   end
 
   create_table "comments", force: :cascade do |t|
