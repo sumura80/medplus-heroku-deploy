@@ -5,6 +5,7 @@ class CategoriesController < ApplicationController
 			
 	def index
 		@categories = Category.all.order("created_at ASC")
+		@recent_posts= Post.limit(4).order('created_at DESC')
 	end
 
 	def show
