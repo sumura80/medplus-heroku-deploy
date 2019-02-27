@@ -505,6 +505,11 @@ color: #53cb93;
 
 
 
+
+
+
+
+
 /*---Media Queries --*/
 /*Extra Small (XS) 縦向きモバイル – 576px 以下*/
 @media (max-width: 576px) {
@@ -512,6 +517,8 @@ color: #53cb93;
   	width:200px;
   	height: auto;
   }
+
+
 }
 
 /*Small (sm) 横向きモバイル 576px から 768px まで*/
@@ -547,6 +554,7 @@ color: #53cb93;
 .amazing-team{
 	font-size: 2em;
 }
+
 
 }
 
