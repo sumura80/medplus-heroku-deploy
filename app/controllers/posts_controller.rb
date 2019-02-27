@@ -18,6 +18,7 @@ class PostsController < ApplicationController
     else
       @category_id = Category.find_by(name: params[:category]).id
       @posts = Post.where(:category_id => @category_id).paginate(page: params[:page], per_page: 40)
+      
     end
 	end
 
