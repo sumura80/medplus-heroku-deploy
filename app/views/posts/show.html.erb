@@ -130,15 +130,15 @@
               </div>
             <% end %>
 
-            <% if @post.inactive_bold? %>
-              <div class="attn_reg lead"> 
-                <%= h(@post.inactive_bold).gsub(/\n/, '<br/>').html_safe %>
-              </div>
-            <% end %>
-
             <% if @post.inactive_red? %>
               <div class="attn_reg lead" style="color: red;"> 
                 <%= h(@post.inactive_red).gsub(/\n/, '<br/>').html_safe %>
+              </div>
+            <% end %>
+
+            <% if @post.inactive_bold? %>
+              <div class="attn_reg lead"> 
+                <%= h(@post.inactive_bold).gsub(/\n/, '<br/>').html_safe %>
               </div>
             <% end %>
           </div>
@@ -147,9 +147,9 @@
      <!-- Start of instructions for use wrap -->
      <div class="Instructions_for_use_wrap mt-4">
       <span class="lead">Instructions for use </span>
-      <% if @post.instructions_regular? %>
-         <div class="attn_reg"> 
-              <%= h(@post.instructions_regular).gsub(/\n/, '<br/>').html_safe %>
+          <% if @post.instructions_red? %>
+            <div class="attn_reg lead" style="color: red;"> 
+              <%= h(@post.instructions_red).gsub(/\n/, '<br/>').html_safe %>
             </div>
           <% end %>
 
@@ -159,11 +159,13 @@
             </div>
           <% end %>
 
-          <% if @post.instructions_red? %>
-            <div class="attn_reg lead" style="color: red;"> 
-              <%= h(@post.instructions_red).gsub(/\n/, '<br/>').html_safe %>
+         <% if @post.instructions_regular? %>
+         <div class="attn_reg"> 
+              <%= h(@post.instructions_regular).gsub(/\n/, '<br/>').html_safe %>
             </div>
           <% end %>
+
+
       </div>
     <!-- End of instructions for use wrap -->
 
