@@ -7,11 +7,12 @@ body{
 }
 
 /*ハイフンlogin hyphen*/
-.jumbotron-login{
+/*.jumbotron-login{*/
 	/*background: url("login_top.jpg");*/
 	/*background-image: url("https://s3-ap-northeast-1.amazonaws.com/medplus-japan/admin-images/login_top.jpg");
-	*/background-size: cover;
-}
+	*/
+	/*background-size: cover;*/
+/*}*/
 
 .jumbotron-nologin{
 	background-image: url("https://s3-ap-northeast-1.amazonaws.com/medplus-japan/admin-images/no_sign_up.jpg");
