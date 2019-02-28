@@ -29,11 +29,11 @@
 <div class="center">
   <div class="row row-eq-height">
   	<% @categories.each do |category| %>
-  	  <div class="col-sm-6 col-md-6 col-lg-3">
-      <%= link_to category, class:"mb-3" ,style:"text-decoration:none;" do %>
-       <div class="card mb-3 card-hover">
+  	  <div class="col-sm-6 col-md-6 col-lg-3 ">
+      
+       <div class="card mb-3">
        	   <% if category.image? %>
-            <%= image_tag category.image.url, class:"card-img-top" %>
+            <%= image_tag category.image.url, class:"card-img-top mb-3" %>
            <% end %> 
   			  <div class="card-body">
   			    <div class="card-text">
@@ -47,7 +47,7 @@
             </div>
   			  </div>
 			</div>
-      <% end %>
+     
     </div><!-- end of col-3 -->
 	<% end %>
   </div>
