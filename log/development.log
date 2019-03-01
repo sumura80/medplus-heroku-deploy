@@ -19873,3 +19873,258 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 152ms (Views: 139.7ms | ActiveRecord: 2.5ms)
 
 
+Started GET "/posts/6" for 127.0.0.1 at 2019-03-01 08:26:07 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = 2 LIMIT ?[0m  [["post_id", 6], ["LIMIT", 1]]
+  Rendered likes/_likes.html.erb (7.4ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mExtraimg Load (0.2ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 6]]
+  [1m[36mInfoimg Load (0.1ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 6]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" LEFT OUTER JOIN "votes" ON "votes"."comment_id" = "comments"."id" WHERE "comments"."post_id" = ? GROUP BY "comments"."id" ORDER BY count(votes.id) desc[0m  [["post_id", 6]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (1.7ms)
+  Rendered posts/show.html.erb within layouts/application (24.3ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (10.3ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 143ms (Views: 127.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/posts/6/edit" for 127.0.0.1 at 2019-03-01 08:26:11 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mExtraimg Load (0.4ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = 6[0m
+  [1m[36mExtraimg Load (0.4ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 6]]
+  [1m[36mInfoimg Load (0.2ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = 6[0m
+  [1m[36mInfoimg Load (0.1ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 6]]
+  Rendered posts/edit.html.erb within layouts/application (48.6ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (8.7ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 179ms (Views: 163.1ms | ActiveRecord: 2.0ms)
+
+
+Started PATCH "/posts/6" for 127.0.0.1 at 2019-03-01 08:26:20 +0900
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+P6zyHH6JTNmIhvZeHcnl+/eKRFM4QIxS/QB4h4H99SJYvNNszGWEX8+BvVxKc8mBwDgErMyehTvPZJuyyLucA==", "post"=>{"category_id"=>"2", "title"=>"Rhoto Alguard ClearBlock Z", "med_purpose"=>"Provides a strong cooling sensation and relieves itching and redness associated with irritation from pollen and dust.", "medical_type"=>"Allergy Eye Drops", "indication"=>"", "description"=>"Allergy Eye Drops", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007ff018e17188 @tempfile=#<Tempfile:/var/folders/mr/zg4zppzx36d64ydzhpcdl41h0000gn/T/RackMultipart20190301-2669-9iao71.jpg>, @original_filename="rhoto_clearmildZ.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"rhoto_clearmildZ.jpg\"\r\nContent-Type: image/jpeg\r\n">, "extraimgs_attributes"=>{"0"=>{"extraimg_name"=>"", "extraimg_description"=>"", "_destroy"=>"0"}}, "dose"=>"", "active_regular"=>"・Cromolyn Sodium (mast cell stabilizer) 1%\r\n・Chlorphenamine (antihistamine) 0.03%\r\n・Pranoprofen (NSAID) 0.05%\r\n・Chondroitin sulfate (relieves dry eye) 0.5%", "active_large"=>"", "active_red"=>"", "attn_large"=>"", "attn_bold"=>"", "attn_regular"=>"", "attn_red"=>"", "inactive_regular"=>"Boric acid, borax, 1-menthol, d-camphor, BHT, polysorbate 80, polyhexanide hydrochloride, pH regulator", "inactive_bold"=>"", "inactive_red"=>"", "instructions_regular"=>"Children under 7 should not use this product. Do not use if you are or may be pregnant, or if you are breastfeeding. Do not use these drops with contact lenses in. Remove contacts before using. \r\n\r\nStore in a cool, dry place out of direct sunlight. When replacing the cap, turn until you hear a click. This indicates that the cap is completely closed.\r\n\r\nKeep out of reach of children and pets. Do not put the liquid in a different container. This can cause changes to the medicine, introduce foreign bodies or bacteria to the liquid, or cause infections. \r\n\r\nDo not share this medicine with another person. This can cause or spread infection. Do not use after expiration date. ", "instructions_bold"=>"Place 1~2 drops in each eye up to 4 times per day.", "instructions_red"=>"", "other_info_red"=>"", "other_info_bold"=>"", "other_info_regular"=>"", "en_precautions"=>"", "en_source"=>"", "jp_source"=>"", "en_pdf"=>"", "jp_pdf"=>"http://jp.rohto.com/~/media/com/rohto-alguard/eyedrop-clearblock-z/4987241144396.pdf", "link_note"=>"", "infoimgs_attributes"=>{"0"=>{"infoimg_name"=>"", "infoimg_description"=>"", "_destroy"=>"0"}}}, "commit"=>"Edit complete", "id"=>"6"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "posts" SET "image" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["image", "rhoto_clearmildZ.jpg"], ["updated_at", "2019-02-28 23:26:20.458540"], ["id", 6]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/6
+Completed 302 Found in 161ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/posts/6" for 127.0.0.1 at 2019-03-01 08:26:20 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = 2 LIMIT ?[0m  [["post_id", 6], ["LIMIT", 1]]
+  Rendered likes/_likes.html.erb (7.8ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mExtraimg Load (0.1ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 6]]
+  [1m[36mInfoimg Load (0.2ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 6]]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" LEFT OUTER JOIN "votes" ON "votes"."comment_id" = "comments"."id" WHERE "comments"."post_id" = ? GROUP BY "comments"."id" ORDER BY count(votes.id) desc[0m  [["post_id", 6]]
+  Rendered collection of templates [0 times] (0.1ms)
+  Rendered comments/_form.html.erb (13.7ms)
+  Rendered posts/show.html.erb within layouts/application (93.0ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (13.6ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 270ms (Views: 251.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 08:26:23 +0900
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (17.3ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (10.7ms)
+  Rendered layouts/_footer.html.erb (1.3ms)
+Completed 200 OK in 117ms (Views: 110.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/categories/2" for 127.0.0.1 at 2019-03-01 08:28:32 +0900
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = 2 LIMIT ? OFFSET ?[0m  [["LIMIT", 40], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 6]]
+  Rendered categories/show.html.erb within layouts/application (17.7ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (9.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 134ms (Views: 125.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/posts/6" for 127.0.0.1 at 2019-03-01 08:28:33 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = 2 LIMIT ?[0m  [["post_id", 6], ["LIMIT", 1]]
+  Rendered likes/_likes.html.erb (7.3ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mExtraimg Load (0.1ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 6]]
+  [1m[36mInfoimg Load (0.1ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 6]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" LEFT OUTER JOIN "votes" ON "votes"."comment_id" = "comments"."id" WHERE "comments"."post_id" = ? GROUP BY "comments"."id" ORDER BY count(votes.id) desc[0m  [["post_id", 6]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.9ms)
+  Rendered posts/show.html.erb within layouts/application (24.4ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (9.3ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 117ms (Views: 107.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/posts/6/edit" for 127.0.0.1 at 2019-03-01 08:28:35 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mExtraimg Load (0.3ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = 6[0m
+  [1m[36mExtraimg Load (0.2ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 6]]
+  [1m[36mInfoimg Load (0.3ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = 6[0m
+  [1m[36mInfoimg Load (0.2ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 6]]
+  Rendered posts/edit.html.erb within layouts/application (40.9ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (8.8ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 171ms (Views: 158.8ms | ActiveRecord: 1.9ms)
+
+
+Started PATCH "/posts/6" for 127.0.0.1 at 2019-03-01 08:28:43 +0900
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WUyZll7VCOdXy6ENsUTLUKJawVTqz199PAmtTpfedQEo0NkTnB67xU7XvCG4GiPhSoQIVxUcJ1iYwD7CQvtspQ==", "post"=>{"category_id"=>"2", "title"=>"Rhoto Alguard ClearBlock Z", "med_purpose"=>"Provides a strong cooling sensation and relieves itching and redness associated with irritation from pollen and dust.", "medical_type"=>"Allergy Eye Drops", "indication"=>"", "description"=>"Allergy Eye Drops", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007ff011d578d0 @tempfile=#<Tempfile:/var/folders/mr/zg4zppzx36d64ydzhpcdl41h0000gn/T/RackMultipart20190301-2669-11h0n73.jpg>, @original_filename="rhoto_clearblockZ.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"rhoto_clearblockZ.jpg\"\r\nContent-Type: image/jpeg\r\n">, "extraimgs_attributes"=>{"0"=>{"extraimg_name"=>"", "extraimg_description"=>"", "_destroy"=>"0"}}, "dose"=>"", "active_regular"=>"・Cromolyn Sodium (mast cell stabilizer) 1%\r\n・Chlorphenamine (antihistamine) 0.03%\r\n・Pranoprofen (NSAID) 0.05%\r\n・Chondroitin sulfate (relieves dry eye) 0.5%", "active_large"=>"", "active_red"=>"", "attn_large"=>"", "attn_bold"=>"", "attn_regular"=>"", "attn_red"=>"", "inactive_regular"=>"Boric acid, borax, 1-menthol, d-camphor, BHT, polysorbate 80, polyhexanide hydrochloride, pH regulator", "inactive_bold"=>"", "inactive_red"=>"", "instructions_regular"=>"Children under 7 should not use this product. Do not use if you are or may be pregnant, or if you are breastfeeding. Do not use these drops with contact lenses in. Remove contacts before using. \r\n\r\nStore in a cool, dry place out of direct sunlight. When replacing the cap, turn until you hear a click. This indicates that the cap is completely closed.\r\n\r\nKeep out of reach of children and pets. Do not put the liquid in a different container. This can cause changes to the medicine, introduce foreign bodies or bacteria to the liquid, or cause infections. \r\n\r\nDo not share this medicine with another person. This can cause or spread infection. Do not use after expiration date. ", "instructions_bold"=>"Place 1~2 drops in each eye up to 4 times per day.", "instructions_red"=>"", "other_info_red"=>"", "other_info_bold"=>"", "other_info_regular"=>"", "en_precautions"=>"", "en_source"=>"", "jp_source"=>"", "en_pdf"=>"", "jp_pdf"=>"http://jp.rohto.com/~/media/com/rohto-alguard/eyedrop-clearblock-z/4987241144396.pdf", "link_note"=>"", "infoimgs_attributes"=>{"0"=>{"infoimg_name"=>"", "infoimg_description"=>"", "_destroy"=>"0"}}}, "commit"=>"Edit complete", "id"=>"6"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "posts" SET "image" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["image", "rhoto_clearblockZ.jpg"], ["updated_at", "2019-02-28 23:28:43.910808"], ["id", 6]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/6
+Completed 302 Found in 136ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/posts/6" for 127.0.0.1 at 2019-03-01 08:28:43 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = 2 LIMIT ?[0m  [["post_id", 6], ["LIMIT", 1]]
+  Rendered likes/_likes.html.erb (9.8ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mExtraimg Load (0.1ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 6]]
+  [1m[36mInfoimg Load (0.1ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 6]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" LEFT OUTER JOIN "votes" ON "votes"."comment_id" = "comments"."id" WHERE "comments"."post_id" = ? GROUP BY "comments"."id" ORDER BY count(votes.id) desc[0m  [["post_id", 6]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.8ms)
+  Rendered posts/show.html.erb within layouts/application (34.5ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (10.5ms)
+  Rendered layouts/_footer.html.erb (1.9ms)
+Completed 200 OK in 185ms (Views: 176.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2019-03-01 09:00:09 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (24.6ms)
+  Rendered posts/new.html.erb within layouts/application (27.9ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (8.1ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 114ms (Views: 106.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2019-03-01 09:00:40 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (17.8ms)
+  Rendered posts/new.html.erb within layouts/application (20.5ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (9.8ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 144ms (Views: 133.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 09:01:01 +0900
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (39.6ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (17.5ms)
+  Rendered layouts/_footer.html.erb (2.4ms)
+Completed 200 OK in 234ms (Views: 224.2ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 09:10:16 +0900
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (54.5ms)
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (18.9ms)
+  Rendered layouts/_footer.html.erb (3.6ms)
+Completed 200 OK in 217ms (Views: 201.6ms | ActiveRecord: 7.1ms)
+
+
