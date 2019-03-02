@@ -148,13 +148,13 @@
      <div class="Instructions_for_use_wrap mt-4">
       <span class="lead">Instructions for use </span>
           <% if @post.instructions_red? %>
-            <div class="attn_reg lead" style="color: red;"> 
+            <div class="attn_reg lead mb-2" style="color: red;"> 
               <%= h(@post.instructions_red).gsub(/\n/, '<br/>').html_safe %>
             </div>
           <% end %>
 
           <% if @post.instructions_bold? %>
-            <div class="attn_reg lead"> 
+            <div class="attn_reg lead mb-2"> 
               <%= h(@post.instructions_bold).gsub(/\n/, '<br/>').html_safe %>
             </div>
           <% end %>
