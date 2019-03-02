@@ -4,7 +4,7 @@
       <div class="col-6 col-sm-6 col-md-3 col-lg-3 mb-4 card-hover"> 
         <%= link_to recent, class:"mb-3" ,style:"text-decoration:none;" do %>      
          <% if recent.image? %>
-           <%= image_tag recent.image.url, class:"img-fluid mx-n2",style:"padding:0;" %>
+           <%= image_tag recent.image.url, class:"img-fluid" %>
           <% end %> 
         <div class="title lead"><%= recent.title %></div>
         <div class="description"><%= recent.description %></div>
