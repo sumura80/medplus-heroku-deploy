@@ -122,8 +122,10 @@
 
         <br>
         <!-- Start of inactive wrap -->
-        <div class="inactive_wrap mt-4">
-          <span class="lead">Inactive ingredients </span>
+        <div class="inactive_wrap">
+          <% if @post.inactive_regular? || @post.inactive_red?|| @post.inactive_bold? %>
+            <span class="lead mt-4">Inactive ingredients </span>         
+          <% end %>
             <% if @post.inactive_regular? %>
               <div class="attn_reg"> 
                 <%= h(@post.inactive_regular).gsub(/\n/, '<br/>').html_safe %>
