@@ -53,13 +53,13 @@
     <ul class="navbar-nav">
       <% if !user_signed_in? %>    
         <li class="nav-item">
-          <%= link_to "新規登録", new_user_registration_path,class:"nav-link" %></li>
-        <li class="nav-item"><%= link_to "ログイン", new_user_session_path,class:"nav-link" %></li>          
+          <%= link_to "Sign Up", new_user_registration_path,class:"nav-link" %></li>
+        <li class="nav-item"><%= link_to "Log In", new_user_session_path,class:"nav-link" %></li>          
       <% end %>
 
 
       <% if user_signed_in? %>
-      <!-- <li class="nav-item"><%= link_to "ログアウト", destroy_user_session_path,method: :delete,class:"nav-link" %></li> -->
+      <!-- <li class="nav-item"><%= link_to "Log Out", destroy_user_session_path,method: :delete,class:"nav-link" %></li> -->
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          <!-- 画像がある時の表示 -->
