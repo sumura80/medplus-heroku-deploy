@@ -91,6 +91,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Google AnalyicsトラッキングIDを記載
-    GA.tracker = ENV["GOOGLE_ANALYTICS_TRACKING_NUMBER"]
+    GA.tracker = "UA-96765950-3"
 
 end
