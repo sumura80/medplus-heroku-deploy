@@ -60,6 +60,9 @@ gem 'will_paginate-bootstrap4'
 
 gem 'fog'
 
+#Google Analytic gem
+gem 'google-analytics-rails'
+
 
 group :development, :test do
   #Debuggのために追加
