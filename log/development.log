@@ -27434,3 +27434,866 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-03-09 11:52:41 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (869.7ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (26.0ms)
+  Rendered layouts/_footer.html.erb (4.4ms)
+Completed 200 OK in 1290ms (Views: 1232.8ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/%E2%80%9C//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D" for 127.0.0.1 at 2019-03-09 11:52:43 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/%E2%80%9C/pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/posts/new" for 127.0.0.1 at 2019-03-09 11:52:45 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (83.5ms)
+  Rendered posts/new.html.erb within layouts/application (86.3ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (8.8ms)
+  Rendered layouts/_footer.html.erb (2.3ms)
+Completed 200 OK in 287ms (Views: 210.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/posts/%E2%80%9C//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D" for 127.0.0.1 at 2019-03-09 11:52:45 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/posts/%E2%80%9C/pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/posts" for 127.0.0.1 at 2019-03-09 11:52:57 +0900
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WLUef5MwvYs3Tw0hCLKagEFttxwFkMI+fM0JILMgVw511e2bwi+ELn2Wq0JOrLK/NGtfMucDShUqhBNsRawY4g==", "category_id"=>"", "post"=>{"title"=>"", "med_purpose"=>"", "medical_type"=>"", "indication"=>"", "description"=>"", "extraimgs_attributes"=>{"0"=>{"extraimg_name"=>"", "extraimg_description"=>"", "_destroy"=>"0"}}, "dose"=>"", "active_regular"=>"", "active_large"=>"", "active_red"=>"", "attn_large"=>"", "attn_bold"=>"", "attn_regular"=>"", "attn_red"=>"", "inactive_regular"=>"", "inactive_red"=>"", "inactive_bold"=>"", "instructions_regular"=>"", "instructions_red"=>"", "instructions_bold"=>"", "other_info_red"=>"", "other_info_bold"=>"", "other_info_regular"=>"", "en_precautions"=>"", "en_source"=>"", "jp_source"=>"", "en_pdf"=>"", "jp_pdf"=>"", "link_note"=>"", "infoimgs_attributes"=>{"0"=>{"infoimg_name"=>"", "infoimg_description"=>"", "_destroy"=>"0"}}}, "commit"=>"Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (30.1ms)
+  Rendered posts/new.html.erb within layouts/application (33.8ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (15.1ms)
+  Rendered layouts/_footer.html.erb (7.7ms)
+Completed 200 OK in 242ms (Views: 218.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/%E2%80%9C//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D" for 127.0.0.1 at 2019-03-09 11:52:57 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/%E2%80%9C/pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/posts" for 127.0.0.1 at 2019-03-09 11:53:28 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 40], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered posts/index.html.erb within layouts/application (85.6ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (44.2ms)
+  Rendered layouts/_footer.html.erb (1.9ms)
+Completed 200 OK in 261ms (Views: 226.5ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/%E2%80%9C//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D" for 127.0.0.1 at 2019-03-09 11:53:29 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/%E2%80%9C/pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/posts/new" for 127.0.0.1 at 2019-03-09 11:53:31 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (18.5ms)
+  Rendered posts/new.html.erb within layouts/application (20.8ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (8.0ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 139ms (Views: 97.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/%E2%80%9C//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D" for 127.0.0.1 at 2019-03-09 11:53:31 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/posts/%E2%80%9C/pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/posts" for 127.0.0.1 at 2019-03-09 11:53:36 +0900
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h4h23D2P+80fxLvsVQ1cuCjHoSqO/A3eVsPWHvxH0oeq6IU4bJDCaFUdHY8TE3SHXcFJBGxvhfUAisxSCsudaw==", "category_id"=>"", "post"=>{"title"=>"", "med_purpose"=>"", "medical_type"=>"", "indication"=>"", "description"=>"", "extraimgs_attributes"=>{"0"=>{"extraimg_name"=>"", "extraimg_description"=>"", "_destroy"=>"0"}}, "dose"=>"", "active_regular"=>"", "active_large"=>"", "active_red"=>"", "attn_large"=>"", "attn_bold"=>"", "attn_regular"=>"", "attn_red"=>"", "inactive_regular"=>"", "inactive_red"=>"", "inactive_bold"=>"", "instructions_regular"=>"", "instructions_red"=>"", "instructions_bold"=>"", "other_info_red"=>"", "other_info_bold"=>"", "other_info_regular"=>"", "en_precautions"=>"", "en_source"=>"", "jp_source"=>"", "en_pdf"=>"", "jp_pdf"=>"", "link_note"=>"", "infoimgs_attributes"=>{"0"=>{"infoimg_name"=>"", "infoimg_description"=>"", "_destroy"=>"0"}}}, "commit"=>"Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (22.9ms)
+  Rendered posts/new.html.erb within layouts/application (27.9ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (16.8ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 220ms (Views: 198.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/%E2%80%9C//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D" for 127.0.0.1 at 2019-03-09 11:53:37 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/%E2%80%9C/pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/posts" for 127.0.0.1 at 2019-03-09 11:55:15 +0900
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IysUWaP/BMR/GlZqEX4KhVO5BLEDDtWTPgrZF7cxn1T4frPr5QfhwkyFxShF+5FGAGRAKI+iMSEq56w6HHp1pQ==", "category_id"=>"1", "post"=>{"title"=>"Machesto", "med_purpose"=>"", "medical_type"=>"", "indication"=>"", "description"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f83a74f9660 @tempfile=#<Tempfile:/var/folders/mr/zg4zppzx36d64ydzhpcdl41h0000gn/T/RackMultipart20190309-1811-1wdbfrh.jpeg>, @original_filename="meds3.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"meds3.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "extraimgs_attributes"=>{"0"=>{"extraimg_name"=>"Generic type", "extraimage"=>#<ActionDispatch::Http::UploadedFile:0x00007f83a74f93b8 @tempfile=#<Tempfile:/var/folders/mr/zg4zppzx36d64ydzhpcdl41h0000gn/T/RackMultipart20190309-1811-ifpd1h.jpg>, @original_filename="meds2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[extraimgs_attributes][0][extraimage]\"; filename=\"meds2.jpg\"\r\nContent-Type: image/jpeg\r\n">, "extraimg_description"=>"Health goth glossier plaid tilde before they sold out dreamcatcher sriracha meditation taxidermy letterpress listicle subway tile.", "_destroy"=>"0"}}, "dose"=>"", "active_regular"=>"Four loko chicharrones 3 wolf moon small batch hell of, DIY ethical gentrify neutra jianbing vice distillery hammock taiyaki. Kitsch ethical direct trade chillwave. Woke succulents next level gochujang 8-bit kickstarter. ", "active_large"=>"", "active_red"=>"", "attn_large"=>"", "attn_bold"=>"", "attn_regular"=>"", "attn_red"=>"", "inactive_regular"=>"Pabst synth stumptown chartreuse hell of. Artisan trust fund thundercats, typewriter man bun poutine hexagon vape coloring book shoreditch next level gastropub sartorial.", "inactive_red"=>"", "inactive_bold"=>"", "instructions_regular"=>"Taiyaki chicharrones tilde williamsburg. Franzen leggings cloud bread blue bottle tbh keytar cardigan pinterest subway tile pork belly put a bird on it YOLO. Irony tumblr XOXO fam, fingerstache 8-bit pour-over 3 wolf moon vaporware roof party cronut vape. Authentic selfies man braid, schlitz next level church-key tote bag. Vice hammock selfies gentrify man bun vinyl truffaut kale chips. Aesthetic marfa flexitarian drinking vinegar roof party narwhal. Craft beer kitsch cronut skateboard tilde unicorn kickstarter.", "instructions_red"=>"", "instructions_bold"=>"", "other_info_red"=>"", "other_info_bold"=>"", "other_info_regular"=>"", "en_precautions"=>"", "en_source"=>"", "jp_source"=>"", "en_pdf"=>"", "jp_pdf"=>"", "link_note"=>"", "infoimgs_attributes"=>{"0"=>{"infoimg_name"=>"Analytical report", "infoimage"=>#<ActionDispatch::Http::UploadedFile:0x00007f83a74f8350 @tempfile=#<Tempfile:/var/folders/mr/zg4zppzx36d64ydzhpcdl41h0000gn/T/RackMultipart20190309-1811-2licvo.jpg>, @original_filename="generic.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[infoimgs_attributes][0][infoimage]\"; filename=\"generic.jpg\"\r\nContent-Type: image/jpeg\r\n">, "infoimg_description"=>"WHO report release in 2019", "_destroy"=>"0"}}}, "commit"=>"Post"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at", "image", "user_id", "category_id", "med_purpose", "medical_type", "indication", "attn_large", "attn_bold", "attn_regular", "attn_red", "active_large", "active_regular", "active_red", "dose", "inactive_regular", "inactive_bold", "inactive_red", "instructions_regular", "instructions_bold", "instructions_red", "other_info_regular", "other_info_bold", "other_info_red", "link_note", "en_source", "jp_source", "en_pdf", "jp_pdf", "en_precautions") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Machesto"], ["description", ""], ["created_at", "2019-03-09 02:55:16.084610"], ["updated_at", "2019-03-09 02:55:16.084610"], ["image", "meds3.jpeg"], ["user_id", 2], ["category_id", 1], ["med_purpose", ""], ["medical_type", ""], ["indication", ""], ["attn_large", ""], ["attn_bold", ""], ["attn_regular", ""], ["attn_red", ""], ["active_large", ""], ["active_regular", "Four loko chicharrones 3 wolf moon small batch hell of, DIY ethical gentrify neutra jianbing vice distillery hammock taiyaki. Kitsch ethical direct trade chillwave. Woke succulents next level gochujang 8-bit kickstarter. "], ["active_red", ""], ["dose", ""], ["inactive_regular", "Pabst synth stumptown chartreuse hell of. Artisan trust fund thundercats, typewriter man bun poutine hexagon vape coloring book shoreditch next level gastropub sartorial."], ["inactive_bold", ""], ["inactive_red", ""], ["instructions_regular", "Taiyaki chicharrones tilde williamsburg. Franzen leggings cloud bread blue bottle tbh keytar cardigan pinterest subway tile pork belly put a bird on it YOLO. Irony tumblr XOXO fam, fingerstache 8-bit pour-over 3 wolf moon vaporware roof party cronut vape. Authentic selfies man braid, schlitz next level church-key tote bag. Vice hammock selfies gentrify man bun vinyl truffaut kale chips. Aesthetic marfa flexitarian drinking vinegar roof party narwhal. Craft beer kitsch cronut skateboard tilde unicorn kickstarter."], ["instructions_bold", ""], ["instructions_red", ""], ["other_info_regular", ""], ["other_info_bold", ""], ["other_info_red", ""], ["link_note", ""], ["en_source", ""], ["jp_source", ""], ["en_pdf", ""], ["jp_pdf", ""], ["en_precautions", ""]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "extraimgs" ("extraimg_name", "extraimage", "extraimg_description", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["extraimg_name", "Generic type"], ["extraimage", "meds2.jpg"], ["extraimg_description", "Health goth glossier plaid tilde before they sold out dreamcatcher sriracha meditation taxidermy letterpress listicle subway tile."], ["post_id", 8], ["created_at", "2019-03-09 02:55:16.091741"], ["updated_at", "2019-03-09 02:55:16.091741"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "infoimgs" ("infoimg_name", "infoimage", "infoimg_description", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["infoimg_name", "Analytical report"], ["infoimage", "generic.jpg"], ["infoimg_description", "WHO report release in 2019"], ["post_id", 8], ["created_at", "2019-03-09 02:55:16.095236"], ["updated_at", "2019-03-09 02:55:16.095236"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/8
+Completed 302 Found in 382ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/posts/8" for 127.0.0.1 at 2019-03-09 11:55:16 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = 2 LIMIT ?[0m  [["post_id", 8], ["LIMIT", 1]]
+  Rendered likes/_likes.html.erb (4.4ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExtraimg Load (0.2ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 8]]
+  [1m[36mInfoimg Load (0.3ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 8]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" LEFT OUTER JOIN "votes" ON "votes"."comment_id" = "comments"."id" WHERE "comments"."post_id" = ? GROUP BY "comments"."id" ORDER BY count(votes.id) desc[0m  [["post_id", 8]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (23.4ms)
+  Rendered posts/show.html.erb within layouts/application (59.9ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (13.8ms)
+  Rendered layouts/_footer.html.erb (2.8ms)
+Completed 200 OK in 254ms (Views: 243.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/posts/%E2%80%9C//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D" for 127.0.0.1 at 2019-03-09 11:55:16 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/posts/%E2%80%9C/pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/posts/8/edit" for 127.0.0.1 at 2019-03-09 11:55:34 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mExtraimg Load (0.3ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = 8[0m
+  [1m[36mExtraimg Load (0.2ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 8]]
+  [1m[36mInfoimg Load (0.2ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = 8[0m
+  [1m[36mInfoimg Load (0.1ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 8]]
+  Rendered posts/edit.html.erb within layouts/application (39.1ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (12.8ms)
+  Rendered layouts/_footer.html.erb (1.7ms)
+Completed 200 OK in 178ms (Views: 166.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/8/%E2%80%9C//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D" for 127.0.0.1 at 2019-03-09 11:55:35 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/posts/8/%E2%80%9C/pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/posts/8" for 127.0.0.1 at 2019-03-09 11:55:49 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.5ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = 2 LIMIT ?[0m  [["post_id", 8], ["LIMIT", 1]]
+  Rendered likes/_likes.html.erb (8.4ms)
+Started GET "/posts/%E2%80%9C//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D" for 127.0.0.1 at 2019-03-09 11:55:49 +0900
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExtraimg Load (0.2ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 8]]
+  [1m[36mInfoimg Load (0.2ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 8]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" LEFT OUTER JOIN "votes" ON "votes"."comment_id" = "comments"."id" WHERE "comments"."post_id" = ? GROUP BY "comments"."id" ORDER BY count(votes.id) desc[0m  [["post_id", 8]]
+  
+ActionController::RoutingError (No route matches [GET] "/posts/%E2%80%9C/pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D"):
+  Rendered collection of templates [0 times] (0.0ms)
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  Rendered comments/_form.html.erb (3.4ms)
+  Rendered posts/show.html.erb within layouts/application (61.8ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (11.5ms)
+  Rendered layouts/_footer.html.erb (1.3ms)
+Completed 200 OK in 799ms (Views: 783.4ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/posts/%E2%80%9C//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D" for 127.0.0.1 at 2019-03-09 11:55:49 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/posts/%E2%80%9C/pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/posts/8/edit" for 127.0.0.1 at 2019-03-09 11:55:52 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Started GET "/posts/8/%E2%80%9C//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D" for 127.0.0.1 at 2019-03-09 11:55:52 +0900
+  Rendering posts/edit.html.erb within layouts/application
+  
+ActionController::RoutingError (No route matches [GET] "/posts/8/%E2%80%9C/pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[36mExtraimg Load (0.3ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = 8[0m
+  [1m[36mExtraimg Load (0.1ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 8]]
+  [1m[36mInfoimg Load (0.3ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = 8[0m
+  [1m[36mInfoimg Load (0.1ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 8]]
+  Rendered posts/edit.html.erb within layouts/application (50.6ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (13.8ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 817ms (Views: 798.3ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/posts/8/%E2%80%9C//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D" for 127.0.0.1 at 2019-03-09 11:55:52 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/posts/8/%E2%80%9C/pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started PATCH "/posts/8" for 127.0.0.1 at 2019-03-09 11:55:56 +0900
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L55bJO5rDCtx6gt1b/Lzj0N9rFi5W4mOOeMXCXu4E5xkRU1FttXxCEUihtjaYLX+3l1XzlhC+OCGhhEeYLbr1g==", "post"=>{"category_id"=>"1", "title"=>"Machesto", "med_purpose"=>"", "medical_type"=>"", "indication"=>"", "description"=>"", "extraimgs_attributes"=>{"0"=>{"extraimg_name"=>"Generic type", "extraimg_description"=>"Health goth glossier plaid tilde before they sold out dreamcatcher sriracha meditation taxidermy letterpress listicle subway tile.", "_destroy"=>"1", "id"=>"2"}, "1"=>{"extraimg_name"=>"", "extraimg_description"=>"", "_destroy"=>"0"}}, "dose"=>"", "active_regular"=>"Four loko chicharrones 3 wolf moon small batch hell of, DIY ethical gentrify neutra jianbing vice distillery hammock taiyaki. Kitsch ethical direct trade chillwave. Woke succulents next level gochujang 8-bit kickstarter. ", "active_large"=>"", "active_red"=>"", "attn_large"=>"", "attn_bold"=>"", "attn_regular"=>"", "attn_red"=>"", "inactive_regular"=>"Pabst synth stumptown chartreuse hell of. Artisan trust fund thundercats, typewriter man bun poutine hexagon vape coloring book shoreditch next level gastropub sartorial.", "inactive_bold"=>"", "inactive_red"=>"", "instructions_regular"=>"Taiyaki chicharrones tilde williamsburg. Franzen leggings cloud bread blue bottle tbh keytar cardigan pinterest subway tile pork belly put a bird on it YOLO. Irony tumblr XOXO fam, fingerstache 8-bit pour-over 3 wolf moon vaporware roof party cronut vape. Authentic selfies man braid, schlitz next level church-key tote bag. Vice hammock selfies gentrify man bun vinyl truffaut kale chips. Aesthetic marfa flexitarian drinking vinegar roof party narwhal. Craft beer kitsch cronut skateboard tilde unicorn kickstarter.", "instructions_bold"=>"", "instructions_red"=>"", "other_info_red"=>"", "other_info_bold"=>"", "other_info_regular"=>"", "en_precautions"=>"", "en_source"=>"", "jp_source"=>"", "en_pdf"=>"", "jp_pdf"=>"", "link_note"=>"", "infoimgs_attributes"=>{"0"=>{"infoimg_name"=>"Analytical report", "infoimg_description"=>"WHO report release in 2019", "_destroy"=>"0", "id"=>"1"}, "1"=>{"infoimg_name"=>"", "infoimg_description"=>"", "_destroy"=>"0"}}}, "commit"=>"Edit complete", "id"=>"8"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExtraimg Load (1.2ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ? AND "extraimgs"."id" = 2[0m  [["post_id", 8]]
+  [1m[36mInfoimg Load (0.3ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ? AND "infoimgs"."id" = 1[0m  [["post_id", 8]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "extraimgs" WHERE "extraimgs"."id" = ?[0m  [["id", 2]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/8
+Completed 302 Found in 41ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/posts/8" for 127.0.0.1 at 2019-03-09 11:55:56 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = 2 LIMIT ?[0m  [["post_id", 8], ["LIMIT", 1]]
+  Rendered likes/_likes.html.erb (10.6ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExtraimg Load (0.2ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 8]]
+  [1m[36mInfoimg Load (0.1ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 8]]
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" LEFT OUTER JOIN "votes" ON "votes"."comment_id" = "comments"."id" WHERE "comments"."post_id" = ? GROUP BY "comments"."id" ORDER BY count(votes.id) desc[0m  [["post_id", 8]]
+  Rendered collection of templates [0 times] (0.1ms)
+  Rendered comments/_form.html.erb (4.0ms)
+  Rendered posts/show.html.erb within layouts/application (44.7ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (10.2ms)
+  Rendered layouts/_footer.html.erb (8.4ms)
+Completed 200 OK in 181ms (Views: 173.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/posts/%E2%80%9C//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D" for 127.0.0.1 at 2019-03-09 11:55:56 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/posts/%E2%80%9C/pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/posts/8/edit" for 127.0.0.1 at 2019-03-09 11:56:01 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mExtraimg Load (0.2ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = 8[0m
+  [1m[36mExtraimg Load (0.1ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 8]]
+  [1m[36mInfoimg Load (0.4ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = 8[0m
+  [1m[36mInfoimg Load (0.3ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 8]]
+  Rendered posts/edit.html.erb within layouts/application (34.4ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (7.6ms)
+  Rendered layouts/_footer.html.erb (1.7ms)
+Completed 200 OK in 178ms (Views: 160.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/8/%E2%80%9C//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D" for 127.0.0.1 at 2019-03-09 11:56:02 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/posts/8/%E2%80%9C/pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started PATCH "/posts/8" for 127.0.0.1 at 2019-03-09 11:56:35 +0900
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ae0fxtGIlXBP4CKbZ6EIoKa670QZVNRYm6H+t4rSt7MiNgmniTZoU3sorzbSM07RO5oU0vhNpTYkxPigkdxP+Q==", "post"=>{"category_id"=>"1", "title"=>"Machesto", "med_purpose"=>"", "medical_type"=>"", "indication"=>"", "description"=>"", "extraimgs_attributes"=>{"0"=>{"extraimg_name"=>"Generic type", "extraimage"=>#<ActionDispatch::Http::UploadedFile:0x00007f83a7314890 @tempfile=#<Tempfile:/var/folders/mr/zg4zppzx36d64ydzhpcdl41h0000gn/T/RackMultipart20190309-1811-msha2e.jpeg>, @original_filename="meds6.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[extraimgs_attributes][0][extraimage]\"; filename=\"meds6.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "extraimg_description"=>"Health goth glossier plaid tilde before they sold out dreamcatcher sriracha meditation taxidermy letterpress listicle subway tile.", "_destroy"=>"0"}}, "dose"=>"", "active_regular"=>"Four loko chicharrones 3 wolf moon small batch hell of, DIY ethical gentrify neutra jianbing vice distillery hammock taiyaki. Kitsch ethical direct trade chillwave. Woke succulents next level gochujang 8-bit kickstarter. ", "active_large"=>"", "active_red"=>"", "attn_large"=>"", "attn_bold"=>"", "attn_regular"=>"", "attn_red"=>"", "inactive_regular"=>"Pabst synth stumptown chartreuse hell of. Artisan trust fund thundercats, typewriter man bun poutine hexagon vape coloring book shoreditch next level gastropub sartorial.", "inactive_bold"=>"", "inactive_red"=>"", "instructions_regular"=>"Taiyaki chicharrones tilde williamsburg. Franzen leggings cloud bread blue bottle tbh keytar cardigan pinterest subway tile pork belly put a bird on it YOLO. Irony tumblr XOXO fam, fingerstache 8-bit pour-over 3 wolf moon vaporware roof party cronut vape. Authentic selfies man braid, schlitz next level church-key tote bag. Vice hammock selfies gentrify man bun vinyl truffaut kale chips. Aesthetic marfa flexitarian drinking vinegar roof party narwhal. Craft beer kitsch cronut skateboard tilde unicorn kickstarter.", "instructions_bold"=>"", "instructions_red"=>"", "other_info_red"=>"", "other_info_bold"=>"", "other_info_regular"=>"", "en_precautions"=>"", "en_source"=>"", "jp_source"=>"", "en_pdf"=>"", "jp_pdf"=>"", "link_note"=>"", "infoimgs_attributes"=>{"0"=>{"infoimg_name"=>"Analytical report", "infoimg_description"=>"WHO report release in 2019", "_destroy"=>"0", "id"=>"1"}, "1"=>{"infoimg_name"=>"", "infoimg_description"=>"", "_destroy"=>"0"}}}, "commit"=>"Edit complete", "id"=>"8"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mInfoimg Load (1.3ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ? AND "infoimgs"."id" = 1[0m  [["post_id", 8]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "extraimgs" ("extraimg_name", "extraimage", "extraimg_description", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["extraimg_name", "Generic type"], ["extraimage", "meds6.jpeg"], ["extraimg_description", "Health goth glossier plaid tilde before they sold out dreamcatcher sriracha meditation taxidermy letterpress listicle subway tile."], ["post_id", 8], ["created_at", "2019-03-09 02:56:35.488075"], ["updated_at", "2019-03-09 02:56:35.488075"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/8
+Completed 302 Found in 173ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/posts/8" for 127.0.0.1 at 2019-03-09 11:56:35 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = 2 LIMIT ?[0m  [["post_id", 8], ["LIMIT", 1]]
+  Rendered likes/_likes.html.erb (5.4ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExtraimg Load (0.1ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 8]]
+  [1m[36mInfoimg Load (0.1ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 8]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" LEFT OUTER JOIN "votes" ON "votes"."comment_id" = "comments"."id" WHERE "comments"."post_id" = ? GROUP BY "comments"."id" ORDER BY count(votes.id) desc[0m  [["post_id", 8]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (4.1ms)
+  Rendered posts/show.html.erb within layouts/application (24.2ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (6.2ms)
+  Rendered layouts/_footer.html.erb (3.8ms)
+Completed 200 OK in 140ms (Views: 133.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/%E2%80%9C//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D" for 127.0.0.1 at 2019-03-09 11:56:35 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/posts/%E2%80%9C/pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/posts/new" for 127.0.0.1 at 2019-03-09 11:56:54 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (18.4ms)
+  Rendered posts/new.html.erb within layouts/application (22.8ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (5.6ms)
+  Rendered layouts/_footer.html.erb (1.8ms)
+Completed 200 OK in 125ms (Views: 114.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/%E2%80%9C//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D" for 127.0.0.1 at 2019-03-09 11:56:54 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/posts/%E2%80%9C/pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/posts" for 127.0.0.1 at 2019-03-09 11:59:31 +0900
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qpr3RD6s5K2/Apoi0Rb9OeqtG3Q/+FbUEv1D5eoBAluH+gSgb7PdCPXbPEGXCNUGn6vzWt1r3v9EtFmpHI1Ntw==", "category_id"=>"3", "post"=>{"title"=>"Pheromin", "med_purpose"=>"", "medical_type"=>"ur-over 3 wolf", "indication"=>"", "description"=>"s tilde williamsburg.", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f83aa0ab858 @tempfile=#<Tempfile:/var/folders/mr/zg4zppzx36d64ydzhpcdl41h0000gn/T/RackMultipart20190309-1811-sw9byf.jpg>, @original_filename="sample_med33.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"sample_med33.jpg\"\r\nContent-Type: image/jpeg\r\n">, "extraimgs_attributes"=>{"0"=>{"extraimg_name"=>"Generic type", "extraimage"=>#<ActionDispatch::Http::UploadedFile:0x00007f83aa0ab6a0 @tempfile=#<Tempfile:/var/folders/mr/zg4zppzx36d64ydzhpcdl41h0000gn/T/RackMultipart20190309-1811-w8i8lz.jpg>, @original_filename="sample_med_03.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[extraimgs_attributes][0][extraimage]\"; filename=\"sample_med_03.jpg\"\r\nContent-Type: image/jpeg\r\n">, "extraimg_description"=>"Just released new medication", "_destroy"=>"0"}}, "dose"=>"", "active_regular"=>"", "active_large"=>"", "active_red"=>"", "attn_large"=>"", "attn_bold"=>"", "attn_regular"=>"", "attn_red"=>"", "inactive_regular"=>"Four loko chicharrones 3 wolf moon small batch hell of, DIY ethical gentrify neutra jianbing vice distillery hammock taiyaki.", "inactive_red"=>"", "inactive_bold"=>"", "instructions_regular"=>"Synth kombucha williamsburg paleo wolf. Williamsburg 3 wolf moon slow-carb mumblecore authentic retro tilde intelligentsia deep v mustache. Ramps dreamcatcher ethical, jean shorts raw denim microdosing vape pickled adaptogen direct trade af. ", "instructions_red"=>"", "instructions_bold"=>"", "other_info_red"=>"", "other_info_bold"=>"", "other_info_regular"=>"", "en_precautions"=>"", "en_source"=>"", "jp_source"=>"", "en_pdf"=>"", "jp_pdf"=>"", "link_note"=>"", "infoimgs_attributes"=>{"0"=>{"infoimg_name"=>"Recommended by UN", "infoimage"=>#<ActionDispatch::Http::UploadedFile:0x00007f83aa0aae08 @tempfile=#<Tempfile:/var/folders/mr/zg4zppzx36d64ydzhpcdl41h0000gn/T/RackMultipart20190309-1811-psb8fe.jpg>, @original_filename="sample_med_02.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[infoimgs_attributes][0][infoimage]\"; filename=\"sample_med_02.jpg\"\r\nContent-Type: image/jpeg\r\n">, "infoimg_description"=>"Vexillologist fam salvia brooklyn unicorn stumptown meh photo booth helvetica hell of. Fixie lo-fi vice, selvage fingerstache tattooed lumbersexual chicharrones next level kitsch church-key cornhole.", "_destroy"=>"0"}}}, "commit"=>"Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at", "image", "user_id", "category_id", "med_purpose", "medical_type", "indication", "attn_large", "attn_bold", "attn_regular", "attn_red", "active_large", "active_regular", "active_red", "dose", "inactive_regular", "inactive_bold", "inactive_red", "instructions_regular", "instructions_bold", "instructions_red", "other_info_regular", "other_info_bold", "other_info_red", "link_note", "en_source", "jp_source", "en_pdf", "jp_pdf", "en_precautions") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Pheromin"], ["description", "s tilde williamsburg."], ["created_at", "2019-03-09 02:59:31.403464"], ["updated_at", "2019-03-09 02:59:31.403464"], ["image", "sample_med33.jpg"], ["user_id", 2], ["category_id", 3], ["med_purpose", ""], ["medical_type", "ur-over 3 wolf"], ["indication", ""], ["attn_large", ""], ["attn_bold", ""], ["attn_regular", ""], ["attn_red", ""], ["active_large", ""], ["active_regular", ""], ["active_red", ""], ["dose", ""], ["inactive_regular", "Four loko chicharrones 3 wolf moon small batch hell of, DIY ethical gentrify neutra jianbing vice distillery hammock taiyaki."], ["inactive_bold", ""], ["inactive_red", ""], ["instructions_regular", "Synth kombucha williamsburg paleo wolf. Williamsburg 3 wolf moon slow-carb mumblecore authentic retro tilde intelligentsia deep v mustache. Ramps dreamcatcher ethical, jean shorts raw denim microdosing vape pickled adaptogen direct trade af. "], ["instructions_bold", ""], ["instructions_red", ""], ["other_info_regular", ""], ["other_info_bold", ""], ["other_info_red", ""], ["link_note", ""], ["en_source", ""], ["jp_source", ""], ["en_pdf", ""], ["jp_pdf", ""], ["en_precautions", ""]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "extraimgs" ("extraimg_name", "extraimage", "extraimg_description", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["extraimg_name", "Generic type"], ["extraimage", "sample_med_03.jpg"], ["extraimg_description", "Just released new medication"], ["post_id", 9], ["created_at", "2019-03-09 02:59:31.407173"], ["updated_at", "2019-03-09 02:59:31.407173"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "infoimgs" ("infoimg_name", "infoimage", "infoimg_description", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["infoimg_name", "Recommended by UN"], ["infoimage", "sample_med_02.jpg"], ["infoimg_description", "Vexillologist fam salvia brooklyn unicorn stumptown meh photo booth helvetica hell of. Fixie lo-fi vice, selvage fingerstache tattooed lumbersexual chicharrones next level kitsch church-key cornhole."], ["post_id", 9], ["created_at", "2019-03-09 02:59:31.409953"], ["updated_at", "2019-03-09 02:59:31.409953"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/9
+Completed 302 Found in 288ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/posts/9" for 127.0.0.1 at 2019-03-09 11:59:31 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = 2 LIMIT ?[0m  [["post_id", 9], ["LIMIT", 1]]
+  Rendered likes/_likes.html.erb (4.3ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mExtraimg Load (0.2ms)[0m  [1m[34mSELECT "extraimgs".* FROM "extraimgs" WHERE "extraimgs"."post_id" = ?[0m  [["post_id", 9]]
+  [1m[36mInfoimg Load (0.1ms)[0m  [1m[34mSELECT "infoimgs".* FROM "infoimgs" WHERE "infoimgs"."post_id" = ?[0m  [["post_id", 9]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" LEFT OUTER JOIN "votes" ON "votes"."comment_id" = "comments"."id" WHERE "comments"."post_id" = ? GROUP BY "comments"."id" ORDER BY count(votes.id) desc[0m  [["post_id", 9]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.5ms)
+  Rendered posts/show.html.erb within layouts/application (21.3ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (13.3ms)
+  Rendered layouts/_footer.html.erb (8.9ms)
+Completed 200 OK in 163ms (Views: 157.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/%E2%80%9C//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D" for 127.0.0.1 at 2019-03-09 11:59:31 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/posts/%E2%80%9C/pagead2.googlesyndication.com/pagead/js/adsbygoogle.js%E2%80%9D"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
