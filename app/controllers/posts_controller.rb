@@ -45,8 +45,6 @@ class PostsController < ApplicationController
 			redirect_to @post
   	else
   		@categories = Category.all.map{ |c| [c.name, c.id]}
-  		@post.extraimgs.build
-	  	@post.infoimgs.build
   		render 'new'
   	end
 	end
