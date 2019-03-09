@@ -61,7 +61,7 @@ class PostsController < ApplicationController
 
 	def update
 		 @post.category_id = params[:category_id]
-		 
+
   	if @post.update(post_params)
   		redirect_to post_path
   	else
