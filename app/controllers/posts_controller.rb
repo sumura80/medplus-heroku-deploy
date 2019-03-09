@@ -65,11 +65,6 @@ class PostsController < ApplicationController
   	if @post.update(post_params)
   		redirect_to post_path
   	else
-  		@categories = Category.all.map{ |c| [c.name, c.id]}
-	    @extraimgs = Extraimg.where(post_id: [@post.id])
-	    @infoimgs = Infoimg.where(post_id: [@post.id])
-  		@post.extraimgs.build
-	    @post.infoimgs.build
   		render 'edit'
   	end
 	end
