@@ -51,5 +51,8 @@ Rails.application.routes.draw do
   #controllerはapplication_controllerのsearchメソッド
   get 'search', to: 'posts#search'
 
+  #「/sitemap」でsitemap.xml.gzにアクセスできるように、「config/routes.rb」に以下を追記
+  get 'sitemap', to: redirect('https://s3-ap-northeast-1.amazonaws.com/AMAZON_S3_BUCKET_NAME/sitemaps/sitemap.xml.gz')
+
 
 end
