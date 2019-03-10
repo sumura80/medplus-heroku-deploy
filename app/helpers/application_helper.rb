@@ -28,7 +28,7 @@ def default_meta_tags
       locale: "ja_JP" #リソースの言語を設定
     },
     twitter: {
-      site: '@lifeabroadjpn' #'@ツイッターのアカウント名',
+      site: '@lifeabroadjpn', #'@ツイッターのアカウント名',
       card: 'summary',
       image: image_url('favicon.png')# ツイッター専用にイメージを設定する場合
   },
