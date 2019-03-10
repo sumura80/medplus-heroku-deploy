@@ -27,3 +27,7 @@
 
 # Ignore application configuration to set up password and 定数
 /config/application.yml
+
+#Ignore sitemap.xml.gz in plublic
+public/sitemap.xml
+public/sitemap.xml.gz

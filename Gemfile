@@ -63,6 +63,12 @@ gem 'fog'
 #Google Analytic gem
 gem 'google-analytics-rails'
 
+#サイトマップを作成
+#public/':+ sitemap.xml.gz保存
+gem 'sitemap_generator'
+
+#S3へのアップロード
+gem 'aws-sdk'
 
 group :development, :test do
   #Debuggのために追加
