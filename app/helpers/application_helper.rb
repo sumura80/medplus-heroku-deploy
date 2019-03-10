@@ -2,8 +2,8 @@ module ApplicationHelper
 
 def default_meta_tags
   {  
-  	site: "Life Abroad Med+", #'サイト名' 
-    title:  "Your community guide to OTC medications in Japan | Life Abroad Med+", #タイトルを設定
+  	site: "Med+", #'サイト名' 
+    title:  "Life Abroad Med+", #タイトルを設定
     reverse: true, #trueを設定することで「タイトル | サイト名」の並びで出力してくれる
     description: 'Med+ is your source for information on over-the-counter medications in Japan, complete with product descriptions, ingredients, instructions, and community feedback.',
     keywords: 'medicine in Japan, medicine, allergy, pain relief, pain relievers, pain killers, cold, flu, Japan, Tokyo, digestive, topical, medication',
