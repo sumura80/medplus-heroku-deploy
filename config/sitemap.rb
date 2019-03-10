@@ -13,7 +13,6 @@ SitemapGenerator::Sitemap.sitemaps_host = "https://s3-ap-northeast-1.amazonaws.c
   aws_region: ENV['AMAZON_S3_REGION'],
 )
 
-
 SitemapGenerator::Sitemap.create do
 
   #下記を追加
