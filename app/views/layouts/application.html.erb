@@ -16,6 +16,9 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <!-- Google analytics tracking number -->
    <%= analytics_init if Rails.env.production? %>
+
+   <!-- meta data info is stored in helpers/application_helper.rb ↓ -->
+   <%= display_meta_tags(default_meta_tags) %>
 </head>
 
 <body>

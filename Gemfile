@@ -63,6 +63,8 @@ gem 'fog'
 #Google Analytic gem
 gem 'google-analytics-rails'
 
+gem 'meta-tags'
+
 
 group :development, :test do
   #Debuggのために追加

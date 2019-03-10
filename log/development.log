@@ -30832,3 +30832,875 @@ Processing by CategoriesController#index as HTML
 Completed 200 OK in 759ms (Views: 700.2ms | ActiveRecord: 4.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-03-10 07:34:51 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mCategory Load (2.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (398.0ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (19.3ms)
+  Rendered layouts/_footer.html.erb (2.9ms)
+Completed 200 OK in 666ms (Views: 622.2ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:20:49 +0900
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:9: syntax error, unexpected '\n', expecting =>
+...ワードを「,」で区切る
+...                               ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:13: syntax error, unexpected ',', expecting keyword_end
+    ],
+     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:14: syntax error, unexpected ',', expecting keyword_end
+...index: ! Rails.env.production?, # production環境以外はn...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:16: syntax error, unexpected tLABEL, expecting '='
+    charset: "UTF-8",#文字コードの...
+    ^~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:16: syntax error, unexpected ',', expecting keyword_end
+    charset: "UTF-8",#文字コードの設定
+                    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:17: syntax error, unexpected ',', expecting keyword_end
+    separator: '|', #ページ名とサイト名...
+                  ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+...なら「:description」とする
+...                                 ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+      type: "website", #[‘website’, ‘article...
+                     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+      image: image_url("sample_og.png"), ...
+      ^~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+...ge: image_url("sample_og.png"), #シェア用の画像を設...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+    },
+    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+...("sample_twitter.png")　　　# ツイッター専用にイ...
+...                      ^~~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end):
+  
+app/helpers/application_helper.rb:9: syntax error, unexpected '\n', expecting =>
+app/helpers/application_helper.rb:13: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:14: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:16: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:16: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:17: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/categories_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:21:57 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:9: syntax error, unexpected '\n', expecting =>
+...   "rails,seo,meta-tags",　　
+...                               ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:13: syntax error, unexpected ',', expecting keyword_end
+    ],
+     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:14: syntax error, unexpected ',', expecting keyword_end
+...index: ! Rails.env.production?, # production環境以外はn...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:16: syntax error, unexpected tLABEL, expecting '='
+    charset: "UTF-8",#文字コードの...
+    ^~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:16: syntax error, unexpected ',', expecting keyword_end
+    charset: "UTF-8",#文字コードの設定
+                    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:17: syntax error, unexpected ',', expecting keyword_end
+    separator: '|', #ページ名とサイト名...
+                  ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+...なら「:description」とする
+...                                 ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+      type: "website", #[‘website’, ‘article...
+                     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+      image: image_url("sample_og.png"), ...
+      ^~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+...ge: image_url("sample_og.png"), #シェア用の画像を設...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+    },
+    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+...("sample_twitter.png")　　　# ツイッター専用にイ...
+...                      ^~~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end):
+  
+app/helpers/application_helper.rb:9: syntax error, unexpected '\n', expecting =>
+app/helpers/application_helper.rb:13: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:14: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:16: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:16: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:17: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/categories_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:21:57 +0900
+  
+SyntaxError (/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:9: syntax error, unexpected '\n', expecting =>
+...   "rails,seo,meta-tags",　　
+...                               ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:13: syntax error, unexpected ',', expecting keyword_end
+    ],
+     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:14: syntax error, unexpected ',', expecting keyword_end
+...index: ! Rails.env.production?, # production環境以外はn...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:16: syntax error, unexpected tLABEL, expecting '='
+    charset: "UTF-8",#文字コードの...
+    ^~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:16: syntax error, unexpected ',', expecting keyword_end
+    charset: "UTF-8",#文字コードの設定
+                    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:17: syntax error, unexpected ',', expecting keyword_end
+    separator: '|', #ページ名とサイト名...
+                  ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+...なら「:description」とする
+...                                 ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+      type: "website", #[‘website’, ‘article...
+                     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+      image: image_url("sample_og.png"), ...
+      ^~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+...ge: image_url("sample_og.png"), #シェア用の画像を設...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+    },
+    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+...("sample_twitter.png")　　　# ツイッター専用にイ...
+...                      ^~~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end):
+  
+app/helpers/application_helper.rb:9: syntax error, unexpected '\n', expecting =>
+app/helpers/application_helper.rb:13: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:14: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:16: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:16: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:17: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/categories_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:21:59 +0900
+  
+SyntaxError (/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:9: syntax error, unexpected '\n', expecting =>
+...   "rails,seo,meta-tags",　　
+...                               ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:13: syntax error, unexpected ',', expecting keyword_end
+    ],
+     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:14: syntax error, unexpected ',', expecting keyword_end
+...index: ! Rails.env.production?, # production環境以外はn...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:16: syntax error, unexpected tLABEL, expecting '='
+    charset: "UTF-8",#文字コードの...
+    ^~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:16: syntax error, unexpected ',', expecting keyword_end
+    charset: "UTF-8",#文字コードの設定
+                    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:17: syntax error, unexpected ',', expecting keyword_end
+    separator: '|', #ページ名とサイト名...
+                  ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+...なら「:description」とする
+...                                 ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+      type: "website", #[‘website’, ‘article...
+                     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+      image: image_url("sample_og.png"), ...
+      ^~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+...ge: image_url("sample_og.png"), #シェア用の画像を設...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+    },
+    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+...("sample_twitter.png")　　　# ツイッター専用にイ...
+...                      ^~~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end):
+  
+app/helpers/application_helper.rb:9: syntax error, unexpected '\n', expecting =>
+app/helpers/application_helper.rb:13: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:14: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:16: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:16: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:17: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/categories_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:22:17 +0900
+  
+SyntaxError (/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:9: syntax error, unexpected '\n', expecting =>
+...s: "rails,seo,meta-tags",　　
+...                               ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:13: syntax error, unexpected ',', expecting keyword_end
+    ],
+     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:14: syntax error, unexpected ',', expecting keyword_end
+...index: ! Rails.env.production?, # production環境以外はn...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:16: syntax error, unexpected tLABEL, expecting '='
+    charset: "UTF-8",#文字コードの...
+    ^~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:16: syntax error, unexpected ',', expecting keyword_end
+    charset: "UTF-8",#文字コードの設定
+                    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:17: syntax error, unexpected ',', expecting keyword_end
+    separator: '|', #ページ名とサイト名...
+                  ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+...なら「:description」とする
+...                                 ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+      type: "website", #[‘website’, ‘article...
+                     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+      image: image_url("sample_og.png"), ...
+      ^~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+...ge: image_url("sample_og.png"), #シェア用の画像を設...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+    },
+    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+...("sample_twitter.png")　　　# ツイッター専用にイ...
+...                      ^~~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end):
+  
+app/helpers/application_helper.rb:9: syntax error, unexpected '\n', expecting =>
+app/helpers/application_helper.rb:13: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:14: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:16: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:16: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:17: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/categories_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:22:47 +0900
+  
+SyntaxError (/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:9: syntax error, unexpected '\n', expecting =>
+...words: 'キーワード',　　
+...                               ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:13: syntax error, unexpected ',', expecting keyword_end
+    ],
+     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:14: syntax error, unexpected ',', expecting keyword_end
+...index: ! Rails.env.production?, # production環境以外はn...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:16: syntax error, unexpected tLABEL, expecting '='
+    charset: "UTF-8",#文字コードの...
+    ^~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:16: syntax error, unexpected ',', expecting keyword_end
+    charset: "UTF-8",#文字コードの設定
+                    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:17: syntax error, unexpected ',', expecting keyword_end
+    separator: '|', #ページ名とサイト名...
+                  ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+...なら「:description」とする
+...                                 ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+      type: "website", #[‘website’, ‘article...
+                     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+      image: image_url("sample_og.png"), ...
+      ^~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+...ge: image_url("sample_og.png"), #シェア用の画像を設...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+    },
+    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+...("sample_twitter.png")　　　# ツイッター専用にイ...
+...                      ^~~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end):
+  
+app/helpers/application_helper.rb:9: syntax error, unexpected '\n', expecting =>
+app/helpers/application_helper.rb:13: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:14: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:16: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:16: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:17: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/categories_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:23:04 +0900
+  
+SyntaxError (/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:9: syntax error, unexpected '\n', expecting =>
+...keywords: 'キーワード',　
+...                               ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:13: syntax error, unexpected ',', expecting keyword_end
+    ],
+     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:14: syntax error, unexpected ',', expecting keyword_end
+...index: ! Rails.env.production?, # production環境以外はn...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:16: syntax error, unexpected tLABEL, expecting '='
+    charset: "UTF-8",#文字コードの...
+    ^~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:16: syntax error, unexpected ',', expecting keyword_end
+    charset: "UTF-8",#文字コードの設定
+                    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:17: syntax error, unexpected ',', expecting keyword_end
+    separator: '|', #ページ名とサイト名...
+                  ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+...なら「:description」とする
+...                                 ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+      type: "website", #[‘website’, ‘article...
+                     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+      image: image_url("sample_og.png"), ...
+      ^~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+...ge: image_url("sample_og.png"), #シェア用の画像を設...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+    },
+    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+...("sample_twitter.png")　　　# ツイッター専用にイ...
+...                      ^~~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end):
+  
+app/helpers/application_helper.rb:9: syntax error, unexpected '\n', expecting =>
+app/helpers/application_helper.rb:13: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:14: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:16: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:16: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:17: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/categories_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:23:13 +0900
+  
+SyntaxError (/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:9: syntax error, unexpected '\n', expecting =>
+...keywords: 'キーワード',　
+...                               ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:13: syntax error, unexpected ',', expecting keyword_end
+    ],
+     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:14: syntax error, unexpected ',', expecting keyword_end
+...index: ! Rails.env.production?, # production環境以外はn...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:16: syntax error, unexpected tLABEL, expecting '='
+    charset: "UTF-8",#文字コードの...
+    ^~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:16: syntax error, unexpected ',', expecting keyword_end
+    charset: "UTF-8",#文字コードの設定
+                    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:17: syntax error, unexpected ',', expecting keyword_end
+    separator: '|', #ページ名とサイト名...
+                  ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+...なら「:description」とする
+...                                 ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+      type: "website", #[‘website’, ‘article...
+                     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+      image: image_url("sample_og.png"), ...
+      ^~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+...ge: image_url("sample_og.png"), #シェア用の画像を設...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+    },
+    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+...("sample_twitter.png")　　　# ツイッター専用にイ...
+...                      ^~~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end):
+  
+app/helpers/application_helper.rb:9: syntax error, unexpected '\n', expecting =>
+app/helpers/application_helper.rb:13: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:14: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:16: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:16: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:17: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/categories_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:23:18 +0900
+  
+SyntaxError (/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+...なら「:description」とする
+...                                 ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+      type: "website", #[‘website’, ‘article...
+                     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+      image: image_url("sample_og.png"), ...
+      ^~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+...ge: image_url("sample_og.png"), #シェア用の画像を設...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+    },
+    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+...("sample_twitter.png")　　　# ツイッター専用にイ...
+...                      ^~~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end):
+  
+app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/categories_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:23:39 +0900
+  
+SyntaxError (/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:10: syntax error, unexpected tIDENTIFIER, expecting '}'
+    icon: [
+    ^~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:13: syntax error, unexpected ',', expecting keyword_end
+    ],
+     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:14: syntax error, unexpected ',', expecting keyword_end
+...index: ! Rails.env.production?, # production環境以外はn...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:16: syntax error, unexpected tLABEL, expecting '='
+    charset: "UTF-8",#文字コードの...
+    ^~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:16: syntax error, unexpected ',', expecting keyword_end
+    charset: "UTF-8",#文字コードの設定
+                    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:17: syntax error, unexpected ',', expecting keyword_end
+    separator: '|', #ページ名とサイト名...
+                  ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+...なら「:description」とする
+...                                 ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+      type: "website", #[‘website’, ‘article...
+                     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+      image: image_url("sample_og.png"), ...
+      ^~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+...ge: image_url("sample_og.png"), #シェア用の画像を設...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+    },
+    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+...("sample_twitter.png")　　　# ツイッター専用にイ...
+...                      ^~~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end):
+  
+app/helpers/application_helper.rb:10: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/helpers/application_helper.rb:13: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:14: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:16: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:16: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:17: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/categories_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:23:46 +0900
+  
+SyntaxError (/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+...なら「:description」とする
+...                                 ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+      type: "website", #[‘website’, ‘article...
+                     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+      image: image_url("sample_og.png"), ...
+      ^~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+...ge: image_url("sample_og.png"), #シェア用の画像を設...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+    },
+    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+...("sample_twitter.png")　　　# ツイッター専用にイ...
+...                      ^~~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end):
+  
+app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/categories_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:24:04 +0900
+  
+SyntaxError (/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+...なら「:description」とする
+...                                 ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+      type: "website", #[‘website’, ‘article...
+                     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+      image: image_url("sample_og.png"), ...
+      ^~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+...ge: image_url("sample_og.png"), #シェア用の画像を設...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+    },
+    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+...("sample_twitter.png")　　　# ツイッター専用にイ...
+...                      ^~~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end):
+  
+app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/categories_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:24:22 +0900
+  
+SyntaxError (/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+...なら「:description」とする
+...                                 ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+      type: "website", #[‘website’, ‘article...
+                     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+      image: image_url("sample_og.png"), ...
+      ^~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+...ge: image_url("sample_og.png"), #シェア用の画像を設...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+    },
+    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+...("sample_twitter.png")　　　# ツイッター専用にイ...
+...                      ^~~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end):
+  
+app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/categories_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:24:42 +0900
+  
+SyntaxError (/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+...なら「:description」とする
+...                                 ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+      type: "website", #[‘website’, ‘article...
+                     ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+      image: image_url("sample_og.png"), ...
+      ^~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+...ge: image_url("sample_og.png"), #シェア用の画像を設...
+...                              ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+    },
+    ^
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+...("sample_twitter.png")　　　# ツイッター専用にイ...
+...                      ^~~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end):
+  
+app/helpers/application_helper.rb:24: syntax error, unexpected '\n', expecting =>
+app/helpers/application_helper.rb:25: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:27: syntax error, unexpected tLABEL, expecting '='
+app/helpers/application_helper.rb:27: syntax error, unexpected ',', expecting keyword_end
+app/helpers/application_helper.rb:29: syntax error, unexpected '}', expecting keyword_end
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/categories_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:25:11 +0900
+  
+SyntaxError (/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+...("sample_twitter.png")　　　# ツイッター専用にイ...
+...                      ^~~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end):
+  
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/categories_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:25:38 +0900
+  
+SyntaxError (/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+      image: image_url("sample_twitter.p...
+      ^~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+...("sample_twitter.png")　　　# ツイッター専用にイ...
+...                      ^~~~~~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end):
+  
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+app/helpers/application_helper.rb:38: syntax error, unexpected '}', expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/categories_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:26:20 +0900
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mPost Load (5.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (722.2ms)
+Completed 500 Internal Server Error in 958ms (ActiveRecord: 10.0ms)
+
+
+  
+ActionView::Template::Error (The asset "favicon.ico" is not present in the asset pipeline.):
+    18:    <%= analytics_init if Rails.env.production? %>
+    19: 
+    20:    <!-- meta data info is stored in helpers/application_helper.rb ↓ -->
+    21:    <%= display_meta_tags(default_meta_tags) %>
+    22: </head>
+    23: 
+    24: <body>
+  
+app/helpers/application_helper.rb:11:in `default_meta_tags'
+app/views/layouts/application.html.erb:21:in `_app_views_layouts_application_html_erb___4483637949548155143_70327361004220'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:27:11 +0900
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (84.2ms)
+Completed 500 Internal Server Error in 206ms (ActiveRecord: 4.4ms)
+
+
+  
+ActionView::Template::Error (The asset "sample.png" is not present in the asset pipeline.):
+    18:    <%= analytics_init if Rails.env.production? %>
+    19: 
+    20:    <!-- meta data info is stored in helpers/application_helper.rb ↓ -->
+    21:    <%= display_meta_tags(default_meta_tags) %>
+    22: </head>
+    23: 
+    24: <body>
+  
+app/helpers/application_helper.rb:12:in `default_meta_tags'
+app/views/layouts/application.html.erb:21:in `_app_views_layouts_application_html_erb___4483637949548155143_70327373334600'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:27:55 +0900
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (102.2ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (11.4ms)
+  Rendered layouts/_footer.html.erb (1.6ms)
+Completed 200 OK in 252ms (Views: 225.0ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:49:21 +0900
+  
+SyntaxError (/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+      image: image_url("sample_twitter.p...
+      ^~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+...("sample_twitter.png")　　　# ツイッター専用にイ...
+...                      ^~~~~~~~~):
+  
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/categories_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:50:15 +0900
+  
+SyntaxError (/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+      image: image_url("sample_twitter.p...
+      ^~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+...("sample_twitter.png")　　　# ツイッター専用にイ...
+...                      ^~~~~~~~~):
+  
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/categories_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:50:31 +0900
+  
+SyntaxError (/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+      image: image_url("sample_twitter.p...
+      ^~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+...("sample_twitter.png")　　　# ツイッター専用にイ...
+...                      ^~~~~~~~~):
+  
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/categories_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:50:56 +0900
+  
+SyntaxError (/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+      image: image_url('favicon.pnpn')...
+      ^~~~~
+/Users/susumu/code_folder/med_plus_lifeabroad/medplus-production/app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+...ge_url('favicon.pnpn')　　　# ツイッター専用にイ...
+...                      ^~~~~~~~~):
+  
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/helpers/application_helper.rb:33: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/categories_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:51:11 +0900
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (109.7ms)
+Completed 500 Internal Server Error in 253ms (ActiveRecord: 4.5ms)
+
+
+  
+ActionView::Template::Error (The asset "favicon.pnpn" is not present in the asset pipeline.):
+    18:    <%= analytics_init if Rails.env.production? %>
+    19: 
+    20:    <!-- meta data info is stored in helpers/application_helper.rb ↓ -->
+    21:    <%= display_meta_tags(default_meta_tags) %>
+    22: </head>
+    23: 
+    24: <body>
+  
+app/helpers/application_helper.rb:27:in `default_meta_tags'
+app/views/layouts/application.html.erb:21:in `_app_views_layouts_application_html_erb___4483637949548155143_70327362442920'
+Started GET "/" for 127.0.0.1 at 2019-03-10 08:51:25 +0900
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (79.6ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (14.1ms)
+  Rendered layouts/_footer.html.erb (2.0ms)
+Completed 200 OK in 231ms (Views: 202.1ms | ActiveRecord: 5.3ms)
+
+
