@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Med Plus</title>
+    <!-- <title>Med Plus</title> -->
+    <!-- meta data info is stored in helpers/application_helper.rb ↓ -->
+    <%= display_meta_tags(default_meta_tags) %>
+    
+    <!-- クロスサイトリクエストフォージェリ(CSRF)の対策のために記述する。csrf_meta_tags -->
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -17,8 +21,7 @@
   <!-- Google analytics tracking number -->
    <%= analytics_init if Rails.env.production? %>
 
-   <!-- meta data info is stored in helpers/application_helper.rb ↓ -->
-   <%= display_meta_tags(default_meta_tags) %>
+
 </head>
 
 <body>
