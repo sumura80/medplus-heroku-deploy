@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
  <div class="container-fluid">
+  <span class="badge badge-danger" style="position: absolute; top:5px; left:40px;">Beta Lunch</span>
   <%= link_to image_tag('https://s3-ap-northeast-1.amazonaws.com/medplus-japan/admin-images/logo_navbar.png'), root_path,class:"navbar-brand mb-1" %><span class="sr-only">(current)</span>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -44,7 +45,7 @@
     <!-- Search box -->
     <form class="form-inline my-2 my-lg-0" action="/search" method="get">
       <%= search_form_for @query do |f| %>
-        <%= f.search_field  :title_or_title_jp_or_med_purpose_or_medical_type_or_indication_or_attn_large_or_attn_bold_or_attn_regular_or_attn_red_or_active_large_or_active_regular_or_active_red_or_title_jp_or_description_jp_or_medical_type_cont,placeholder: "\uF002",class:"form-control mr-sm-2 fa" , required: true,oninvalid:"this.setCustomValidity('Type a medicine or ingredient')" ,oninput:"this.setCustomValidity('')"%>
+        <%= f.search_field  :title_or_title_jp_or_med_purpose_or_medical_type_or_indication_or_attn_large_or_attn_bold_or_attn_regular_or_attn_red_or_active_large_or_active_regular_or_active_red_or_title_jp_or_description_jp_or_medical_type_cont,placeholder: "\uF002",class:"form-control mr-sm-2 fa" , required: true,oninvalid:"this.setCustomValidity('Type a medicine or ingredient')" ,oninput:"this.setCustomValidity('')"  %>
         <%= f.submit "Search" , class: 'btn btn-outline-success my-2 my-sm-0'%>
       <% end %>
     </form>
