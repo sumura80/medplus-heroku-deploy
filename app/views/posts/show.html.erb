@@ -20,7 +20,7 @@
         <div class="intro_wrap">
           <% if @post.med_purpose? %>
             <div class="med_purpose my-3">
-             <div class ="lead">Purpose:</div>             
+             <div class ="lead">Contents:</div>             
               <%= h(@post.med_purpose).gsub(/\n/, '<br/>').html_safe %> 
             </div>
           <% end %>
