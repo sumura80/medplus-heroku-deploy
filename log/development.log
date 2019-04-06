@@ -33542,3 +33542,1472 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 175ms (Views: 164.9ms | ActiveRecord: 2.1ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-04-06 12:34:02 +0900
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (17.7ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (13.5ms)
+  Rendered layouts/_footer.html.erb (1.5ms)
+Completed 200 OK in 114ms (Views: 108.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-04-06 12:43:38 +0900
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mPost Load (9.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (66.4ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (32.7ms)
+  Rendered layouts/_footer.html.erb (4.0ms)
+Completed 200 OK in 260ms (Views: 242.7ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-04-06 12:43:43 +0900
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (12.1ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (8.3ms)
+  Rendered layouts/_footer.html.erb (2.3ms)
+Completed 200 OK in 146ms (Views: 133.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-04-06 12:43:54 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Tgx3ERcJxqla4BY1kL4eL01OHLGck/l2n1MCXwNAdQSXcXXSvgw/+zpJUr3AdDsTRS99eV9kLERm+BwNRF1X7A==", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "button"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 227ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-04-06 12:43:54 +0900
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (32.7ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (14.7ms)
+  Rendered layouts/_footer.html.erb (5.6ms)
+Completed 200 OK in 196ms (Views: 190.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2019-04-06 12:44:18 +0900
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered contacts/new.html.erb within layouts/application (3.9ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (8.7ms)
+  Rendered layouts/_footer.html.erb (2.7ms)
+Completed 200 OK in 140ms (Views: 111.3ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2019-04-06 12:44:43 +0900
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DEj18xI3imIHi0HVCJrPq90ltpAguvcwET7W4ptSlbgjsCQ7EXdnQIx8ufrts6XOizEOBZwHHEFRIFEes8usRA==", "contact"=>{"name"=>"susumu", "email"=>"codetest1980@gmail.com", "message"=>"medplus test"}, "button"=>""}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "susumu"], ["email", "codetest1980@gmail.com"], ["message", "medplus test"], ["created_at", "2019-04-06 03:44:43.298739"], ["updated_at", "2019-04-06 03:44:43.298739"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering contact_mailer/contact_notification.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.html.erb within layouts/mailer (0.9ms)
+  Rendering contact_mailer/contact_notification.text.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.text.erb within layouts/mailer (0.9ms)
+ContactMailer#contact_notification: processed outbound mail in 392.8ms
+Sent mail to info@polyglot80.sakura.ne.jp (1796.1ms)
+Date: Sat, 06 Apr 2019 12:44:43 +0900
+From: codetest1980@gmail.com
+To: info@polyglot80.sakura.ne.jp
+Message-ID: <5ca820abbd4ba_aff3fcd05fb75cc289da@SusumunoMac-mini.local.mail>
+Subject: Contact message from susumu
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ca820abb9a63_aff3fcd05fb75cc288c2";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ca820abb9a63_aff3fcd05fb75cc288c2
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+c3VzdW11IOanmCDjgYvjgonllY/jgYTlkIjjgo/jgZvjgYzjgYLjgorjgb7j
+gZfjgZ/jgII8YnI+CuODu+OBiuWVj+OBhOWQiOOCj+OBm+WGheWuuShUZXh0
+KTxicj4KbWVkcGx1cyB0ZXN0Cg==
+
+----==_mimepart_5ca820abb9a63_aff3fcd05fb75cc288c2
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <div class="contact-wrap" style="padding-top: 5px;">
+<p>We got a message from <span style="color: #F34834; font-weight: bold;">susumu</span></p>
+
+<h5 style="">Message</h5>
+<div style="background-color: #EBEDEF; padding: 5px;">medplus test</div>
+<br><br>
+
+<p>
+	Name: <span style="color: #F34834; font-weight: bold;">susumu</span><br>
+	Email:<span style="font-weight: bold;">codetest1980@gmail.com</span><br>
+</p>
+
+</div>
+  </body>
+</html>
+
+----==_mimepart_5ca820abb9a63_aff3fcd05fb75cc288c2--
+
+Completed 500 Internal Server Error in 2265ms (ActiveRecord: 6.4ms)
+
+
+  
+Net::SMTPAuthenticationError (535-5.7.8 Username and Password not accepted. Learn more at
+):
+  
+app/controllers/contacts_controller.rb:10:in `create'
+Started POST "/contacts" for 127.0.0.1 at 2019-04-06 12:45:42 +0900
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4zw/h7UuZgODakz+lIvRpp6/W3BEjFR5Xcfhj9Lo72kLpay5hEKU2VaVwHp/obc9MDxSPcK67TjbFiY11JhYg==", "contact"=>{"name"=>"susumu", "email"=>"codetest1980@gmail.com", "message"=>"medplus test"}, "button"=>""}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "susumu"], ["email", "codetest1980@gmail.com"], ["message", "medplus test"], ["created_at", "2019-04-06 03:45:42.939392"], ["updated_at", "2019-04-06 03:45:42.939392"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering contact_mailer/contact_notification.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.html.erb within layouts/mailer (1.5ms)
+  Rendering contact_mailer/contact_notification.text.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.text.erb within layouts/mailer (0.6ms)
+ContactMailer#contact_notification: processed outbound mail in 424.2ms
+Sent mail to info@polyglot80.sakura.ne.jp (1150.8ms)
+Date: Sat, 06 Apr 2019 12:45:43 +0900
+From: codetest1980@gmail.com
+To: info@polyglot80.sakura.ne.jp
+Message-ID: <5ca820e76243f_d803fc405a69c7c76110@SusumunoMac-mini.local.mail>
+Subject: Contact message from susumu
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ca820e75e643_d803fc405a69c7c76029";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ca820e75e643_d803fc405a69c7c76029
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+c3VzdW11IOanmCDjgYvjgonllY/jgYTlkIjjgo/jgZvjgYzjgYLjgorjgb7j
+gZfjgZ/jgII8YnI+CuODu+OBiuWVj+OBhOWQiOOCj+OBm+WGheWuuShUZXh0
+KTxicj4KbWVkcGx1cyB0ZXN0Cg==
+
+----==_mimepart_5ca820e75e643_d803fc405a69c7c76029
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <div class="contact-wrap" style="padding-top: 5px;">
+<p>We got a message from <span style="color: #F34834; font-weight: bold;">susumu</span></p>
+
+<h5 style="">Message</h5>
+<div style="background-color: #EBEDEF; padding: 5px;">medplus test</div>
+<br><br>
+
+<p>
+	Name: <span style="color: #F34834; font-weight: bold;">susumu</span><br>
+	Email:<span style="font-weight: bold;">codetest1980@gmail.com</span><br>
+</p>
+
+</div>
+  </body>
+</html>
+
+----==_mimepart_5ca820e75e643_d803fc405a69c7c76029--
+
+Completed 500 Internal Server Error in 1692ms (ActiveRecord: 3.3ms)
+
+
+  
+Net::SMTPAuthenticationError (535-5.7.8 Username and Password not accepted. Learn more at
+):
+  
+app/controllers/contacts_controller.rb:10:in `create'
+Started POST "/contacts" for 127.0.0.1 at 2019-04-06 12:47:12 +0900
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4zw/h7UuZgODakz+lIvRpp6/W3BEjFR5Xcfhj9Lo72kLpay5hEKU2VaVwHp/obc9MDxSPcK67TjbFiY11JhYg==", "contact"=>{"name"=>"susumu", "email"=>"codetest1980@gmail.com", "message"=>"medplus test"}, "button"=>""}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "susumu"], ["email", "codetest1980@gmail.com"], ["message", "medplus test"], ["created_at", "2019-04-06 03:47:12.871125"], ["updated_at", "2019-04-06 03:47:12.871125"]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering contact_mailer/contact_notification.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.html.erb within layouts/mailer (1.4ms)
+  Rendering contact_mailer/contact_notification.text.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.text.erb within layouts/mailer (1.0ms)
+ContactMailer#contact_notification: processed outbound mail in 74.3ms
+Sent mail to info@polyglot80.sakura.ne.jp (1780.8ms)
+Date: Sat, 06 Apr 2019 12:47:12 +0900
+From: codetest1980@gmail.com
+To: info@polyglot80.sakura.ne.jp
+Message-ID: <5ca82140e8c9c_d803fc405a69d9476352@SusumunoMac-mini.local.mail>
+Subject: Contact message from susumu
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ca82140e74e6_d803fc405a69d9476222";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ca82140e74e6_d803fc405a69d9476222
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+c3VzdW11IOanmCDjgYvjgonllY/jgYTlkIjjgo/jgZvjgYzjgYLjgorjgb7j
+gZfjgZ/jgII8YnI+CuODu+OBiuWVj+OBhOWQiOOCj+OBm+WGheWuuShUZXh0
+KTxicj4KbWVkcGx1cyB0ZXN0Cg==
+
+----==_mimepart_5ca82140e74e6_d803fc405a69d9476222
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <div class="contact-wrap" style="padding-top: 5px;">
+<p>We got a message from <span style="color: #F34834; font-weight: bold;">susumu</span></p>
+
+<h5 style="">Message</h5>
+<div style="background-color: #EBEDEF; padding: 5px;">medplus test</div>
+<br><br>
+
+<p>
+	Name: <span style="color: #F34834; font-weight: bold;">susumu</span><br>
+	Email:<span style="font-weight: bold;">codetest1980@gmail.com</span><br>
+</p>
+
+</div>
+  </body>
+</html>
+
+----==_mimepart_5ca82140e74e6_d803fc405a69d9476222--
+
+Completed 500 Internal Server Error in 1864ms (ActiveRecord: 4.0ms)
+
+
+  
+Net::SMTPAuthenticationError (535-5.7.8 Username and Password not accepted. Learn more at
+):
+  
+app/controllers/contacts_controller.rb:10:in `create'
+Started POST "/contacts" for 127.0.0.1 at 2019-04-06 12:47:48 +0900
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4zw/h7UuZgODakz+lIvRpp6/W3BEjFR5Xcfhj9Lo72kLpay5hEKU2VaVwHp/obc9MDxSPcK67TjbFiY11JhYg==", "contact"=>{"name"=>"susumu", "email"=>"codetest1980@gmail.com", "message"=>"medplus test"}, "button"=>""}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "susumu"], ["email", "codetest1980@gmail.com"], ["message", "medplus test"], ["created_at", "2019-04-06 03:47:48.183482"], ["updated_at", "2019-04-06 03:47:48.183482"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendering contact_mailer/contact_notification.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.html.erb within layouts/mailer (0.7ms)
+  Rendering contact_mailer/contact_notification.text.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.text.erb within layouts/mailer (3.7ms)
+ContactMailer#contact_notification: processed outbound mail in 87.4ms
+Sent mail to info@polyglot80.sakura.ne.jp (1151.9ms)
+Date: Sat, 06 Apr 2019 12:47:48 +0900
+From: codetest1980@gmail.com
+To: info@polyglot80.sakura.ne.jp
+Message-ID: <5ca8216443a98_d803fc405a69bf0765c5@SusumunoMac-mini.local.mail>
+Subject: Contact message from susumu
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ca8216442c94_d803fc405a69bf07643f";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ca8216442c94_d803fc405a69bf07643f
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+c3VzdW11IOanmCDjgYvjgonllY/jgYTlkIjjgo/jgZvjgYzjgYLjgorjgb7j
+gZfjgZ/jgII8YnI+CuODu+OBiuWVj+OBhOWQiOOCj+OBm+WGheWuuShUZXh0
+KTxicj4KbWVkcGx1cyB0ZXN0Cg==
+
+----==_mimepart_5ca8216442c94_d803fc405a69bf07643f
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <div class="contact-wrap" style="padding-top: 5px;">
+<p>We got a message from <span style="color: #F34834; font-weight: bold;">susumu</span></p>
+
+<h5 style="">Message</h5>
+<div style="background-color: #EBEDEF; padding: 5px;">medplus test</div>
+<br><br>
+
+<p>
+	Name: <span style="color: #F34834; font-weight: bold;">susumu</span><br>
+	Email:<span style="font-weight: bold;">codetest1980@gmail.com</span><br>
+</p>
+
+</div>
+  </body>
+</html>
+
+----==_mimepart_5ca8216442c94_d803fc405a69bf07643f--
+
+Completed 500 Internal Server Error in 1247ms (ActiveRecord: 2.7ms)
+
+
+  
+Net::SMTPAuthenticationError (535-5.7.8 Username and Password not accepted. Learn more at
+):
+  
+app/controllers/contacts_controller.rb:10:in `create'
+Started POST "/contacts" for 127.0.0.1 at 2019-04-06 12:49:21 +0900
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4zw/h7UuZgODakz+lIvRpp6/W3BEjFR5Xcfhj9Lo72kLpay5hEKU2VaVwHp/obc9MDxSPcK67TjbFiY11JhYg==", "contact"=>{"name"=>"susumu", "email"=>"codetest1980@gmail.com", "message"=>"medplus test"}, "button"=>""}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "susumu"], ["email", "codetest1980@gmail.com"], ["message", "medplus test"], ["created_at", "2019-04-06 03:49:21.967785"], ["updated_at", "2019-04-06 03:49:21.967785"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  Rendering contact_mailer/contact_notification.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.html.erb within layouts/mailer (0.6ms)
+  Rendering contact_mailer/contact_notification.text.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.text.erb within layouts/mailer (1.3ms)
+ContactMailer#contact_notification: processed outbound mail in 67.5ms
+Sent mail to info@polyglot80.sakura.ne.jp (1138.3ms)
+Date: Sat, 06 Apr 2019 12:49:22 +0900
+From: codetest1980@gmail.com
+To: info@polyglot80.sakura.ne.jp
+Message-ID: <5ca821c2aad2_d803fc405a69d08767f8@SusumunoMac-mini.local.mail>
+Subject: Contact message from susumu
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ca821c289fa_d803fc405a69d08766f6";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ca821c289fa_d803fc405a69d08766f6
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+c3VzdW11IOanmCDjgYvjgonllY/jgYTlkIjjgo/jgZvjgYzjgYLjgorjgb7j
+gZfjgZ/jgII8YnI+CuODu+OBiuWVj+OBhOWQiOOCj+OBm+WGheWuuShUZXh0
+KTxicj4KbWVkcGx1cyB0ZXN0Cg==
+
+----==_mimepart_5ca821c289fa_d803fc405a69d08766f6
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <div class="contact-wrap" style="padding-top: 5px;">
+<p>We got a message from <span style="color: #F34834; font-weight: bold;">susumu</span></p>
+
+<h5 style="">Message</h5>
+<div style="background-color: #EBEDEF; padding: 5px;">medplus test</div>
+<br><br>
+
+<p>
+	Name: <span style="color: #F34834; font-weight: bold;">susumu</span><br>
+	Email:<span style="font-weight: bold;">codetest1980@gmail.com</span><br>
+</p>
+
+</div>
+  </body>
+</html>
+
+----==_mimepart_5ca821c289fa_d803fc405a69d08766f6--
+
+Completed 500 Internal Server Error in 1221ms (ActiveRecord: 2.7ms)
+
+
+  
+Net::SMTPAuthenticationError (535-5.7.8 Username and Password not accepted. Learn more at
+):
+  
+app/controllers/contacts_controller.rb:10:in `create'
+Started POST "/contacts" for 127.0.0.1 at 2019-04-06 12:49:29 +0900
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4zw/h7UuZgODakz+lIvRpp6/W3BEjFR5Xcfhj9Lo72kLpay5hEKU2VaVwHp/obc9MDxSPcK67TjbFiY11JhYg==", "contact"=>{"name"=>"susumu", "email"=>"codetest1980@gmail.com", "message"=>"medplus test"}, "button"=>""}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (21.5ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "susumu"], ["email", "codetest1980@gmail.com"], ["message", "medplus test"], ["created_at", "2019-04-06 03:49:29.862569"], ["updated_at", "2019-04-06 03:49:29.862569"]]
+  [1m[35m (18.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering contact_mailer/contact_notification.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.html.erb within layouts/mailer (0.6ms)
+  Rendering contact_mailer/contact_notification.text.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.text.erb within layouts/mailer (0.8ms)
+ContactMailer#contact_notification: processed outbound mail in 71.7ms
+Sent mail to info@polyglot80.sakura.ne.jp (1149.9ms)
+Date: Sat, 06 Apr 2019 12:49:29 +0900
+From: codetest1980@gmail.com
+To: info@polyglot80.sakura.ne.jp
+Message-ID: <5ca821c9ef8a3_d803fc405a69c7c76940@SusumunoMac-mini.local.mail>
+Subject: Contact message from susumu
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ca821c9edab7_d803fc405a69c7c76894";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ca821c9edab7_d803fc405a69c7c76894
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+c3VzdW11IOanmCDjgYvjgonllY/jgYTlkIjjgo/jgZvjgYzjgYLjgorjgb7j
+gZfjgZ/jgII8YnI+CuODu+OBiuWVj+OBhOWQiOOCj+OBm+WGheWuuShUZXh0
+KTxicj4KbWVkcGx1cyB0ZXN0Cg==
+
+----==_mimepart_5ca821c9edab7_d803fc405a69c7c76894
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <div class="contact-wrap" style="padding-top: 5px;">
+<p>We got a message from <span style="color: #F34834; font-weight: bold;">susumu</span></p>
+
+<h5 style="">Message</h5>
+<div style="background-color: #EBEDEF; padding: 5px;">medplus test</div>
+<br><br>
+
+<p>
+	Name: <span style="color: #F34834; font-weight: bold;">susumu</span><br>
+	Email:<span style="font-weight: bold;">codetest1980@gmail.com</span><br>
+</p>
+
+</div>
+  </body>
+</html>
+
+----==_mimepart_5ca821c9edab7_d803fc405a69c7c76894--
+
+Completed 500 Internal Server Error in 1271ms (ActiveRecord: 40.2ms)
+
+
+  
+Net::SMTPAuthenticationError (535-5.7.8 Username and Password not accepted. Learn more at
+):
+  
+app/controllers/contacts_controller.rb:10:in `create'
+Started POST "/contacts" for 127.0.0.1 at 2019-04-06 12:49:58 +0900
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4zw/h7UuZgODakz+lIvRpp6/W3BEjFR5Xcfhj9Lo72kLpay5hEKU2VaVwHp/obc9MDxSPcK67TjbFiY11JhYg==", "contact"=>{"name"=>"susumu", "email"=>"codetest1980@gmail.com", "message"=>"medplus test"}, "button"=>""}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "susumu"], ["email", "codetest1980@gmail.com"], ["message", "medplus test"], ["created_at", "2019-04-06 03:49:58.970653"], ["updated_at", "2019-04-06 03:49:58.970653"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering contact_mailer/contact_notification.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.html.erb within layouts/mailer (1.8ms)
+  Rendering contact_mailer/contact_notification.text.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.text.erb within layouts/mailer (1.5ms)
+ContactMailer#contact_notification: processed outbound mail in 90.3ms
+Sent mail to info@polyglot80.sakura.ne.jp (1136.0ms)
+Date: Sat, 06 Apr 2019 12:49:59 +0900
+From: codetest1980@gmail.com
+To: info@polyglot80.sakura.ne.jp
+Message-ID: <5ca821e7118af_d803fc405a69d947719d@SusumunoMac-mini.local.mail>
+Subject: Contact message from susumu
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ca821e7f6d7_d803fc405a69d94770bd";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ca821e7f6d7_d803fc405a69d94770bd
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+c3VzdW11IOanmCDjgYvjgonllY/jgYTlkIjjgo/jgZvjgYzjgYLjgorjgb7j
+gZfjgZ/jgII8YnI+CuODu+OBiuWVj+OBhOWQiOOCj+OBm+WGheWuuShUZXh0
+KTxicj4KbWVkcGx1cyB0ZXN0Cg==
+
+----==_mimepart_5ca821e7f6d7_d803fc405a69d94770bd
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <div class="contact-wrap" style="padding-top: 5px;">
+<p>We got a message from <span style="color: #F34834; font-weight: bold;">susumu</span></p>
+
+<h5 style="">Message</h5>
+<div style="background-color: #EBEDEF; padding: 5px;">medplus test</div>
+<br><br>
+
+<p>
+	Name: <span style="color: #F34834; font-weight: bold;">susumu</span><br>
+	Email:<span style="font-weight: bold;">codetest1980@gmail.com</span><br>
+</p>
+
+</div>
+  </body>
+</html>
+
+----==_mimepart_5ca821e7f6d7_d803fc405a69d94770bd--
+
+Completed 500 Internal Server Error in 1244ms (ActiveRecord: 4.0ms)
+
+
+  
+Net::SMTPAuthenticationError (535-5.7.8 Username and Password not accepted. Learn more at
+):
+  
+app/controllers/contacts_controller.rb:10:in `create'
+Started POST "/contacts" for 127.0.0.1 at 2019-04-06 12:55:23 +0900
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4zw/h7UuZgODakz+lIvRpp6/W3BEjFR5Xcfhj9Lo72kLpay5hEKU2VaVwHp/obc9MDxSPcK67TjbFiY11JhYg==", "contact"=>{"name"=>"susumu", "email"=>"codetest1980@gmail.com", "message"=>"medplus test"}, "button"=>""}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "susumu"], ["email", "codetest1980@gmail.com"], ["message", "medplus test"], ["created_at", "2019-04-06 03:55:23.460532"], ["updated_at", "2019-04-06 03:55:23.460532"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  Rendering contact_mailer/contact_notification.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.html.erb within layouts/mailer (1.7ms)
+  Rendering contact_mailer/contact_notification.text.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.text.erb within layouts/mailer (1.3ms)
+ContactMailer#contact_notification: processed outbound mail in 613.5ms
+Sent mail to  (1221.1ms)
+Date: Sat, 06 Apr 2019 12:55:24 +0900
+From: codetest1980@gmail.com
+Message-ID: <5ca8232c1cdc1_dfd3fc737595ea010816@SusumunoMac-mini.local.mail>
+Subject: Contact message from susumu
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ca8232c16617_dfd3fc737595ea0107a9";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ca8232c16617_dfd3fc737595ea0107a9
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+c3VzdW11IOanmCDjgYvjgonllY/jgYTlkIjjgo/jgZvjgYzjgYLjgorjgb7j
+gZfjgZ/jgII8YnI+CuODu+OBiuWVj+OBhOWQiOOCj+OBm+WGheWuuShUZXh0
+KTxicj4KbWVkcGx1cyB0ZXN0Cg==
+
+----==_mimepart_5ca8232c16617_dfd3fc737595ea0107a9
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <div class="contact-wrap" style="padding-top: 5px;">
+<p>We got a message from <span style="color: #F34834; font-weight: bold;">susumu</span></p>
+
+<h5 style="">Message</h5>
+<div style="background-color: #EBEDEF; padding: 5px;">medplus test</div>
+<br><br>
+
+<p>
+	Name: <span style="color: #F34834; font-weight: bold;">susumu</span><br>
+	Email:<span style="font-weight: bold;">codetest1980@gmail.com</span><br>
+</p>
+
+</div>
+  </body>
+</html>
+
+----==_mimepart_5ca8232c16617_dfd3fc737595ea0107a9--
+
+Completed 500 Internal Server Error in 1957ms (ActiveRecord: 3.3ms)
+
+
+  
+ArgumentError (SMTP To address may not be blank: []):
+  
+app/controllers/contacts_controller.rb:10:in `create'
+Started GET "/letter_opener" for 127.0.0.1 at 2019-04-06 12:55:41 +0900
+Processing by LetterOpenerWeb::LettersController#index as HTML
+  Rendering /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters
+  Rendered /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters (1.4ms)
+Completed 200 OK in 570ms (Views: 560.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/letter_opener/" for 127.0.0.1 at 2019-04-06 12:55:44 +0900
+Processing by LetterOpenerWeb::LettersController#index as HTML
+  Rendering /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters
+  Rendered /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters (1.2ms)
+Completed 200 OK in 108ms (Views: 57.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/letter_opener/" for 127.0.0.1 at 2019-04-06 12:55:44 +0900
+Processing by LetterOpenerWeb::LettersController#index as HTML
+  Rendering /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters
+  Rendered /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters (7.3ms)
+Completed 200 OK in 262ms (Views: 179.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2019-04-06 12:56:48 +0900
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4zw/h7UuZgODakz+lIvRpp6/W3BEjFR5Xcfhj9Lo72kLpay5hEKU2VaVwHp/obc9MDxSPcK67TjbFiY11JhYg==", "contact"=>{"name"=>"susumu", "email"=>"codetest1980@gmail.com", "message"=>"medplus test"}, "button"=>""}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "susumu"], ["email", "codetest1980@gmail.com"], ["message", "medplus test"], ["created_at", "2019-04-06 03:56:48.228001"], ["updated_at", "2019-04-06 03:56:48.228001"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering contact_mailer/contact_notification.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.html.erb within layouts/mailer (0.7ms)
+  Rendering contact_mailer/contact_notification.text.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.text.erb within layouts/mailer (0.6ms)
+ContactMailer#contact_notification: processed outbound mail in 64.6ms
+Sent mail to  (1177.7ms)
+Date: Sat, 06 Apr 2019 12:56:48 +0900
+From: codetest1980@gmail.com
+Message-ID: <5ca8238049db7_dfd3fc737595e1411012@SusumunoMac-mini.local.mail>
+Subject: Contact message from susumu
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ca82380488b4_dfd3fc737595e14109a3";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ca82380488b4_dfd3fc737595e14109a3
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+c3VzdW11IOanmCDjgYvjgonllY/jgYTlkIjjgo/jgZvjgYzjgYLjgorjgb7j
+gZfjgZ/jgII8YnI+CuODu+OBiuWVj+OBhOWQiOOCj+OBm+WGheWuuShUZXh0
+KTxicj4KbWVkcGx1cyB0ZXN0Cg==
+
+----==_mimepart_5ca82380488b4_dfd3fc737595e14109a3
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <div class="contact-wrap" style="padding-top: 5px;">
+<p>We got a message from <span style="color: #F34834; font-weight: bold;">susumu</span></p>
+
+<h5 style="">Message</h5>
+<div style="background-color: #EBEDEF; padding: 5px;">medplus test</div>
+<br><br>
+
+<p>
+	Name: <span style="color: #F34834; font-weight: bold;">susumu</span><br>
+	Email:<span style="font-weight: bold;">codetest1980@gmail.com</span><br>
+</p>
+
+</div>
+  </body>
+</html>
+
+----==_mimepart_5ca82380488b4_dfd3fc737595e14109a3--
+
+Completed 500 Internal Server Error in 1253ms (ActiveRecord: 3.0ms)
+
+
+  
+ArgumentError (SMTP To address may not be blank: []):
+  
+app/controllers/contacts_controller.rb:10:in `create'
+Started POST "/contacts" for 127.0.0.1 at 2019-04-06 12:57:33 +0900
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4zw/h7UuZgODakz+lIvRpp6/W3BEjFR5Xcfhj9Lo72kLpay5hEKU2VaVwHp/obc9MDxSPcK67TjbFiY11JhYg==", "contact"=>{"name"=>"susumu", "email"=>"codetest1980@gmail.com", "message"=>"medplus test"}, "button"=>""}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "susumu"], ["email", "codetest1980@gmail.com"], ["message", "medplus test"], ["created_at", "2019-04-06 03:57:33.104184"], ["updated_at", "2019-04-06 03:57:33.104184"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendering contact_mailer/contact_notification.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.html.erb within layouts/mailer (0.9ms)
+  Rendering contact_mailer/contact_notification.text.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.text.erb within layouts/mailer (1.6ms)
+ContactMailer#contact_notification: processed outbound mail in 70.1ms
+Sent mail to  (1117.0ms)
+Date: Sat, 06 Apr 2019 12:57:33 +0900
+From: codetest1980@gmail.com
+Message-ID: <5ca823ad2e220_dfd3fc737595ea01128d@SusumunoMac-mini.local.mail>
+Subject: Contact message from susumu
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ca823ad2a7ad_dfd3fc737595ea0111ab";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ca823ad2a7ad_dfd3fc737595ea0111ab
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+c3VzdW11IOanmCDjgYvjgonllY/jgYTlkIjjgo/jgZvjgYzjgYLjgorjgb7j
+gZfjgZ/jgII8YnI+CuODu+OBiuWVj+OBhOWQiOOCj+OBm+WGheWuuShUZXh0
+KTxicj4KbWVkcGx1cyB0ZXN0Cg==
+
+----==_mimepart_5ca823ad2a7ad_dfd3fc737595ea0111ab
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <div class="contact-wrap" style="padding-top: 5px;">
+<p>We got a message from <span style="color: #F34834; font-weight: bold;">susumu</span></p>
+
+<h5 style="">Message</h5>
+<div style="background-color: #EBEDEF; padding: 5px;">medplus test</div>
+<br><br>
+
+<p>
+	Name: <span style="color: #F34834; font-weight: bold;">susumu</span><br>
+	Email:<span style="font-weight: bold;">codetest1980@gmail.com</span><br>
+</p>
+
+</div>
+  </body>
+</html>
+
+----==_mimepart_5ca823ad2a7ad_dfd3fc737595ea0111ab--
+
+Completed 500 Internal Server Error in 1198ms (ActiveRecord: 2.2ms)
+
+
+  
+ArgumentError (SMTP To address may not be blank: []):
+  
+app/controllers/contacts_controller.rb:10:in `create'
+Started POST "/contacts" for 127.0.0.1 at 2019-04-06 13:04:38 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4zw/h7UuZgODakz+lIvRpp6/W3BEjFR5Xcfhj9Lo72kLpay5hEKU2VaVwHp/obc9MDxSPcK67TjbFiY11JhYg==", "contact"=>{"name"=>"susumu", "email"=>"codetest1980@gmail.com", "message"=>"medplus test"}, "button"=>""}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "susumu"], ["email", "codetest1980@gmail.com"], ["message", "medplus test"], ["created_at", "2019-04-06 04:04:38.738300"], ["updated_at", "2019-04-06 04:04:38.738300"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering contact_mailer/contact_notification.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.html.erb within layouts/mailer (1.1ms)
+  Rendering contact_mailer/contact_notification.text.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.text.erb within layouts/mailer (0.9ms)
+ContactMailer#contact_notification: processed outbound mail in 302.5ms
+Sent mail to codetest1980@gmail.com (2978.5ms)
+Date: Sat, 06 Apr 2019 13:04:39 +0900
+From: codetest1980@gmail.com
+To: codetest1980@gmail.com
+Message-ID: <5ca82557126fa_e503fdfd2c931e0283f6@SusumunoMac-mini.local.mail>
+Subject: Contact message from susumu
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ca82557e7fa_e503fdfd2c931e02825";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ca82557e7fa_e503fdfd2c931e02825
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+c3VzdW11IOanmCDjgYvjgonllY/jgYTlkIjjgo/jgZvjgYzjgYLjgorjgb7j
+gZfjgZ/jgII8YnI+CuODu+OBiuWVj+OBhOWQiOOCj+OBm+WGheWuuShUZXh0
+KTxicj4KbWVkcGx1cyB0ZXN0Cg==
+
+----==_mimepart_5ca82557e7fa_e503fdfd2c931e02825
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <div class="contact-wrap" style="padding-top: 5px;">
+<p>We got a message from <span style="color: #F34834; font-weight: bold;">susumu</span></p>
+
+<h5 style="">Message</h5>
+<div style="background-color: #EBEDEF; padding: 5px;">medplus test</div>
+<br><br>
+
+<p>
+	Name: <span style="color: #F34834; font-weight: bold;">susumu</span><br>
+	Email:<span style="font-weight: bold;">codetest1980@gmail.com</span><br>
+</p>
+
+</div>
+  </body>
+</html>
+
+----==_mimepart_5ca82557e7fa_e503fdfd2c931e02825--
+
+Redirected to http://localhost:3000/thanks
+Completed 302 Found in 3369ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/thanks" for 127.0.0.1 at 2019-04-06 13:04:42 +0900
+Processing by ContactsController#thanks as HTML
+  Rendering contacts/thanks.html.erb within layouts/application
+  Rendered contacts/thanks.html.erb within layouts/application (0.8ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (145.2ms)
+  Rendered layouts/_footer.html.erb (5.9ms)
+Completed 200 OK in 1016ms (Views: 1006.0ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/letter_opener" for 127.0.0.1 at 2019-04-06 13:05:35 +0900
+Processing by LetterOpenerWeb::LettersController#index as HTML
+  Rendering /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters
+  Rendered /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters (1.4ms)
+Completed 200 OK in 60ms (Views: 49.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/letter_opener/" for 127.0.0.1 at 2019-04-06 13:05:53 +0900
+Processing by LetterOpenerWeb::LettersController#index as HTML
+  Rendering /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters
+  Rendered /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters (1.1ms)
+Completed 200 OK in 116ms (Views: 58.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/letter_opener/" for 127.0.0.1 at 2019-04-06 13:05:54 +0900
+Processing by LetterOpenerWeb::LettersController#index as HTML
+  Rendering /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters
+  Rendered /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters (1.4ms)
+Completed 200 OK in 139ms (Views: 90.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/letter_opener" for 127.0.0.1 at 2019-04-06 13:11:16 +0900
+Processing by LetterOpenerWeb::LettersController#index as HTML
+  Rendering /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters
+  Rendered /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters (2.9ms)
+Completed 200 OK in 61ms (Views: 51.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/letter_opener" for 127.0.0.1 at 2019-04-06 13:11:17 +0900
+Processing by LetterOpenerWeb::LettersController#index as HTML
+  Rendering /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters
+  Rendered /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters (1.3ms)
+Completed 200 OK in 44ms (Views: 37.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2019-04-06 13:11:23 +0900
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4zw/h7UuZgODakz+lIvRpp6/W3BEjFR5Xcfhj9Lo72kLpay5hEKU2VaVwHp/obc9MDxSPcK67TjbFiY11JhYg==", "contact"=>{"name"=>"susumu", "email"=>"codetest1980@gmail.com", "message"=>"medplus test"}, "button"=>""}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "susumu"], ["email", "codetest1980@gmail.com"], ["message", "medplus test"], ["created_at", "2019-04-06 04:11:23.230933"], ["updated_at", "2019-04-06 04:11:23.230933"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering contact_mailer/contact_notification.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.html.erb within layouts/mailer (0.8ms)
+  Rendering contact_mailer/contact_notification.text.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.text.erb within layouts/mailer (1.2ms)
+ContactMailer#contact_notification: processed outbound mail in 119.3ms
+Sent mail to codetest1980@gmail.com (2966.5ms)
+Date: Sat, 06 Apr 2019 13:11:23 +0900
+From: codetest1980@gmail.com
+To: codetest1980@gmail.com
+Message-ID: <5ca826eb5c90f_e503fdfd2c932a82851a@SusumunoMac-mini.local.mail>
+Subject: Contact message from susumu
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ca826eb52298_e503fdfd2c932a8284b4";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ca826eb52298_e503fdfd2c932a8284b4
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+c3VzdW11IOanmCDjgYvjgonllY/jgYTlkIjjgo/jgZvjgYzjgYLjgorjgb7j
+gZfjgZ/jgII8YnI+CuODu+OBiuWVj+OBhOWQiOOCj+OBm+WGheWuuShUZXh0
+KTxicj4KbWVkcGx1cyB0ZXN0Cg==
+
+----==_mimepart_5ca826eb52298_e503fdfd2c932a8284b4
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <div class="contact-wrap" style="padding-top: 5px;">
+<p>We got a message from <span style="color: #F34834; font-weight: bold;">susumu</span></p>
+
+<h5 style="">Message</h5>
+<div style="background-color: #EBEDEF; padding: 5px;">medplus test</div>
+<br><br>
+
+<p>
+	Name: <span style="color: #F34834; font-weight: bold;">susumu</span><br>
+	Email:<span style="font-weight: bold;">codetest1980@gmail.com</span><br>
+</p>
+
+</div>
+  </body>
+</html>
+
+----==_mimepart_5ca826eb52298_e503fdfd2c932a8284b4--
+
+Redirected to http://localhost:3000/thanks
+Completed 302 Found in 3102ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/thanks" for 127.0.0.1 at 2019-04-06 13:11:26 +0900
+Processing by ContactsController#thanks as HTML
+  Rendering contacts/thanks.html.erb within layouts/application
+  Rendered contacts/thanks.html.erb within layouts/application (1.4ms)
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (26.6ms)
+  Rendered layouts/_footer.html.erb (8.8ms)
+Completed 200 OK in 235ms (Views: 224.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/letter_opener" for 127.0.0.1 at 2019-04-06 13:11:34 +0900
+Processing by LetterOpenerWeb::LettersController#index as HTML
+  Rendering /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters
+  Rendered /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters (2.6ms)
+Completed 200 OK in 118ms (Views: 100.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2019-04-06 13:11:55 +0900
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4zw/h7UuZgODakz+lIvRpp6/W3BEjFR5Xcfhj9Lo72kLpay5hEKU2VaVwHp/obc9MDxSPcK67TjbFiY11JhYg==", "contact"=>{"name"=>"susumu", "email"=>"codetest1980@gmail.com", "message"=>"medplus test"}, "button"=>""}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "susumu"], ["email", "codetest1980@gmail.com"], ["message", "medplus test"], ["created_at", "2019-04-06 04:11:55.142074"], ["updated_at", "2019-04-06 04:11:55.142074"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering contact_mailer/contact_notification.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.html.erb within layouts/mailer (1.1ms)
+  Rendering contact_mailer/contact_notification.text.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.text.erb within layouts/mailer (0.6ms)
+ContactMailer#contact_notification: processed outbound mail in 119.9ms
+Sent mail to codetest1980@gmail.com (3430.5ms)
+Date: Sat, 06 Apr 2019 13:11:55 +0900
+From: codetest1980@gmail.com
+To: codetest1980@gmail.com
+Message-ID: <5ca8270b42fa8_e503fdfd2c93384287db@SusumunoMac-mini.local.mail>
+Subject: Contact message from susumu
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ca8270b3ca34_e503fdfd2c93384286c";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ca8270b3ca34_e503fdfd2c93384286c
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+c3VzdW11IOanmCDjgYvjgonllY/jgYTlkIjjgo/jgZvjgYzjgYLjgorjgb7j
+gZfjgZ/jgII8YnI+CuODu+OBiuWVj+OBhOWQiOOCj+OBm+WGheWuuShUZXh0
+KTxicj4KbWVkcGx1cyB0ZXN0Cg==
+
+----==_mimepart_5ca8270b3ca34_e503fdfd2c93384286c
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <div class="contact-wrap" style="padding-top: 5px;">
+<p>We got a message from <span style="color: #F34834; font-weight: bold;">susumu</span></p>
+
+<h5 style="">Message</h5>
+<div style="background-color: #EBEDEF; padding: 5px;">medplus test</div>
+<br><br>
+
+<p>
+	Name: <span style="color: #F34834; font-weight: bold;">susumu</span><br>
+	Email:<span style="font-weight: bold;">codetest1980@gmail.com</span><br>
+</p>
+
+</div>
+  </body>
+</html>
+
+----==_mimepart_5ca8270b3ca34_e503fdfd2c93384286c--
+
+Redirected to http://localhost:3000/thanks
+Completed 302 Found in 3566ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/thanks" for 127.0.0.1 at 2019-04-06 13:11:58 +0900
+Processing by ContactsController#thanks as HTML
+  Rendering contacts/thanks.html.erb within layouts/application
+  Rendered contacts/thanks.html.erb within layouts/application (1.7ms)
+  [1m[36mCategory Load (5.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (29.1ms)
+  Rendered layouts/_footer.html.erb (5.3ms)
+Completed 200 OK in 623ms (Views: 608.5ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/letter_opener" for 127.0.0.1 at 2019-04-06 13:12:09 +0900
+Processing by LetterOpenerWeb::LettersController#index as HTML
+  Rendering /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters
+  Rendered /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters (2.8ms)
+Completed 200 OK in 101ms (Views: 94.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/letter_opener/" for 127.0.0.1 at 2019-04-06 13:12:12 +0900
+Processing by LetterOpenerWeb::LettersController#index as HTML
+  Rendering /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters
+  Rendered /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters (1.2ms)
+Completed 200 OK in 110ms (Views: 62.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/letter_opener/" for 127.0.0.1 at 2019-04-06 13:12:12 +0900
+Processing by LetterOpenerWeb::LettersController#index as HTML
+  Rendering /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters
+  Rendered /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters (1.1ms)
+Completed 200 OK in 105ms (Views: 57.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/letter_opener/" for 127.0.0.1 at 2019-04-06 13:12:13 +0900
+Processing by LetterOpenerWeb::LettersController#index as HTML
+  Rendering /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters
+  Rendered /Users/susumu/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/letter_opener_web-1.3.4/app/views/letter_opener_web/letters/index.html.erb within layouts/letter_opener_web/letters (1.6ms)
+Completed 200 OK in 106ms (Views: 59.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-04-06 13:50:58 +0900
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (175.0ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (19.0ms)
+  Rendered layouts/_footer.html.erb (5.0ms)
+Completed 200 OK in 436ms (Views: 412.2ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2019-04-06 13:51:33 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered contacts/new.html.erb within layouts/application (18.3ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (247.1ms)
+  Rendered layouts/_footer.html.erb (3.3ms)
+Completed 200 OK in 1239ms (Views: 1188.7ms | ActiveRecord: 8.2ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2019-04-06 13:52:29 +0900
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q+q37dyMEx664hGQJeTRKMKJhJi/LzHemqD9Kua6SlRsEmYl38z+PDEV6b/AzbtNlJ08DQOS2q/avnrWziNzqA==", "contact"=>{"name"=>"mail tester", "email"=>"pinetree321@hotmail.co.jp", "message"=>"this is a test message with lifeabroad email account"}, "button"=>""}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "mail tester"], ["email", "pinetree321@hotmail.co.jp"], ["message", "this is a test message with lifeabroad email account"], ["created_at", "2019-04-06 04:52:29.258822"], ["updated_at", "2019-04-06 04:52:29.258822"]]
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  Rendering contact_mailer/contact_notification.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.html.erb within layouts/mailer (0.7ms)
+  Rendering contact_mailer/contact_notification.text.erb within layouts/mailer
+  Rendered contact_mailer/contact_notification.text.erb within layouts/mailer (1.2ms)
+ContactMailer#contact_notification: processed outbound mail in 485.9ms
+Sent mail to lifeabroadjapan@gmail.com (3257.6ms)
+Date: Sat, 06 Apr 2019 13:52:29 +0900
+From: pinetree321@hotmail.co.jp
+To: lifeabroadjapan@gmail.com
+Message-ID: <5ca8308dc9f3d_10d33fdb028ef98c415f@SusumunoMac-mini.local.mail>
+Subject: Contact message from mail tester
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ca8308dc510a_10d33fdb028ef98c4143e";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ca8308dc510a_10d33fdb028ef98c4143e
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+bWFpbCB0ZXN0ZXIg5qeYIOOBi+OCieWVj+OBhOWQiOOCj+OBm+OBjOOBguOC
+iuOBvuOBl+OBn+OAgjxicj4K44O744GK5ZWP44GE5ZCI44KP44Gb5YaF5a65
+KFRleHQpPGJyPgp0aGlzIGlzIGEgdGVzdCBtZXNzYWdlIHdpdGggbGlmZWFi
+cm9hZCBlbWFpbCBhY2NvdW50Cg==
+
+----==_mimepart_5ca8308dc510a_10d33fdb028ef98c4143e
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <div class="contact-wrap" style="padding-top: 5px;">
+<p>We got a message from <span style="color: #F34834; font-weight: bold;">mail tester</span></p>
+
+<h5 style="">Message</h5>
+<div style="background-color: #EBEDEF; padding: 5px;">this is a test message with lifeabroad email account</div>
+<br><br>
+
+<p>
+	Name: <span style="color: #F34834; font-weight: bold;">mail tester</span><br>
+	Email:<span style="font-weight: bold;">pinetree321@hotmail.co.jp</span><br>
+</p>
+
+</div>
+  </body>
+</html>
+
+----==_mimepart_5ca8308dc510a_10d33fdb028ef98c4143e--
+
+Redirected to http://localhost:3000/thanks
+Completed 302 Found in 3818ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/thanks" for 127.0.0.1 at 2019-04-06 13:52:33 +0900
+Processing by ContactsController#thanks as HTML
+  Rendering contacts/thanks.html.erb within layouts/application
+  Rendered contacts/thanks.html.erb within layouts/application (1.2ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (19.7ms)
+  Rendered layouts/_footer.html.erb (2.7ms)
+Completed 200 OK in 206ms (Views: 200.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-04-06 13:53:21 +0900
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mPost Load (10.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (334.7ms)
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (18.3ms)
+  Rendered layouts/_footer.html.erb (4.3ms)
+Completed 200 OK in 663ms (Views: 635.9ms | ActiveRecord: 16.9ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2019-04-06 13:54:50 +0900
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"33zWMoH58MVUaIh9fAtUJL4CxrLusjP3VKlQ1QSYtjkY3rB+eTxDDj8/dk9vp/2+0LjKl9iq6RJSshfL7IF05g=="}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 86ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-04-06 13:54:50 +0900
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mPost Load (2.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (28.8ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (10.8ms)
+  Rendered layouts/_footer.html.erb (1.6ms)
+Completed 200 OK in 160ms (Views: 152.1ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-04-06 13:54:53 +0900
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (15.6ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (6.6ms)
+  Rendered layouts/_footer.html.erb (2.1ms)
+Completed 200 OK in 126ms (Views: 124.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-04-06 13:55:12 +0900
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h5DYYieZtv2aWxVKgyLH4CRjs/pSCPbbE82KaNZCjscxCJTOnUc87JZWRqf37WMl89TpK7aPLhyat4L8F6Hysg==", "user"=>{"username"=>"susumu", "email"=>"pinetree321@hotmail.co.jp", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "button"=>""}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."deleted_at" IS NULL LIMIT ?[0m  [["email", "pinetree321@hotmail.co.jp"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."deleted_at" IS NULL LIMIT ?[0m  [["username", "susumu"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."deleted_at" IS NULL LIMIT ?[0m  [["email", "pinetree321@hotmail.co.jp"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["email", "pinetree321@hotmail.co.jp"], ["encrypted_password", "$2a$11$.XbOGEYPY46tNrWCdbHHGuXWUzpThNgj46XuoTnrNagYUYytEAHLG"], ["created_at", "2019-04-06 04:55:12.197105"], ["updated_at", "2019-04-06 04:55:12.197105"], ["username", "susumu"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 221ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-04-06 13:55:12 +0900
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (26.3ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (28.4ms)
+  Rendered layouts/_footer.html.erb (2.9ms)
+Completed 200 OK in 198ms (Views: 191.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2019-04-06 13:59:03 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 3]]
+  Rendered users/show.html.erb within layouts/application (4.6ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (7.7ms)
+  Rendered layouts/_footer.html.erb (2.7ms)
+Completed 200 OK in 148ms (Views: 130.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2019-04-06 13:59:15 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (27.4ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (7.9ms)
+  Rendered layouts/_footer.html.erb (2.7ms)
+Completed 200 OK in 172ms (Views: 164.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2019-04-06 13:59:26 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (5.3ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (7.3ms)
+  Rendered layouts/_footer.html.erb (2.2ms)
+Completed 200 OK in 177ms (Views: 165.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2019-04-06 13:59:31 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ? ORDER BY created_at DESC[0m  [["user_id", 3]]
+  Rendered users/show.html.erb within layouts/application (12.6ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (9.8ms)
+  Rendered layouts/_footer.html.erb (5.4ms)
+Completed 200 OK in 159ms (Views: 150.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2019-04-06 14:00:23 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (3.4ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (8.3ms)
+  Rendered layouts/_footer.html.erb (1.6ms)
+Completed 200 OK in 129ms (Views: 125.7ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/users" for 127.0.0.1 at 2019-04-06 14:01:11 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e2r/ZVZIonoJ3tVT327ng+CMBQoLZRL9UqN9366mpF2iOsp+oUrwvzCVFZYTKAZAY7hrUgp1EPaEX+g1O+DFYQ==", "user"=>{"email"=>"codetest1980@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "button"=>""}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."deleted_at" IS NULL AND ("users"."id" != ?) LIMIT ?[0m  [["email", "codetest1980@gmail.com"], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."deleted_at" IS NULL AND ("users"."id" != ?) LIMIT ?[0m  [["username", "susumu"], ["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."deleted_at" IS NULL AND ("users"."id" != ?) LIMIT ?[0m  [["email", "codetest1980@gmail.com"], ["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "email" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["email", "codetest1980@gmail.com"], ["updated_at", "2019-04-06 05:01:11.623342"], ["id", 3]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 268ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-04-06 14:01:11 +0900
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."deleted_at" IS NULL AND "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY created_at ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered categories/index.html.erb within layouts/application (23.0ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (12.0ms)
+  Rendered layouts/_footer.html.erb (1.9ms)
+Completed 200 OK in 158ms (Views: 150.8ms | ActiveRecord: 2.9ms)
+
+
