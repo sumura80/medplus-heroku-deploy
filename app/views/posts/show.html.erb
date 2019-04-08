@@ -238,7 +238,8 @@
 
           <% if @post.link_note? %>
             <div class="attn_reg"> 
-              <p>Note: <%= link_to @post.link_note,@post.link_note,:target => "_blank" %></p>
+              <span class="lead">NOTE:</span><br>
+              <%= h(@post.link_note).gsub(/\n/, '<br/>').html_safe %>
             </div>
           <% end %>
      </div>
