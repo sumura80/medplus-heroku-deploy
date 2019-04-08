@@ -6,12 +6,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super
     
-    UserMailer.signup_confirmation(user).deliver_now
+    UserMailer.signup_confirmation(@user).deliver_now
   end
 
   def update
     super
-    UserMailer.edit_privacy_confirmation(user).deliver_now
+    UserMailer.edit_privacy_confirmation(@user).deliver_now
   end
   # GET /resource/sign_up
   # def new
