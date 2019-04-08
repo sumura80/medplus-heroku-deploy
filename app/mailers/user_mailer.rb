@@ -13,8 +13,7 @@ class UserMailer < ApplicationMailer
   	@user = user
 
     mail(
-    # from: 'codetest1980@gmail.com',
-    from: 'lifeabroadjapan@gmail.com',
+    from: 'codetest1980@gmail.com',
     to:   @user.email,
     subject: 'Sign Up Confirmation (Med+)'
   )
@@ -27,8 +26,7 @@ class UserMailer < ApplicationMailer
     @user = user
 
     mail(
-    # from: 'codetest1980@gmail.com',
-    from: 'lifeabroadjapan@gmail.com',
+    from: 'codetest1980@gmail.com',
     to:   @user.email,
     subject: 'Privacy setting was changed (Med+)'
   )
