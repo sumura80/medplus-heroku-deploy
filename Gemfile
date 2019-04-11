@@ -83,7 +83,7 @@ end
 
 group :development do
   #送ったメールをブラウザで確認するためのgem
-  #gem "letter_opener"
+  gem "letter_opener"
   gem 'letter_opener_web'
 end
 
