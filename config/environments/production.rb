@@ -93,4 +93,26 @@ Rails.application.configure do
   # Google AnalyicsトラッキングIDを記載
     GA.tracker = "UA-96765950-3"
 
+
+  #Actionmailerでメールを送る設定。development.rbと同じ
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { host: 'medplus.jp'}
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+  address: 'smtp.gmail.com',
+  domain: 'gmail.com',
+  port: 587,
+  user_name: ENV['ACTION_MAILER_EMAIL_ADDRESS'],
+  password: ENV['ACTION_MAILER_EMAIL_PASSWORD'],
+
+  authentication: 'plain',
+  enable_starttls_auto: true
+}
+
+
+
+
+
+
+
 end
