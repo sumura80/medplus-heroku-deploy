@@ -5,12 +5,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
   def create
     super
-    UserMailer.signup_confirmation(@user).deliver
+    
+    UserMailer.signup_confirmation(@user).deliver_now
   end
 
   def update
     super
-    UserMailer.edit_privacy_confirmation(@user).deliver
+    UserMailer.edit_privacy_confirmation(@user).deliver_now
   end
   # GET /resource/sign_up
   # def new
@@ -18,9 +19,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  def create
-    super
-  end
+  # def create
+  #   super
+  # end
 
   # GET /resource/edit
   def edit
@@ -28,9 +29,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # PUT /resource
-  def update
-    super
-  end
+  # def update
+  #   super
+  # end
 
   # DELETE /resource
   def destroy
