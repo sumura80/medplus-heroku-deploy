@@ -96,7 +96,7 @@ Rails.application.configure do
 
   #Actionmailerでメールを送る設定。development.rbと同じ
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { host: 'medplus.jp'}
+  config.action_mailer.default_url_options = { host: 'www.medplus.jp'}
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
   address: 'smtp.gmail.com',
