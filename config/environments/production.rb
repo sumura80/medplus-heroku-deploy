@@ -91,7 +91,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Google AnalyicsトラッキングIDを記載
-    GA.tracker = ENV['SAMPLE_GA_RAILS_TRACKING_ID']
+   GA.tracker = "UA-96765950-3"
+    
 
 
   #Actionmailerでメールを送る設定。development.rbと同じ
