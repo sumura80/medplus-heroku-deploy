@@ -92,6 +92,7 @@ Rails.application.configure do
 
   # Google AnalyicsトラッキングIDを記載
     GA.tracker = "UA-96765950-3"
+    GA.tracker = ENV['SAMPLE_GA_RAILS_TRACKING_ID']
 
 
   #Actionmailerでメールを送る設定。development.rbと同じ
