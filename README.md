@@ -49,5 +49,5 @@ Used gems:
 
 Ruby version:2.5.0 /
 Ruby on Rails version: 5.1.6 / 
-DB:sqlite3 
+DB:PostgreSQL
 
