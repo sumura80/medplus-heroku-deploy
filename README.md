@@ -11,6 +11,8 @@ You can download and run seed and you can see the app with some data in.
 1. Posting comment in show page. 
 2. Changing user own picture/image in account page. 
 3. Sign Up / Sign In / Sign Out / Cancel the account.(Devise).
+4. LIKE button
+5. Vote button (The more vote you get from users, the higher your post goes up)
   
   
 ## [App]
