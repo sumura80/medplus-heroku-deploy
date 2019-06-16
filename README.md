@@ -25,7 +25,7 @@ You can download and run seed and you can see the app with some data in.
 4. Heroku for deploy.
 5. Search function with ransack.
 6. logical delete (paranoia)
-7. Sending email to users when users sign up/ change password
+7. Sending email to users with Action Mailer when users sign up/ change password
 8. Forget password remake function
 ```
 
