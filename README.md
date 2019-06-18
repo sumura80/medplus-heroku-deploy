@@ -53,7 +53,12 @@ Programming languages : Ruby, Ruby on Rails, Boostrap
 ```
 
 ## Note
-Ruby version:2.5.0 /
-Ruby on Rails version: 5.1.6 / 
+Ruby version:2.5.0 / 
+
+Ruby on Rails version: 5.1.6 /  
+
 DB:PostgreSQL
 
+Version control:Github
+
+Infrastructure:Heroku
