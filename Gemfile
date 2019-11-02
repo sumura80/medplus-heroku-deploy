@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 
-gem 'devise', '~> 4.5'
+gem 'devise', '~> 4.7'
 #gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'carrierwave', '~> 1.2', '>= 1.2.3'
 gem 'mini_magick'
