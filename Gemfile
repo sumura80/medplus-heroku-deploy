@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise', '~> 4.5'
 #gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
-gem 'carrierwave', '~> 1.2', '>= 1.2.3'
+gem 'carrierwave', '~> 1.3'
 gem 'mini_magick'
 
 #BootstrapはjQueryに依存するため、
